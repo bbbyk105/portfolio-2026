@@ -43,15 +43,19 @@ const tweets = [
 
 export default function CommunitySection() {
   return (
-    <section className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-8 sm:py-12 md:py-16 lg:py-24">
-      <div className="flex flex-col items-center gap-3 sm:gap-4 px-4 mb-8 sm:mb-12 md:mb-16">
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[35.4px] leading-7 sm:leading-8 md:leading-9 lg:leading-10 xl:leading-[43.2px] text-[#fafafa] text-center">
-          Join the community
-        </h2>
-        <p className="text-xs sm:text-sm md:text-base lg:text-[15.4px] leading-5 sm:leading-6 md:leading-7 lg:leading-[24px] text-[#b4b4b4] text-center max-w-2xl">
-          Discover what our community has to say about their Supabase
-          experience.
-        </p>
+    <section className="w-full bg-[#171717] py-12 sm:py-16 md:py-20 lg:py-24">
+      <div className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
+        <div className="mb-8 sm:mb-12 md:mb-16">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-1 h-8 bg-[#3ecf8e]"></div>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#fafafa]">
+              Join the community
+            </h2>
+          </div>
+          <p className="text-sm sm:text-base md:text-lg text-[#b4b4b4] max-w-3xl ml-4 mb-4">
+            Discover what our community has to say about their Supabase
+            experience.
+          </p>
         <a
           href="https://discord.supabase.com/"
           className="px-3 sm:px-[13px] py-2 sm:py-[9px] bg-[#242424] border border-[#363636] rounded-md text-xs sm:text-[13.3px] text-[#fafafa] hover:bg-[#2e2e2e] transition-colors inline-flex items-center gap-2"
@@ -65,8 +69,8 @@ export default function CommunitySection() {
           </svg>
           Join us on Discord
         </a>
-      </div>
-      <div className="relative overflow-hidden">
+        </div>
+        <div className="relative overflow-hidden">
         <div className="flex gap-3 sm:gap-4 animate-scroll">
           {tweets.map((tweet, idx) => (
             <div
@@ -123,6 +127,7 @@ export default function CommunitySection() {
               </p>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>

@@ -1,15 +1,71 @@
+"use client";
+
+import { useState } from "react";
+
+const translations = {
+  en: {
+    banner: "Supabase Wrapped 2025: The year in review",
+    description: [
+      "Evimería builds digital systems that create a competitive edge.",
+      "Start with web and app development, then integrate n8n-powered",
+      "automation, Meta advertising,",
+      "and scalable dropshipping operations — all designed to drive real",
+      "results.",
+    ],
+    cta1: "Start your project",
+    cta2: "Request a demo",
+  },
+  ja: {
+    banner: "Supabase Wrapped 2025: 年間レビュー",
+    description: [
+      "Evimeríaは競争優位性を生み出すデジタルシステムを構築します。",
+      "Web開発とアプリ開発から始め、n8nを活用した",
+      "自動化、Meta広告、",
+      "そしてスケーラブルなドロップシッピング運用を統合 — すべては実際の",
+      "結果を生み出すために設計されています。",
+    ],
+    cta1: "プロジェクトを始める",
+    cta2: "デモをリクエスト",
+  },
+};
+
 export default function HeroSection() {
+  const [language, setLanguage] = useState<"en" | "ja">("en");
+  const t = translations[language];
+
   return (
-    <section className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-[432px] py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24">
+    <section className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-[432px] py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 relative">
       <div className="flex flex-col items-center gap-4 sm:gap-6 md:gap-8 pt-8 sm:pt-12 md:pt-16 lg:pt-20 xl:pt-[90px]">
+        {/* Language Toggle */}
+        <div className="absolute top-8 right-4 sm:right-6 md:right-8 lg:right-12 xl:right-20 flex gap-2 z-10">
+          <button
+            onClick={() => setLanguage("en")}
+            className={`px-3 py-1.5 text-xs rounded-md transition-colors ${
+              language === "en"
+                ? "bg-[#006239] text-[#fafafa]"
+                : "bg-[#242424] text-[#898989] hover:text-[#fafafa] border border-[#363636]"
+            }`}
+          >
+            EN
+          </button>
+          <button
+            onClick={() => setLanguage("ja")}
+            className={`px-3 py-1.5 text-xs rounded-md transition-colors ${
+              language === "ja"
+                ? "bg-[#006239] text-[#fafafa]"
+                : "bg-[#242424] text-[#898989] hover:text-[#fafafa] border border-[#363636]"
+            }`}
+          >
+            JA
+          </button>
+        </div>
+
         {/* Banner */}
         <a
           href="https://supabase.com/wrapped"
           className="inline-flex items-center gap-2 px-3 sm:px-4 md:px-5 py-1 rounded-full bg-gradient-to-b from-[#1f1f1f] to-[#292929] border border-[#292929] backdrop-blur-sm text-[10px] sm:text-xs md:text-sm text-[#fafafa] hover:bg-[#2e2e2e] transition-colors"
         >
-          <span className="whitespace-nowrap">
-            Supabase Wrapped 2025: The year in review
-          </span>
+          <span className="whitespace-nowrap">{t.banner}</span>
           <svg
             className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0"
             fill="none"
@@ -37,15 +93,17 @@ export default function HeroSection() {
 
         {/* Description */}
         <p className="text-xs sm:text-sm md:text-base lg:text-[17.4px] leading-5 sm:leading-6 md:leading-7 lg:leading-[28px] text-[#fafafa] text-center max-w-[576px] px-4">
-          Evimería builds digital systems that create a competitive edge.
+          {t.description[0]}
           <br className="hidden sm:block" />
           <span className="sm:hidden"> </span>
-          Start with web and app development, then integrate n8n-powered
-          automation, Meta advertising,
+          {t.description[1]}
           <br className="hidden sm:block" />
           <span className="sm:hidden"> </span>
-          and scalable dropshipping operations — all designed to drive real
-          results.
+          {t.description[2]}
+          <br className="hidden sm:block" />
+          <span className="sm:hidden"> </span>
+          {t.description[3]}
+          {t.description[4]}
         </p>
 
         {/* CTA Buttons */}
@@ -54,13 +112,13 @@ export default function HeroSection() {
             href="https://supabase.com/dashboard"
             className="w-full sm:w-auto px-4 sm:px-[17px] py-2 sm:py-[9px] bg-[#006239] border border-[rgba(62,207,142,0.3)] rounded-md text-xs sm:text-[13.8px] text-[#fafafa] hover:bg-[#007a47] transition-colors text-center"
           >
-            Start your project
+            {t.cta1}
           </a>
           <a
             href="https://supabase.com/contact/sales"
             className="w-full sm:w-auto px-4 sm:px-[17px] py-2 sm:py-[9px] bg-[#242424] border border-[#363636] rounded-md text-xs sm:text-[13.3px] text-[#fafafa] hover:bg-[#2e2e2e] transition-colors text-center"
           >
-            Request a demo
+            {t.cta2}
           </a>
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const imgSupabaseLogo1 = "/images/logo.png";
@@ -10,27 +11,27 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-[#121212]/95 backdrop-blur-sm border-b border-[#2e2e2e]">
-      <nav className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 h-16 flex items-center justify-between">
-        <a href="https://supabase.com/" className="flex items-center">
+      <nav className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 h-16 sm:h-20 md:h-24 flex items-center justify-between">
+        <Link href="/" className="flex items-center">
           <Image
             src={imgSupabaseLogo1}
             alt="Supabase Logo"
-            width={124}
-            height={24}
-            className="h-5 sm:h-6 w-auto"
+            width={240}
+            height={48}
+            className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto"
           />
-        </a>
+        </Link>
         <div className="hidden lg:flex items-center gap-4">
           <div className="flex items-center gap-1">
             <button className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md">
-              Product
-            </button>
-            <button className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md">
               Developers
             </button>
-            <button className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md">
+            <Link
+              href="/solutions"
+              className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md"
+            >
               Solutions
-            </button>
+            </Link>
             <a
               href="https://supabase.com/pricing"
               className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md"
@@ -163,4 +164,3 @@ export default function Header() {
     </header>
   );
 }
-

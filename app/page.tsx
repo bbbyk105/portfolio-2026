@@ -2,8 +2,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import LogoMarquee from "@/components/LogoMarquee";
 import FeaturesSection from "@/components/FeaturesSection";
-import FrameworksSection from "@/components/FrameworksSection";
-import CustomerStoriesSection from "@/components/CustomerStoriesSection";
+import NewsSection from "@/components/NewsSection";
 import TemplatesSection from "@/components/TemplatesSection";
 import DashboardSection from "@/components/DashboardSection";
 import CommunitySection from "@/components/CommunitySection";
@@ -18,8 +17,7 @@ export default function Home() {
         <HeroSection />
         <LogoMarquee />
         <FeaturesSection />
-        <FrameworksSection />
-        <CustomerStoriesSection />
+        <NewsSection />
         <TemplatesSection />
         <DashboardSection />
         <CommunitySection />
