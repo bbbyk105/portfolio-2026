@@ -31,7 +31,7 @@ export default function TemplatesSection() {
       <div className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
         <div className="mb-8 sm:mb-12 md:mb-16">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-1 h-8 bg-[#3ecf8e]"></div>
+            <div className="w-1 h-8 bg-[#0ABAB5]"></div>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#fafafa]">
               Start building in seconds
             </h2>
@@ -43,7 +43,7 @@ export default function TemplatesSection() {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 ml-4 w-full sm:w-auto">
             <a
               href="https://supabase.com/templates"
-              className="w-full sm:w-auto px-4 sm:px-[17px] py-2 sm:py-[9px] bg-[#006239] border border-[rgba(62,207,142,0.3)] rounded-md text-xs sm:text-[13.8px] text-[#fafafa] hover:bg-[#007a47] transition-colors text-center"
+              className="w-full sm:w-auto px-4 sm:px-[17px] py-2 sm:py-[9px] bg-[#078A85] border border-[rgba(10,186,181,0.3)] rounded-md text-xs sm:text-[13.8px] text-[#fafafa] hover:bg-[#089A95] transition-colors text-center"
             >
               Browse templates
             </a>
@@ -67,7 +67,7 @@ export default function TemplatesSection() {
           <a
             key={idx}
             href="https://supabase.com/templates"
-            className="h-[280px] sm:h-[300px] bg-[#171717] border border-[#2e2e2e] rounded-lg p-4 sm:p-5 md:p-6 flex flex-col hover:border-[#3ecf8e] transition-colors"
+            className="h-[280px] sm:h-[300px] bg-[#171717] border border-[#2e2e2e] rounded-lg p-4 sm:p-5 md:p-6 flex flex-col hover:border-[#0ABAB5] transition-colors"
           >
             <h3 className="text-base sm:text-lg text-[#fafafa] mb-2">
               {template.title}
@@ -75,7 +75,7 @@ export default function TemplatesSection() {
             <p className="text-xs sm:text-sm text-[#898989] mb-4 flex-1">
               {template.desc}
             </p>
-            <span className="text-[10px] sm:text-xs text-[#3ecf8e]">
+            <span className="text-[10px] sm:text-xs text-[#0ABAB5]">
               Read more →
             </span>
           </a>

@@ -20,7 +20,7 @@ export default function CustomerStoriesSection() {
             Customer Stories
           </p>
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-1 h-8 bg-[#3ecf8e]"></div>
+            <div className="w-1 h-8 bg-[#0ABAB5]"></div>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#fafafa]">
               Trusted by the world&apos;s most innovative companies.
             </h2>
@@ -32,7 +32,7 @@ export default function CustomerStoriesSection() {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 ml-4 w-full sm:w-auto">
             <a
               href="https://supabase.com/customers"
-              className="w-full sm:w-auto px-4 sm:px-[17px] py-2 sm:py-[9px] bg-[#006239] border border-[rgba(62,207,142,0.3)] rounded-md text-xs sm:text-[13.8px] text-[#fafafa] hover:bg-[#007a47] transition-colors text-center"
+              className="w-full sm:w-auto px-4 sm:px-[17px] py-2 sm:py-[9px] bg-[#078A85] border border-[rgba(10,186,181,0.3)] rounded-md text-xs sm:text-[13.8px] text-[#fafafa] hover:bg-[#089A95] transition-colors text-center"
             >
               View all customers
             </a>

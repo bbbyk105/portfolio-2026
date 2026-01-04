@@ -4,7 +4,7 @@ export default function AppDevelopmentSection() {
       <div className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
         <div className="mb-8 sm:mb-12 md:mb-16">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-1 h-8 bg-[#3ecf8e]"></div>
+            <div className="w-1 h-8 bg-[#0ABAB5]"></div>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#fafafa]">
               アプリ制作
             </h2>

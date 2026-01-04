@@ -1,78 +1,185 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const imgSupabaseLogo1 = "/images/logo.png";
+const languages = [
+  { code: "ja", label: "日本語" },
+  { code: "en", label: "English" },
+] as const;
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
+  const { language: selectedLanguage, setLanguage } = useLanguage();
+  const desktopDropdownRef = useRef<HTMLDivElement>(null);
+  const mobileDropdownRef = useRef<HTMLDivElement>(null);
+
+  // ドロップダウン外クリックで閉じる
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
+      const isInsideDesktop = desktopDropdownRef.current?.contains(target);
+      const isInsideMobile = mobileDropdownRef.current?.contains(target);
+      
+      // どちらのドロップダウンにも含まれていない場合、閉じる
+      if (languageDropdownOpen && !isInsideDesktop && !isInsideMobile) {
+        setLanguageDropdownOpen(false);
+      }
+    };
+
+    if (languageDropdownOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }
+  }, [languageDropdownOpen]);
+
+  const handleLanguageSelect = (lang: "ja" | "en") => {
+    setLanguage(lang);
+    setLanguageDropdownOpen(false);
+  };
+
+  const toggleDropdown = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setLanguageDropdownOpen((prev) => !prev);
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-[#121212]/95 backdrop-blur-sm border-b border-[#2e2e2e]">
       <nav className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 h-16 sm:h-20 md:h-24 flex items-center justify-between">
         <Link href="/" className="flex items-center">
-          <Image
-            src={imgSupabaseLogo1}
-            alt="Supabase Logo"
-            width={240}
-            height={48}
-            className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto"
-          />
+          <h1 className="text-xl sm:text-2xl font-medium text-[#fafafa]">
+            Evimería
+          </h1>
         </Link>
         <div className="hidden lg:flex items-center gap-4">
           <div className="flex items-center gap-1">
-            <button className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md">
-              Developers
-            </button>
             <Link
               href="/solutions"
-              className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md"
+              className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
             >
-              Solutions
+              サービス
             </Link>
-            <a
-              href="https://supabase.com/pricing"
-              className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md"
+            <Link
+              href="/portfolio"
+              className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
             >
-              Pricing
-            </a>
-            <a
-              href="https://supabase.com/docs"
-              className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md"
+              制作実績
+            </Link>
+            <Link
+              href="/news"
+              className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
             >
-              Docs
-            </a>
-            <a
-              href="https://supabase.com/blog"
-              className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md"
+              最新情報
+            </Link>
+            <Link
+              href="/about"
+              className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
             >
-              Blog
-            </a>
+              会社概要
+            </Link>
           </div>
           <div className="flex items-center gap-2">
-            <a
-              href="https://github.com/supabase/supabase"
-              className="px-3 py-1.5 text-xs text-[#b4b4b4] border border-transparent rounded-md hover:bg-[#1f1f1f]"
+            {/* 言語切り替えプルダウン */}
+            <div className="relative" ref={desktopDropdownRef}>
+              <button
+                onClick={toggleDropdown}
+                className="px-3 py-1.5 text-xs text-[#fafafa] bg-[#242424] border border-[#363636] rounded-md hover:bg-[#2e2e2e] transition-colors flex items-center gap-1.5"
+              >
+                <span>{selectedLanguage.toUpperCase()}</span>
+                <svg
+                  className={`w-3 h-3 transition-transform duration-200 ${
+                    languageDropdownOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              {languageDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-32 bg-[#171717] border border-[#2e2e2e] rounded-md shadow-lg overflow-hidden z-50">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleLanguageSelect(lang.code as "ja" | "en");
+                      }}
+                      className={`w-full px-4 py-2 text-sm text-left transition-colors ${
+                        selectedLanguage === lang.code
+                          ? "bg-[#0ABAB5]/20 text-[#0ABAB5]"
+                          : "text-[#fafafa] hover:bg-[#1f1f1f]"
+                      }`}
+                    >
+                      {lang.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            <Link
+              href="/contact"
+              className="px-3 py-1.5 text-xs text-[#fafafa] bg-[#078A85] border border-[rgba(10,186,181,0.3)] rounded-md hover:bg-[#089A95] transition-colors"
             >
-              GitHub
-            </a>
-            <a
-              href="https://supabase.com/dashboard"
-              className="px-3 py-1.5 text-xs text-[#fafafa] bg-[#242424] border border-[#363636] rounded-md hover:bg-[#2e2e2e]"
-            >
-              Sign in
-            </a>
-            <a
-              href="https://supabase.com/dashboard"
-              className="px-3 py-1.5 text-xs text-[#fafafa] bg-[#006239] border border-[rgba(62,207,142,0.3)] rounded-md hover:bg-[#007a47]"
-            >
-              Start your project
-            </a>
+              お問い合わせ
+            </Link>
           </div>
         </div>
-        <div className="lg:hidden">
+        <div className="lg:hidden flex items-center gap-2">
+          {/* モバイル用言語切り替え */}
+          <div className="relative" ref={mobileDropdownRef}>
+            <button
+              onClick={toggleDropdown}
+              className="px-2 py-1.5 text-xs text-[#fafafa] bg-[#242424] border border-[#363636] rounded-md hover:bg-[#2e2e2e] transition-colors flex items-center gap-1"
+            >
+              <span>{selectedLanguage.toUpperCase()}</span>
+              <svg
+                className={`w-3 h-3 transition-transform duration-200 ${
+                  languageDropdownOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            {languageDropdownOpen && (
+              <div className="absolute right-0 mt-2 w-32 bg-[#171717] border border-[#2e2e2e] rounded-md shadow-lg overflow-hidden z-50">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleLanguageSelect(lang.code as "ja" | "en");
+                    }}
+                    className={`w-full px-4 py-2 text-sm text-left transition-colors ${
+                      selectedLanguage === lang.code
+                        ? "bg-[#0ABAB5]/20 text-[#0ABAB5]"
+                        : "text-[#fafafa] hover:bg-[#1f1f1f]"
+                    }`}
+                  >
+                    {lang.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="px-3 py-2 text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
@@ -114,49 +221,42 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-[#2e2e2e] bg-[#121212]">
           <div className="max-w-[1536px] mx-auto px-4 py-4 space-y-2">
-            <a
-              href="https://supabase.com/pricing"
-              className="block px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md"
+            <Link
+              href="/solutions"
+              className="block px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Pricing
-            </a>
-            <a
-              href="https://supabase.com/docs"
-              className="block px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md"
+              サービス
+            </Link>
+            <Link
+              href="/portfolio"
+              className="block px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Docs
-            </a>
-            <a
-              href="https://supabase.com/blog"
-              className="block px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md"
+              制作実績
+            </Link>
+            <Link
+              href="/news"
+              className="block px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Blog
-            </a>
-            <div className="pt-2 border-t border-[#2e2e2e] space-y-2">
-              <a
-                href="https://github.com/supabase/supabase"
-                className="block px-3 py-2 text-sm text-[#b4b4b4] hover:bg-[#1f1f1f] rounded-md"
+              最新情報
+            </Link>
+            <Link
+              href="/about"
+              className="block px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              会社概要
+            </Link>
+            <div className="pt-2 border-t border-[#2e2e2e]">
+              <Link
+                href="/contact"
+                className="block px-3 py-2 text-sm text-[#fafafa] bg-[#078A85] border border-[rgba(10,186,181,0.3)] rounded-md hover:bg-[#089A95] text-center transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                GitHub
-              </a>
-              <a
-                href="https://supabase.com/dashboard"
-                className="block px-3 py-2 text-sm text-[#fafafa] bg-[#242424] border border-[#363636] rounded-md hover:bg-[#2e2e2e] text-center"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Sign in
-              </a>
-              <a
-                href="https://supabase.com/dashboard"
-                className="block px-3 py-2 text-sm text-[#fafafa] bg-[#006239] border border-[rgba(62,207,142,0.3)] rounded-md hover:bg-[#007a47] text-center"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Start your project
-              </a>
+                お問い合わせ
+              </Link>
             </div>
           </div>
         </div>

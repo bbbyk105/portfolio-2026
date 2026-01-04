@@ -30,7 +30,7 @@ export default function NewsSection() {
             News
           </p>
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-1 h-8 bg-[#3ecf8e]"></div>
+            <div className="w-1 h-8 bg-[#0ABAB5]"></div>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#fafafa]">
               最新情報
             </h2>

@@ -133,7 +133,7 @@ export default function FeaturesSection() {
       <div className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
         <div className="mb-8 sm:mb-12 md:mb-16">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-1 h-8 bg-[#3ecf8e]"></div>
+            <div className="w-1 h-8 bg-[#0ABAB5]"></div>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#fafafa]">
               包括的なデジタルソリューション
             </h2>
@@ -150,15 +150,15 @@ export default function FeaturesSection() {
             <a
               key={index}
               href={feature.href}
-              className="group relative h-full min-h-[280px] sm:min-h-[300px] rounded-lg border border-[#2e2e2e] bg-[#171717] p-6 sm:p-7 md:p-8 flex flex-col transition-all duration-300 hover:border-[#3ecf8e]/50 hover:bg-[#1a1a1a]"
+              className="group relative h-full min-h-[280px] sm:min-h-[300px] rounded-lg border border-[#2e2e2e] bg-[#171717] p-6 sm:p-7 md:p-8 flex flex-col transition-all duration-300 hover:border-[#0ABAB5]/50 hover:bg-[#1a1a1a]"
             >
               {/* アイコン */}
-              <div className="mb-4 w-12 h-12 rounded-lg bg-[#3ecf8e]/10 border border-[#3ecf8e]/20 flex items-center justify-center text-[#3ecf8e] transition-all duration-300 group-hover:bg-[#3ecf8e]/20 group-hover:border-[#3ecf8e]/40 group-hover:scale-110">
+              <div className="mb-4 w-12 h-12 rounded-lg bg-[#0ABAB5]/10 border border-[#0ABAB5]/20 flex items-center justify-center text-[#0ABAB5] transition-all duration-300 group-hover:bg-[#0ABAB5]/20 group-hover:border-[#0ABAB5]/40 group-hover:scale-110">
                 {feature.icon}
               </div>
 
               {/* タイトル */}
-              <h3 className="text-lg sm:text-xl font-medium text-[#fafafa] mb-3 transition-colors duration-300 group-hover:text-[#3ecf8e]">
+              <h3 className="text-lg sm:text-xl font-medium text-[#fafafa] mb-3 transition-colors duration-300 group-hover:text-[#0ABAB5]">
                 {feature.title}
               </h3>
 
@@ -175,7 +175,7 @@ export default function FeaturesSection() {
                     className="flex items-center gap-2 text-sm text-[#b4b4b4]"
                   >
                     <svg
-                      className="w-4 h-4 text-[#3ecf8e] flex-shrink-0"
+                      className="w-4 h-4 text-[#0ABAB5] flex-shrink-0"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -195,7 +195,7 @@ export default function FeaturesSection() {
               {/* ホバー時の矢印 */}
               <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <svg
-                  className="w-5 h-5 text-[#3ecf8e] transition-transform duration-300 group-hover:translate-x-1"
+                  className="w-5 h-5 text-[#0ABAB5] transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

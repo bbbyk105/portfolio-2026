@@ -51,7 +51,7 @@ export default function PortfolioSection() {
       <div className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
         <div className="mb-8 sm:mb-12 md:mb-16">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-1 h-8 bg-[#3ecf8e]"></div>
+            <div className="w-1 h-8 bg-[#0ABAB5]"></div>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#fafafa]">
               制作実績
             </h2>
@@ -67,7 +67,7 @@ export default function PortfolioSection() {
             <a
               key={item.id}
               href={`/portfolio/${item.id}`}
-              className="group relative h-[400px] sm:h-[420px] md:h-[450px] overflow-hidden rounded-lg border border-[#2e2e2e] bg-[#1a1a1a] transition-all duration-300 hover:border-[#3ecf8e]/50"
+              className="group relative h-[400px] sm:h-[420px] md:h-[450px] overflow-hidden rounded-lg border border-[#2e2e2e] bg-[#1a1a1a] transition-all duration-300 hover:border-[#0ABAB5]/50"
             >
               {/* 画像背景 */}
               <div className="absolute inset-0 flex items-center justify-center p-8">
@@ -86,14 +86,14 @@ export default function PortfolioSection() {
               <div className="relative h-full flex flex-col justify-between p-6 sm:p-7 md:p-8">
                 {/* 上部：カテゴリ */}
                 <div>
-                  <span className="inline-block px-3 py-1 text-[10px] sm:text-xs font-medium text-[#3ecf8e] bg-[#3ecf8e]/10 rounded-full border border-[#3ecf8e]/20">
+                  <span className="inline-block px-3 py-1 text-[10px] sm:text-xs font-medium text-[#0ABAB5] bg-[#0ABAB5]/10 rounded-full border border-[#0ABAB5]/20">
                     {item.category}
                   </span>
                 </div>
 
                 {/* 下部：タイトルと説明 */}
                 <div className="space-y-2">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-[#fafafa] transition-colors duration-300 group-hover:text-[#3ecf8e]">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-[#fafafa] transition-colors duration-300 group-hover:text-[#0ABAB5]">
                     {item.title}
                   </h3>
                   <p className="text-sm sm:text-base text-[#d4d4d4] leading-relaxed">
@@ -101,7 +101,7 @@ export default function PortfolioSection() {
                   </p>
 
                   {/* 詳細リンク */}
-                  <div className="flex items-center gap-2 pt-2 text-[#3ecf8e] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex items-center gap-2 pt-2 text-[#0ABAB5] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span>詳細を見る</span>
                     <svg
                       className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const translations = {
   en: {
@@ -30,36 +30,12 @@ const translations = {
 };
 
 export default function HeroSection() {
-  const [language, setLanguage] = useState<"en" | "ja">("en");
+  const { language } = useLanguage();
   const t = translations[language];
 
   return (
     <section className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-[432px] py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 relative">
       <div className="flex flex-col items-center gap-4 sm:gap-6 md:gap-8 pt-8 sm:pt-12 md:pt-16 lg:pt-20 xl:pt-[90px]">
-        {/* Language Toggle */}
-        <div className="absolute top-8 right-4 sm:right-6 md:right-8 lg:right-12 xl:right-20 flex gap-2 z-10">
-          <button
-            onClick={() => setLanguage("en")}
-            className={`px-3 py-1.5 text-xs rounded-md transition-colors ${
-              language === "en"
-                ? "bg-[#006239] text-[#fafafa]"
-                : "bg-[#242424] text-[#898989] hover:text-[#fafafa] border border-[#363636]"
-            }`}
-          >
-            EN
-          </button>
-          <button
-            onClick={() => setLanguage("ja")}
-            className={`px-3 py-1.5 text-xs rounded-md transition-colors ${
-              language === "ja"
-                ? "bg-[#006239] text-[#fafafa]"
-                : "bg-[#242424] text-[#898989] hover:text-[#fafafa] border border-[#363636]"
-            }`}
-          >
-            JA
-          </button>
-        </div>
-
         {/* Banner */}
         <a
           href="https://supabase.com/wrapped"
@@ -86,7 +62,7 @@ export default function HeroSection() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[69px] leading-tight sm:leading-[48px] md:leading-[56px] lg:leading-[64px] xl:leading-[72px] font-medium text-[#fafafa] text-center px-2 sm:px-4">
             Build the edge
           </h1>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[69.6px] leading-tight sm:leading-[48px] md:leading-[56px] lg:leading-[64px] xl:leading-[72px] font-medium text-[#3ecf8e] text-center px-2 sm:px-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[69.6px] leading-tight sm:leading-[48px] md:leading-[56px] lg:leading-[64px] xl:leading-[72px] font-medium text-[#0ABAB5] text-center px-2 sm:px-4">
             Where systems become leverage
           </h1>
         </div>
@@ -110,7 +86,7 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 px-4 w-full sm:w-auto">
           <a
             href="https://supabase.com/dashboard"
-            className="w-full sm:w-auto px-4 sm:px-[17px] py-2 sm:py-[9px] bg-[#006239] border border-[rgba(62,207,142,0.3)] rounded-md text-xs sm:text-[13.8px] text-[#fafafa] hover:bg-[#007a47] transition-colors text-center"
+            className="w-full sm:w-auto px-4 sm:px-[17px] py-2 sm:py-[9px] bg-[#078A85] border border-[rgba(10,186,181,0.3)] rounded-md text-xs sm:text-[13.8px] text-[#fafafa] hover:bg-[#089A95] transition-colors text-center"
           >
             {t.cta1}
           </a>
@@ -125,5 +101,3 @@ export default function HeroSection() {
     </section>
   );
 }
-
-

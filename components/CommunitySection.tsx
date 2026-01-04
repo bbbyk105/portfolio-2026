@@ -1,137 +1,126 @@
-const tweets = [
+"use client";
+
+import { useState } from "react";
+
+const faqs = [
   {
-    user: "@nerdburn",
-    text: "It's fun, feels lightweight, and really quick to spin up user auth and a few tables. Almost too easy! Highly recommend.",
+    id: 1,
+    question: "Webサイト制作の料金はどのくらいかかりますか？",
+    answer:
+      "プロジェクトの規模や要件によって異なります。企業サイトで10万円〜、ECサイトで30万円〜が目安です。まずはお気軽にお問い合わせください。",
   },
   {
-    user: "@patrickc",
-    text: 'Very impressed by @supabase\'s growth. For new startups, they seem to have gone from "promising" to "standard" in remarkably short order.',
+    id: 2,
+    question: "アプリ開発にはどのくらいの期間が必要ですか？",
+    answer:
+      "アプリの種類や機能によって異なりますが、シンプルなアプリで1〜2ヶ月、機能が豊富なアプリで6ヶ月〜1年程度が目安です。詳細はヒアリング時にご提案いたします。",
   },
   {
-    user: "@adeelibr",
-    text: "@supabase shout out, their MCP is awesome. It's helping me create better row securities and telling me best practises for setting up a supabase app",
+    id: 3,
+    question: "既存のWebサイトのリニューアルも対応可能ですか？",
+    answer:
+      "はい、対応可能です。既存サイトの分析から、最新技術を活用したリニューアルまで一貫してサポートいたします。SEO対策や表示速度の改善も同時に行います。",
   },
   {
-    user: "@TyronBache",
-    text: "Really impressed with @supabase's Assistant. It has helped me troubleshoot and solve complex CORS Configuration issues on Pinger.",
+    id: 4,
+    question: "制作後のサポートはありますか？",
+    answer:
+      "はい、制作後の運用・保守・改善まで長期的にサポートいたします。定期的なメンテナンスプランもご用意していますので、お気軽にご相談ください。",
   },
   {
-    user: "@orlandopedro_",
-    text: "Love @supabase custom domains makes the auth so much better",
+    id: 5,
+    question: "Meta広告の運用費用はどのくらいかかりますか？",
+    answer:
+      "広告予算と運用費用は別途となります。運用費用は月額5万円〜が目安です。広告予算はお客様の目標に合わせて最適な金額をご提案いたします。",
   },
   {
-    user: "@sdusteric",
-    text: "Loving #Supabase MCP. Claude Code would not only plan what data we should save but also figure out a migration script by checking what the schema looks like on Supabase via MCP.",
+    id: 6,
+    question: "AI自動化システムの導入にはどのような準備が必要ですか？",
+    answer:
+      "現在の業務フローや使用しているツールの情報があれば十分です。ヒアリング時に最適な自動化プランをご提案し、段階的に導入を進めることができます。",
   },
   {
-    user: "@adm_lawson",
-    text: "Love supabse edge functions. Cursor+Supabase+MCP+Docker desktop is all I need",
+    id: 7,
+    question: "リモートでの打ち合わせや開発は可能ですか？",
+    answer:
+      "はい、完全リモートでの対応も可能です。オンラインミーティングツールを活用し、全国どこからでもご利用いただけます。",
   },
   {
-    user: "@gokul_i",
-    text: "First time running @supabase in local. It just works. Very good DX imo.",
-  },
-  {
-    user: "@xthemadgeniusx",
-    text: "Lately been using Supabase over AWS/ GCP for products to save on costs and rapid builds(Vibe Code) that do not need all the Infra and the hefty costs that come with AWS/ GCP out the door. Great solution overall.",
-  },
-  {
-    user: "@pontusab",
-    text: "I love everything about Supabase.",
+    id: 8,
+    question: "お見積もりは無料ですか？",
+    answer:
+      "はい、お見積もりは無料です。まずはお気軽にお問い合わせください。プロジェクトの内容を詳しくお聞きし、最適なプランをご提案いたします。",
   },
 ];
 
 export default function CommunitySection() {
+  const [openId, setOpenId] = useState<number | null>(null);
+
+  const toggleFAQ = (id: number) => {
+    setOpenId(openId === id ? null : id);
+  };
+
   return (
     <section className="w-full bg-[#171717] py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
         <div className="mb-8 sm:mb-12 md:mb-16">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-1 h-8 bg-[#3ecf8e]"></div>
+            <div className="w-1 h-8 bg-[#0ABAB5]"></div>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#fafafa]">
-              Join the community
+              よくある質問
             </h2>
           </div>
-          <p className="text-sm sm:text-base md:text-lg text-[#b4b4b4] max-w-3xl ml-4 mb-4">
-            Discover what our community has to say about their Supabase
-            experience.
+          <p className="text-sm sm:text-base md:text-lg text-[#b4b4b4] max-w-3xl ml-4">
+            お客様からよくいただく質問と回答をご紹介します。
           </p>
-        <a
-          href="https://discord.supabase.com/"
-          className="px-3 sm:px-[13px] py-2 sm:py-[9px] bg-[#242424] border border-[#363636] rounded-md text-xs sm:text-[13.3px] text-[#fafafa] hover:bg-[#2e2e2e] transition-colors inline-flex items-center gap-2"
-        >
-          <svg
-            className="w-3 h-3 sm:w-4 sm:h-4"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.045-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
-          </svg>
-          Join us on Discord
-        </a>
         </div>
-        <div className="relative overflow-hidden">
-        <div className="flex gap-3 sm:gap-4 animate-scroll">
-          {tweets.map((tweet, idx) => (
+
+        <div className="space-y-3 sm:space-y-4">
+          {faqs.map((faq) => (
             <div
-              key={idx}
-              className="min-w-[280px] sm:min-w-[304px] bg-[#171717] border border-[#2e2e2e] rounded-lg p-4 sm:p-5 md:p-6 flex-shrink-0"
+              key={faq.id}
+              className="border border-[#2e2e2e] rounded-lg bg-[#171717] overflow-hidden transition-all duration-300 hover:border-[#0ABAB5]/30"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-[#2e2e2e] flex items-center justify-center">
-                  <span className="text-xs text-[#898989]">
-                    {tweet.user[1]}
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-sm text-[#fafafa]">{tweet.user}</span>
-                  <svg
-                    className="w-4 h-4 text-[#898989]"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                  </svg>
+              <button
+                onClick={() => toggleFAQ(faq.id)}
+                className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 flex items-center justify-between text-left gap-4 group"
+              >
+                <h3 className="text-sm sm:text-base md:text-lg font-medium text-[#fafafa] flex-1 group-hover:text-[#0ABAB5] transition-colors duration-300">
+                  {faq.question}
+                </h3>
+                <svg
+                  className={`w-5 h-5 text-[#0ABAB5] flex-shrink-0 transition-transform duration-300 ${
+                    openId === faq.id ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  openId === faq.id
+                    ? "max-h-[500px] opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6 pt-0">
+                  <p className="text-sm sm:text-base text-[#b4b4b4] leading-relaxed">
+                    {faq.answer}
+                  </p>
                 </div>
               </div>
-              <p className="text-sm text-[#b4b4b4] leading-relaxed">
-                {tweet.text}
-              </p>
             </div>
           ))}
-          {/* Duplicate for seamless loop */}
-          {tweets.slice(0, 3).map((tweet, idx) => (
-            <div
-              key={`dup-${idx}`}
-              className="min-w-[280px] sm:min-w-[304px] bg-[#171717] border border-[#2e2e2e] rounded-lg p-4 sm:p-5 md:p-6 flex-shrink-0"
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-[#2e2e2e] flex items-center justify-center">
-                  <span className="text-xs text-[#898989]">
-                    {tweet.user[1]}
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-sm text-[#fafafa]">{tweet.user}</span>
-                  <svg
-                    className="w-4 h-4 text-[#898989]"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                  </svg>
-                </div>
-              </div>
-              <p className="text-sm text-[#b4b4b4] leading-relaxed">
-                {tweet.text}
-              </p>
-            </div>
-          ))}
-        </div>
         </div>
       </div>
     </section>
   );
 }
-
-
