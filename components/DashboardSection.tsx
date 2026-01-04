@@ -1,37 +1,100 @@
-const steps = [
-  {
-    id: "consultation",
-    name: "お問い合わせ・ヒアリング",
-    description: "ご要望を詳しくお聞きし、お客様のビジネス目標を理解します。",
+"use client";
+
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const stepsData = {
+  ja: [
+    {
+      id: "consultation",
+      name: "お問い合わせ・ヒアリング",
+      description: "ご要望を詳しくお聞きし、お客様のビジネス目標を理解します。",
+    },
+    {
+      id: "proposal",
+      name: "提案・見積もり",
+      description:
+        "最適なソリューションを提案し、詳細な見積もりをご提示します。",
+    },
+    {
+      id: "contract",
+      name: "契約・キックオフ",
+      description: "契約後、プロジェクトのキックオフミーティングを実施します。",
+    },
+    {
+      id: "development",
+      name: "開発・制作",
+      description: "定期的な進捗報告を行いながら、高品質な開発を進めます。",
+    },
+    {
+      id: "testing",
+      name: "テスト・調整",
+      description:
+        "品質チェックと改善を行い、お客様のご要望に合わせて調整します。",
+    },
+    {
+      id: "launch",
+      name: "リリース・運用開始",
+      description:
+        "リリース後も継続的なサポートを提供し、ビジネス成長をサポートします。",
+    },
+  ],
+  en: [
+    {
+      id: "consultation",
+      name: "Inquiry & Consultation",
+      description:
+        "We listen to your requirements in detail and understand your business goals.",
+    },
+    {
+      id: "proposal",
+      name: "Proposal & Estimate",
+      description:
+        "We propose the optimal solution and provide a detailed estimate.",
+    },
+    {
+      id: "contract",
+      name: "Contract & Kickoff",
+      description: "After contract, we conduct a project kickoff meeting.",
+    },
+    {
+      id: "development",
+      name: "Development & Production",
+      description:
+        "We proceed with high-quality development while providing regular progress reports.",
+    },
+    {
+      id: "testing",
+      name: "Testing & Adjustment",
+      description:
+        "We perform quality checks and improvements, adjusting to your requirements.",
+    },
+    {
+      id: "launch",
+      name: "Release & Operation Start",
+      description:
+        "We provide ongoing support after release and support your business growth.",
+    },
+  ],
+};
+
+const translations = {
+  ja: {
+    title: "プロジェクトの進め方",
+    description:
+      "お客様のビジネス成長をサポートする、確かな開発プロセスをご紹介します。",
   },
-  {
-    id: "proposal",
-    name: "提案・見積もり",
-    description: "最適なソリューションを提案し、詳細な見積もりをご提示します。",
+  en: {
+    title: "Project Process",
+    description:
+      "We introduce our reliable development process that supports your business growth.",
   },
-  {
-    id: "contract",
-    name: "契約・キックオフ",
-    description: "契約後、プロジェクトのキックオフミーティングを実施します。",
-  },
-  {
-    id: "development",
-    name: "開発・制作",
-    description: "定期的な進捗報告を行いながら、高品質な開発を進めます。",
-  },
-  {
-    id: "testing",
-    name: "テスト・調整",
-    description: "品質チェックと改善を行い、お客様のご要望に合わせて調整します。",
-  },
-  {
-    id: "launch",
-    name: "リリース・運用開始",
-    description: "リリース後も継続的なサポートを提供し、ビジネス成長をサポートします。",
-  },
-];
+};
 
 export default function DashboardSection() {
+  const { language } = useLanguage();
+  const steps = stepsData[language];
+  const t = translations[language];
+
   return (
     <section className="w-full bg-[#171717] py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
@@ -39,11 +102,11 @@ export default function DashboardSection() {
           <div className="flex items-center gap-3 mb-4">
             <div className="w-1 h-8 bg-[#0ABAB5]"></div>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#fafafa]">
-              プロジェクトの進め方
+              {t.title}
             </h2>
           </div>
           <p className="text-sm sm:text-base md:text-lg text-[#b4b4b4] max-w-3xl ml-4">
-            お客様のビジネス成長をサポートする、確かな開発プロセスをご紹介します。
+            {t.description}
           </p>
         </div>
 
@@ -55,10 +118,15 @@ export default function DashboardSection() {
             <div className="absolute top-12 left-12 right-12 h-px bg-[#0ABAB5]/30"></div>
 
             {steps.map((step, index) => (
-              <div key={step.id} className="relative flex flex-col items-center">
+              <div
+                key={step.id}
+                className="relative flex flex-col items-center"
+              >
                 {/* ステップ番号 */}
                 <div className="relative z-10 w-24 h-24 rounded-full bg-[#171717] border-2 border-[#0ABAB5] flex items-center justify-center mb-6 group-hover:bg-[#0ABAB5]/10 transition-colors">
-                  <span className="text-2xl font-bold text-[#0ABAB5]">{index + 1}</span>
+                  <span className="text-2xl font-bold text-[#0ABAB5]">
+                    {index + 1}
+                  </span>
                 </div>
 
                 {/* ステップ内容 */}
@@ -80,8 +148,10 @@ export default function DashboardSection() {
               <div key={step.id} className="relative flex gap-6">
                 {/* 左側：番号と線 */}
                 <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-[#171717] border-2 border-[#0ABAB5] flex items-center justify-center flex-shrink-0">
-                    <span className="text-lg font-bold text-[#0ABAB5]">{index + 1}</span>
+                  <div className="w-12 h-12 rounded-full bg-[#171717] border-2 border-[#0ABAB5] flex items-center justify-center shrink-0">
+                    <span className="text-lg font-bold text-[#0ABAB5]">
+                      {index + 1}
+                    </span>
                   </div>
                   {index < steps.length - 1 && (
                     <div className="w-px h-full bg-[#0ABAB5]/30 mt-4 min-h-[80px]"></div>

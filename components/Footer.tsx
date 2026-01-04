@@ -1,12 +1,60 @@
+"use client";
+
+import Link from "next/link";
 import Image from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const translations = {
+  ja: {
+    description: "デジタルシステムで競争優位性を創出します。",
+    services: "サービス",
+    webDevelopment: "Web制作",
+    appDevelopment: "アプリ制作",
+    metaAds: "Meta広告代理",
+    aiAutomation: "AI自動化",
+    companyInfo: "会社情報",
+    about: "会社概要",
+    contact: "お問い合わせ",
+    privacy: "プライバシーポリシー",
+    terms: "利用規約",
+    resources: "リソース",
+    news: "最新情報",
+    portfolio: "制作実績",
+    blog: "ブログ",
+    support: "サポート",
+    faq: "よくある質問",
+  },
+  en: {
+    description: "We create competitive advantages through digital systems.",
+    services: "Services",
+    webDevelopment: "Web Development",
+    appDevelopment: "App Development",
+    metaAds: "Meta Advertising",
+    aiAutomation: "AI Automation",
+    companyInfo: "Company",
+    about: "About",
+    contact: "Contact",
+    privacy: "Privacy Policy",
+    terms: "Terms of Service",
+    resources: "Resources",
+    news: "News",
+    portfolio: "Portfolio",
+    blog: "Blog",
+    support: "Support",
+    faq: "FAQ",
+  },
+};
 
 export default function Footer() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <footer className="bg-[#0f0f0f] border-t border-[#2e2e2e]">
       <div className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-8 sm:py-12 md:py-16 lg:py-24">
         <div className="flex flex-col lg:flex-row items-start justify-between mb-6 sm:mb-8 md:mb-10 lg:mb-12 gap-6 sm:gap-8 lg:gap-0">
           <div className="flex flex-col gap-4 sm:gap-6 md:gap-8">
-            <a href="/" className="block">
+            <Link href="/" className="block">
               <Image
                 src="/images/logo.png"
                 alt="Evimería"
@@ -14,10 +62,8 @@ export default function Footer() {
                 height={67}
                 className="h-12 sm:h-16 md:h-20 w-auto"
               />
-            </a>
-            <p className="text-sm text-[#898989] max-w-xs">
-              デジタルシステムで競争優位性を創出します。
-            </p>
+            </Link>
+            <p className="text-sm text-[#898989] max-w-xs">{t.description}</p>
             <div className="flex items-center gap-4 sm:gap-5">
               <a
                 href="https://github.com/evimeria"
@@ -84,7 +130,7 @@ export default function Footer() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 sm:gap-8 md:gap-12 lg:gap-16 w-full lg:w-auto">
             <div>
               <h3 className="text-[15.5px] leading-[24px] text-[#fafafa] mb-4">
-                サービス
+                {t.services}
               </h3>
               <ul className="space-y-2">
                 <li>
@@ -92,7 +138,7 @@ export default function Footer() {
                     href="/solutions#web"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
-                    Web制作
+                    {t.webDevelopment}
                   </a>
                 </li>
                 <li>
@@ -100,7 +146,7 @@ export default function Footer() {
                     href="/solutions#app"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
-                    アプリ制作
+                    {t.appDevelopment}
                   </a>
                 </li>
                 <li>
@@ -108,7 +154,7 @@ export default function Footer() {
                     href="/solutions#meta"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
-                    Meta広告代理
+                    {t.metaAds}
                   </a>
                 </li>
                 <li>
@@ -116,14 +162,14 @@ export default function Footer() {
                     href="/solutions#automation"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
-                    AI自動化
+                    {t.aiAutomation}
                   </a>
                 </li>
               </ul>
             </div>
             <div>
               <h3 className="text-[15.4px] leading-[24px] text-[#fafafa] mb-4">
-                会社情報
+                {t.companyInfo}
               </h3>
               <ul className="space-y-2">
                 <li>
@@ -131,7 +177,7 @@ export default function Footer() {
                     href="/about"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
-                    会社概要
+                    {t.about}
                   </a>
                 </li>
                 <li>
@@ -139,7 +185,7 @@ export default function Footer() {
                     href="/contact"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
-                    お問い合わせ
+                    {t.contact}
                   </a>
                 </li>
                 <li>
@@ -147,7 +193,7 @@ export default function Footer() {
                     href="/privacy"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
-                    プライバシーポリシー
+                    {t.privacy}
                   </a>
                 </li>
                 <li>
@@ -155,14 +201,14 @@ export default function Footer() {
                     href="/terms"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
-                    利用規約
+                    {t.terms}
                   </a>
                 </li>
               </ul>
             </div>
             <div>
               <h3 className="text-[15px] leading-[24px] text-[#fafafa] mb-4">
-                リソース
+                {t.resources}
               </h3>
               <ul className="space-y-2">
                 <li>
@@ -170,7 +216,7 @@ export default function Footer() {
                     href="/news"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
-                    最新情報
+                    {t.news}
                   </a>
                 </li>
                 <li>
@@ -178,7 +224,7 @@ export default function Footer() {
                     href="/portfolio"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
-                    制作実績
+                    {t.portfolio}
                   </a>
                 </li>
                 <li>
@@ -186,14 +232,14 @@ export default function Footer() {
                     href="/blog"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
-                    ブログ
+                    {t.blog}
                   </a>
                 </li>
               </ul>
             </div>
             <div>
               <h3 className="text-[15.5px] leading-[24px] text-[#fafafa] mb-4">
-                サポート
+                {t.support}
               </h3>
               <ul className="space-y-2">
                 <li>
@@ -201,7 +247,7 @@ export default function Footer() {
                     href="/contact"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
-                    お問い合わせ
+                    {t.contact}
                   </a>
                 </li>
                 <li>
@@ -209,7 +255,7 @@ export default function Footer() {
                     href="/faq"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
-                    よくある質問
+                    {t.faq}
                   </a>
                 </li>
               </ul>

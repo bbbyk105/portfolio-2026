@@ -10,12 +10,30 @@ const languages = [
   { code: "en", label: "English" },
 ] as const;
 
+const translations = {
+  ja: {
+    services: "サービス",
+    portfolio: "制作実績",
+    news: "最新情報",
+    about: "会社概要",
+    contact: "お問い合わせ",
+  },
+  en: {
+    services: "Services",
+    portfolio: "Portfolio",
+    news: "News",
+    about: "About",
+    contact: "Contact",
+  },
+};
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
   const { language: selectedLanguage, setLanguage } = useLanguage();
   const desktopDropdownRef = useRef<HTMLDivElement>(null);
   const mobileDropdownRef = useRef<HTMLDivElement>(null);
+  const t = translations[selectedLanguage];
 
   // ドロップダウン外クリックで閉じる
   useEffect(() => {
@@ -23,7 +41,7 @@ export default function Header() {
       const target = event.target as Node;
       const isInsideDesktop = desktopDropdownRef.current?.contains(target);
       const isInsideMobile = mobileDropdownRef.current?.contains(target);
-      
+
       // どちらのドロップダウンにも含まれていない場合、閉じる
       if (languageDropdownOpen && !isInsideDesktop && !isInsideMobile) {
         setLanguageDropdownOpen(false);
@@ -67,25 +85,25 @@ export default function Header() {
               href="/solutions"
               className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
             >
-              サービス
+              {t.services}
             </Link>
             <Link
               href="/portfolio"
               className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
             >
-              制作実績
+              {t.portfolio}
             </Link>
             <Link
               href="/news"
               className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
             >
-              最新情報
+              {t.news}
             </Link>
             <Link
               href="/about"
               className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
             >
-              会社概要
+              {t.about}
             </Link>
           </div>
           <div className="flex items-center gap-2">
@@ -137,7 +155,7 @@ export default function Header() {
               href="/contact"
               className="px-3 py-1.5 text-xs text-[#fafafa] bg-[#078A85] border border-[rgba(10,186,181,0.3)] rounded-md hover:bg-[#089A95] transition-colors"
             >
-              お問い合わせ
+              {t.contact}
             </Link>
           </div>
         </div>
@@ -232,28 +250,28 @@ export default function Header() {
               className="block px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              サービス
+              {t.services}
             </Link>
             <Link
               href="/portfolio"
               className="block px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              制作実績
+              {t.portfolio}
             </Link>
             <Link
               href="/news"
               className="block px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              最新情報
+              {t.news}
             </Link>
             <Link
               href="/about"
               className="block px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              会社概要
+              {t.about}
             </Link>
             <div className="pt-2 border-t border-[#2e2e2e]">
               <Link
@@ -261,7 +279,7 @@ export default function Header() {
                 className="block px-3 py-2 text-sm text-[#fafafa] bg-[#078A85] border border-[rgba(10,186,181,0.3)] rounded-md hover:bg-[#089A95] text-center transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                お問い合わせ
+                {t.contact}
               </Link>
             </div>
           </div>

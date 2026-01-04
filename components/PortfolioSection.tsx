@@ -1,51 +1,119 @@
-import Image from "next/image";
+"use client";
 
-const portfolioItems = [
-  {
-    id: 1,
-    title: "企業サイト制作",
-    description: "スマホ・PC対応の見やすいWebサイト",
-    category: "Web制作",
-    image: "/images/web.png",
+import Image from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const portfolioData = {
+  ja: [
+    {
+      id: 1,
+      title: "企業サイト制作",
+      description: "スマホ・PC対応の見やすいWebサイト",
+      category: "Web制作",
+      image: "/images/web.png",
+    },
+    {
+      id: 2,
+      title: "ECサイト構築",
+      description: "高速で使いやすいネットショップ",
+      category: "Web制作",
+      image: "/images/ec.png",
+    },
+    {
+      id: 3,
+      title: "iOSアプリ開発",
+      description: "App Store公開対応のiPhoneアプリ",
+      category: "アプリ制作",
+      image: "/images/apple.jpg",
+    },
+    {
+      id: 4,
+      title: "Androidアプリ開発",
+      description: "Google Play公開対応のAndroidアプリ",
+      category: "アプリ制作",
+      image: "/images/android.png",
+    },
+    {
+      id: 5,
+      title: "Meta広告運用",
+      description: "効果的な広告戦略と運用",
+      category: "広告運用",
+      image: "/top-logos/meta.png",
+    },
+    {
+      id: 6,
+      title: "AI自動化システム",
+      description: "業務プロセスの自動化と統合",
+      category: "AI自動化",
+      image: "/images/node.png",
+    },
+  ],
+  en: [
+    {
+      id: 1,
+      title: "Corporate Website Development",
+      description: "User-friendly website compatible with mobile and PC",
+      category: "Web Development",
+      image: "/images/web.png",
+    },
+    {
+      id: 2,
+      title: "E-commerce Site Development",
+      description: "Fast and easy-to-use online store",
+      category: "Web Development",
+      image: "/images/ec.png",
+    },
+    {
+      id: 3,
+      title: "iOS App Development",
+      description: "iPhone app ready for App Store release",
+      category: "App Development",
+      image: "/images/apple.jpg",
+    },
+    {
+      id: 4,
+      title: "Android App Development",
+      description: "Android app ready for Google Play release",
+      category: "App Development",
+      image: "/images/android.png",
+    },
+    {
+      id: 5,
+      title: "Meta Advertising",
+      description: "Effective advertising strategy and operations",
+      category: "Advertising",
+      image: "/top-logos/meta.png",
+    },
+    {
+      id: 6,
+      title: "AI Automation System",
+      description: "Business process automation and integration",
+      category: "AI Automation",
+      image: "/images/node.png",
+    },
+  ],
+};
+
+const translations = {
+  ja: {
+    title: "制作実績",
+    description:
+      "これまでに制作したWebサイト、アプリ、システムの実績をご紹介します。",
+    viewDetails: "詳細を見る",
   },
-  {
-    id: 2,
-    title: "ECサイト構築",
-    description: "高速で使いやすいネットショップ",
-    category: "Web制作",
-    image: "/images/ec.png",
+  en: {
+    title: "Portfolio",
+    description:
+      "We introduce our achievements in websites, apps, and systems we have created.",
+    viewDetails: "View Details",
   },
-  {
-    id: 3,
-    title: "iOSアプリ開発",
-    description: "App Store公開対応のiPhoneアプリ",
-    category: "アプリ制作",
-    image: "/images/apple.jpg",
-  },
-  {
-    id: 4,
-    title: "Androidアプリ開発",
-    description: "Google Play公開対応のAndroidアプリ",
-    category: "アプリ制作",
-    image: "/images/android.png",
-  },
-  {
-    id: 5,
-    title: "Meta広告運用",
-    description: "効果的な広告戦略と運用",
-    category: "広告運用",
-    image: "/top-logos/meta.png",
-  },
-  {
-    id: 6,
-    title: "AI自動化システム",
-    description: "業務プロセスの自動化と統合",
-    category: "AI自動化",
-    image: "/images/node.png",
-  },
-];
+};
 
 export default function PortfolioSection() {
+  const { language } = useLanguage();
+  const portfolioItems = portfolioData[language];
+  const t = translations[language];
+
   return (
     <section className="w-full bg-[#171717] py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
@@ -53,11 +121,11 @@ export default function PortfolioSection() {
           <div className="flex items-center gap-3 mb-4">
             <div className="w-1 h-8 bg-[#0ABAB5]"></div>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#fafafa]">
-              制作実績
+              {t.title}
             </h2>
           </div>
           <p className="text-sm sm:text-base md:text-lg text-[#b4b4b4] max-w-3xl ml-4 mb-4">
-            これまでに制作したWebサイト、アプリ、システムの実績をご紹介します。
+            {t.description}
           </p>
         </div>
 
@@ -102,7 +170,7 @@ export default function PortfolioSection() {
 
                   {/* 詳細リンク */}
                   <div className="flex items-center gap-2 pt-2 text-[#0ABAB5] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span>詳細を見る</span>
+                    <span>{t.viewDetails}</span>
                     <svg
                       className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
                       fill="none"
