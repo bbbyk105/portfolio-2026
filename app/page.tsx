@@ -3,7 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import LogoMarquee from "@/components/LogoMarquee";
 import FeaturesSection from "@/components/FeaturesSection";
 import NewsSection from "@/components/NewsSection";
-import TemplatesSection from "@/components/TemplatesSection";
+import PortfolioSection from "@/components/PortfolioSection";
 import DashboardSection from "@/components/DashboardSection";
 import CommunitySection from "@/components/CommunitySection";
 import FinalCTA from "@/components/FinalCTA";
@@ -18,7 +18,7 @@ export default function Home() {
         <LogoMarquee />
         <FeaturesSection />
         <NewsSection />
-        <TemplatesSection />
+        <PortfolioSection />
         <DashboardSection />
         <CommunitySection />
         <FinalCTA />
