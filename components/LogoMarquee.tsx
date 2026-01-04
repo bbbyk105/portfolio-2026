@@ -6,6 +6,7 @@ const logos = [
   { name: "Stripe", src: "/top-logos/stripe.webp", alt: "Stripe" },
   { name: "n8n", src: "/top-logos/n8n.png", alt: "n8n" },
   { name: "Next.js", src: "/top-logos/nextjs.png", alt: "Next.js" },
+  { name: "AutoDS", src: "/top-logos/autods.jpg", alt: "AutoDS" },
 ];
 
 export default function LogoMarquee() {
@@ -15,8 +16,9 @@ export default function LogoMarquee() {
         <p className="text-[10px] sm:text-xs md:text-[13.6px] text-[#898989] text-center mb-4 sm:mb-6 md:mb-8">
           Powered by industry-leading technologies
         </p>
+        {/* 1列横スクロール（全画面サイズ共通） */}
         <div className="h-10 sm:h-12 max-w-[896px] mx-auto overflow-hidden relative">
-          <div className="flex gap-8 sm:gap-12 md:gap-16 items-center animate-scroll whitespace-nowrap">
+          <div className="flex gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center animate-scroll-mobile sm:animate-scroll whitespace-nowrap">
             {logos.map((logo) => (
               <div
                 key={logo.name}

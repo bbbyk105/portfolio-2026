@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="bg-[#0f0f0f] border-t border-[#2e2e2e]">
@@ -5,9 +7,13 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row items-start justify-between mb-6 sm:mb-8 md:mb-10 lg:mb-12 gap-6 sm:gap-8 lg:gap-0">
           <div className="flex flex-col gap-4 sm:gap-6 md:gap-8">
             <a href="/" className="block">
-              <h2 className="text-2xl sm:text-3xl font-medium text-[#fafafa]">
-                Evimería
-              </h2>
+              <Image
+                src="/images/logo.png"
+                alt="Evimería"
+                width={200}
+                height={67}
+                className="h-12 sm:h-16 md:h-20 w-auto"
+              />
             </a>
             <p className="text-sm text-[#898989] max-w-xs">
               デジタルシステムで競争優位性を創出します。

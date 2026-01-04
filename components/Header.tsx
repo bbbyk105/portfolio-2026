@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -49,11 +50,16 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-[#121212]/95 backdrop-blur-sm border-b border-[#2e2e2e]">
-      <nav className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 h-16 sm:h-20 md:h-24 flex items-center justify-between">
+      <nav className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 h-12 sm:h-14 md:h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center">
-          <h1 className="text-xl sm:text-2xl font-medium text-[#fafafa]">
-            Evimería
-          </h1>
+          <Image
+            src="/images/logo.png"
+            alt="Evimería"
+            width={150}
+            height={50}
+            className="h-8 sm:h-10 md:h-12 w-auto"
+            priority
+          />
         </Link>
         <div className="hidden lg:flex items-center gap-4">
           <div className="flex items-center gap-1">

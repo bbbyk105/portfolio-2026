@@ -5,7 +5,7 @@ const features = [
     features: ["スマホ・PC対応", "検索エンジン対策", "表示速度の向上"],
     icon: (
       <svg
-        className="w-5 h-5"
+        className="w-4 h-4 sm:w-5 sm:h-5"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -26,7 +26,7 @@ const features = [
     features: ["iOS/Android対応", "Webアプリ開発", "クロスプラットフォーム"],
     icon: (
       <svg
-        className="w-5 h-5"
+        className="w-4 h-4 sm:w-5 sm:h-5"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -47,7 +47,7 @@ const features = [
     features: ["広告戦略立案", "クリエイティブ制作", "運用・最適化"],
     icon: (
       <svg
-        className="w-5 h-5"
+        className="w-4 h-4 sm:w-5 sm:h-5"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -68,7 +68,7 @@ const features = [
     features: ["ワークフロー自動化", "AI統合", "データ連携"],
     icon: (
       <svg
-        className="w-5 h-5"
+        className="w-4 h-4 sm:w-5 sm:h-5"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -89,7 +89,7 @@ const features = [
     features: ["戦略立案", "実行支援", "効果測定"],
     icon: (
       <svg
-        className="w-5 h-5"
+        className="w-4 h-4 sm:w-5 sm:h-5"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -110,7 +110,7 @@ const features = [
     features: ["運用サポート", "保守・メンテナンス", "継続的改善"],
     icon: (
       <svg
-        className="w-5 h-5"
+        className="w-4 h-4 sm:w-5 sm:h-5"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -145,37 +145,37 @@ export default function FeaturesSection() {
         </div>
 
         {/* おしゃれなグリッドレイアウト */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5 md:gap-6">
           {features.map((feature, index) => (
             <a
               key={index}
               href={feature.href}
-              className="group relative h-full min-h-[280px] sm:min-h-[300px] rounded-lg border border-[#2e2e2e] bg-[#171717] p-6 sm:p-7 md:p-8 flex flex-col transition-all duration-300 hover:border-[#0ABAB5]/50 hover:bg-[#1a1a1a]"
+              className="group relative h-full min-h-[220px] sm:min-h-[300px] rounded-lg border border-[#2e2e2e] bg-[#171717] p-4 sm:p-7 md:p-8 flex flex-col transition-all duration-300 hover:border-[#0ABAB5]/50 hover:bg-[#1a1a1a]"
             >
               {/* アイコン */}
-              <div className="mb-4 w-12 h-12 rounded-lg bg-[#0ABAB5]/10 border border-[#0ABAB5]/20 flex items-center justify-center text-[#0ABAB5] transition-all duration-300 group-hover:bg-[#0ABAB5]/20 group-hover:border-[#0ABAB5]/40 group-hover:scale-110">
+              <div className="mb-3 sm:mb-4 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[#0ABAB5]/10 border border-[#0ABAB5]/20 flex items-center justify-center text-[#0ABAB5] transition-all duration-300 group-hover:bg-[#0ABAB5]/20 group-hover:border-[#0ABAB5]/40 group-hover:scale-110">
                 {feature.icon}
               </div>
 
               {/* タイトル */}
-              <h3 className="text-lg sm:text-xl font-medium text-[#fafafa] mb-3 transition-colors duration-300 group-hover:text-[#0ABAB5]">
+              <h3 className="text-base sm:text-xl font-medium text-[#fafafa] mb-2 sm:mb-3 transition-colors duration-300 group-hover:text-[#0ABAB5]">
                 {feature.title}
               </h3>
 
               {/* 説明 */}
-              <p className="text-sm sm:text-base text-[#898989] mb-4 leading-relaxed flex-1">
+              <p className="text-xs sm:text-base text-[#898989] mb-3 sm:mb-4 leading-relaxed flex-1">
                 {feature.description}
               </p>
 
               {/* 機能リスト */}
-              <ul className="space-y-2">
+              <ul className="space-y-1.5 sm:space-y-2">
                 {feature.features.map((item, idx) => (
                   <li
                     key={idx}
-                    className="flex items-center gap-2 text-sm text-[#b4b4b4]"
+                    className="flex items-center gap-2 text-xs sm:text-sm text-[#b4b4b4]"
                   >
                     <svg
-                      className="w-4 h-4 text-[#0ABAB5] flex-shrink-0"
+                      className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0ABAB5] flex-shrink-0"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -193,7 +193,7 @@ export default function FeaturesSection() {
               </ul>
 
               {/* ホバー時の矢印 */}
-              <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <svg
                   className="w-5 h-5 text-[#0ABAB5] transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"

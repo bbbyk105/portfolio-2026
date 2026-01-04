@@ -26,16 +26,31 @@ body {
 }
 
 @keyframes scroll {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(-50%);
+  to {
+    transform: translateX(calc(-100% / 2));
+  }
+}
+
+@keyframes scroll-mobile {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% / 2));
   }
 }
 
 .animate-scroll {
   animation: scroll 40s linear infinite;
+  display: inline-flex;
+  will-change: transform;
+}
+
+.animate-scroll-mobile {
+  animation: scroll-mobile 20s linear infinite;
   display: inline-flex;
   will-change: transform;
 }
