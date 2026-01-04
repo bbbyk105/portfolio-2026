@@ -63,27 +63,25 @@ export default function TemplatesSection() {
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-        {templates.map((template, idx) => (
-          <a
-            key={idx}
-            href="https://supabase.com/templates"
-            className="h-[280px] sm:h-[300px] bg-[#171717] border border-[#2e2e2e] rounded-lg p-4 sm:p-5 md:p-6 flex flex-col hover:border-[#0ABAB5] transition-colors"
-          >
-            <h3 className="text-base sm:text-lg text-[#fafafa] mb-2">
-              {template.title}
-            </h3>
-            <p className="text-xs sm:text-sm text-[#898989] mb-4 flex-1">
-              {template.desc}
-            </p>
-            <span className="text-[10px] sm:text-xs text-[#0ABAB5]">
-              Read more →
-            </span>
-          </a>
-        ))}
-      </div>
+          {templates.map((template, idx) => (
+            <a
+              key={idx}
+              href="https://supabase.com/templates"
+              className="h-[280px] sm:h-[300px] bg-[#171717] border border-[#2e2e2e] rounded-lg p-4 sm:p-5 md:p-6 flex flex-col hover:border-[#0ABAB5] transition-colors"
+            >
+              <h3 className="text-base sm:text-lg text-[#fafafa] mb-2">
+                {template.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-[#898989] mb-4 flex-1">
+                {template.desc}
+              </p>
+              <span className="text-[10px] sm:text-xs text-[#0ABAB5]">
+                Read more →
+              </span>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
-
-

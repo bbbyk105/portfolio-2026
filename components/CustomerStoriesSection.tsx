@@ -26,8 +26,8 @@ export default function CustomerStoriesSection() {
             </h2>
           </div>
           <p className="text-sm sm:text-base md:text-lg text-[#b4b4b4] max-w-3xl ml-4 mb-4">
-            See how Supabase empowers companies of all sizes to accelerate
-            their growth and streamline their work.
+            See how Supabase empowers companies of all sizes to accelerate their
+            growth and streamline their work.
           </p>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 ml-4 w-full sm:w-auto">
             <a
@@ -60,5 +60,3 @@ export default function CustomerStoriesSection() {
     </section>
   );
 }
-
-

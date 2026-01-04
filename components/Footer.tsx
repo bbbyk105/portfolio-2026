@@ -134,36 +134,44 @@ export default function Footer() {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <a
+                  <Link
+                    href="/solutions"
+                    className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
+                  >
+                    {t.services}
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/solutions#web"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
                     {t.webDevelopment}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/solutions#app"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
                     {t.appDevelopment}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/solutions#meta"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
                     {t.metaAds}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/solutions#automation"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
                     {t.aiAutomation}
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -173,36 +181,36 @@ export default function Footer() {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <a
+                  <Link
                     href="/about"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
                     {t.about}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/contact"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
                     {t.contact}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/privacy"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
                     {t.privacy}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/terms"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
                     {t.terms}
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -212,28 +220,28 @@ export default function Footer() {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <a
+                  <Link
                     href="/news"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
                     {t.news}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/portfolio"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
                     {t.portfolio}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/blog"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
                     {t.blog}
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -243,20 +251,20 @@ export default function Footer() {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <a
+                  <Link
                     href="/contact"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
                     {t.contact}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/faq"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
                     {t.faq}
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

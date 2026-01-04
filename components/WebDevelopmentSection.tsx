@@ -36,52 +36,51 @@ export default function WebDevelopmentSection() {
           </p>
         </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-        {portfolioItems.map((item, index) => (
-          <div
-            key={index}
-            className="h-[350px] sm:h-[380px] md:h-[400px] p-px rounded-xl bg-gradient-to-b from-[#2e2e2e] to-[#2e2e2e]/50 relative overflow-hidden group"
-          >
-            <div className="h-full bg-[#171717] rounded-[11px] p-4 sm:p-5 md:p-6 flex flex-col">
-              <div className="flex items-center gap-2 mb-4">
-                <svg
-                  className="w-[18px] h-[18px]"
-                  fill="none"
-                  stroke="#fafafa"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                  />
-                </svg>
-                <h3 className="text-[15.1px] leading-[24px] text-[#fafafa]">
-                  {item.title}
-                </h3>
-              </div>
-              <div className="flex-1 flex flex-col justify-between">
-                <div>
-                  <p className="text-[13.3px] leading-[20px] text-[#898989] mb-4">
-                    {item.description}
-                  </p>
-                  <div className="relative w-full h-48 bg-[#242424] rounded-lg overflow-hidden">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-cover opacity-60 group-hover:opacity-100 transition-opacity"
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+          {portfolioItems.map((item, index) => (
+            <div
+              key={index}
+              className="h-[350px] sm:h-[380px] md:h-[400px] p-px rounded-xl bg-gradient-to-b from-[#2e2e2e] to-[#2e2e2e]/50 relative overflow-hidden group"
+            >
+              <div className="h-full bg-[#171717] rounded-[11px] p-4 sm:p-5 md:p-6 flex flex-col">
+                <div className="flex items-center gap-2 mb-4">
+                  <svg
+                    className="w-[18px] h-[18px]"
+                    fill="none"
+                    stroke="#fafafa"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
                     />
+                  </svg>
+                  <h3 className="text-[15.1px] leading-[24px] text-[#fafafa]">
+                    {item.title}
+                  </h3>
+                </div>
+                <div className="flex-1 flex flex-col justify-between">
+                  <div>
+                    <p className="text-[13.3px] leading-[20px] text-[#898989] mb-4">
+                      {item.description}
+                    </p>
+                    <div className="relative w-full h-48 bg-[#242424] rounded-lg overflow-hidden">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-cover opacity-60 group-hover:opacity-100 transition-opacity"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
-
