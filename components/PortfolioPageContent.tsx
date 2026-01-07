@@ -127,7 +127,7 @@ const portfolioData = {
       fullDescription:
         "We created a landing page for a fragrance brand using cypress from Mount Fuji. With English support and world-class design, it serves as an inbound marketing tool and promotional material for trade shows and business meetings.",
       image: "/portfolio/ec.png",
-      url: "", // プレビューリンクをここに追加
+      url: "https://www.hinokifragrance.com/", // プレビューリンクをここに追加
       highlights: [
         "English Support",
         "World-Class Design",
@@ -253,7 +253,7 @@ export default function PortfolioPageContent() {
               className="group relative overflow-hidden rounded-lg border border-[#2e2e2e] bg-[#171717] hover:border-[#0ABAB5]/50 hover:bg-[#1a1a1a]"
             >
               {/* 画像エリア */}
-              <div className="relative h-[200px] sm:h-[240px] overflow-hidden bg-[#1a1a1a]">
+              <div className="relative h-[120px] sm:h-[150px] overflow-hidden bg-[#1a1a1a]">
                 <Image
                   src={item.image}
                   alt={item.title}

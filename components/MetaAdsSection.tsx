@@ -1,4 +1,60 @@
+"use client";
+
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const translations = {
+  ja: {
+    title: "Meta広告代理",
+    description:
+      "Meta広告の戦略立案から運用、最適化まで一貫してサポート。ターゲティング、クリエイティブ制作、パフォーマンス分析により、効果的な広告運用を実現します。",
+    strategyTitle: "広告戦略立案",
+    strategyDescription: "目標に合わせた広告戦略の設計と最適化を行います。",
+    strategyFeatures: ["ターゲット設定", "予算配分最適化", "KPI設定"],
+    creativeTitle: "クリエイティブ制作",
+    creativeDescription: "効果的な広告クリエイティブの制作を行います。",
+    creativeFeatures: ["画像・動画制作", "A/Bテスト", "コピーライティング"],
+    managementTitle: "運用・最適化",
+    managementDescription: "継続的な広告運用とパフォーマンス最適化を行います。",
+    managementFeatures: [
+      "日次・週次レポート",
+      "パフォーマンス分析",
+      "継続的な改善",
+    ],
+  },
+  en: {
+    title: "Meta Advertising Agency",
+    description:
+      "We provide comprehensive support from Meta ad strategy planning to management and optimization. We achieve effective ad management through targeting, creative production, and performance analysis.",
+    strategyTitle: "Ad Strategy Planning",
+    strategyDescription:
+      "We design and optimize ad strategies tailored to your goals.",
+    strategyFeatures: [
+      "Target Setting",
+      "Budget Allocation Optimization",
+      "KPI Setting",
+    ],
+    creativeTitle: "Creative Production",
+    creativeDescription: "We produce effective ad creatives.",
+    creativeFeatures: [
+      "Image & Video Production",
+      "A/B Testing",
+      "Copywriting",
+    ],
+    managementTitle: "Management & Optimization",
+    managementDescription:
+      "We provide continuous ad management and performance optimization.",
+    managementFeatures: [
+      "Daily & Weekly Reports",
+      "Performance Analysis",
+      "Continuous Improvement",
+    ],
+  },
+};
+
 export default function MetaAdsSection() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section className="w-full bg-[#171717] py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
@@ -6,13 +62,11 @@ export default function MetaAdsSection() {
           <div className="flex items-center gap-3 mb-4">
             <div className="w-1 h-8 bg-[#0ABAB5]"></div>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#fafafa]">
-              Meta広告代理
+              {t.title}
             </h2>
           </div>
           <p className="text-sm sm:text-base md:text-lg text-[#b4b4b4] max-w-3xl ml-4">
-            Meta広告の戦略立案から運用、最適化まで一貫してサポート。
-            ターゲティング、クリエイティブ制作、パフォーマンス分析により、
-            効果的な広告運用を実現します。
+            {t.description}
           </p>
         </div>
 
@@ -35,64 +89,37 @@ export default function MetaAdsSection() {
                   />
                 </svg>
                 <h3 className="text-[15.1px] leading-[24px] text-[#fafafa]">
-                  広告戦略立案
+                  {t.strategyTitle}
                 </h3>
               </div>
               <div>
                 <p className="text-[13.3px] leading-[20px] text-[#898989] mb-3">
-                  目標に合わせた
-                  <span className="text-[#fafafa]">広告戦略の設計と最適化</span>
-                  を行います。
+                  <span className="text-[#fafafa]">
+                    {t.strategyDescription}
+                  </span>
                 </p>
                 <ul className="space-y-0.5">
-                  <li className="flex items-center gap-2 text-[13.2px] text-[#fafafa]">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="#fafafa"
-                      viewBox="0 0 24 24"
+                  {t.strategyFeatures.map((feature, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-center gap-2 text-[13.2px] text-[#fafafa]"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    ターゲット設定
-                  </li>
-                  <li className="flex items-center gap-2 text-[13.5px] text-[#fafafa]">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="#fafafa"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    予算配分最適化
-                  </li>
-                  <li className="flex items-center gap-2 text-[13.3px] text-[#fafafa]">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="#fafafa"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    KPI設定
-                  </li>
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="#fafafa"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -116,66 +143,37 @@ export default function MetaAdsSection() {
                   />
                 </svg>
                 <h3 className="text-[15.1px] leading-[24px] text-[#fafafa]">
-                  クリエイティブ制作
+                  {t.creativeTitle}
                 </h3>
               </div>
               <div>
                 <p className="text-[13.3px] leading-[20px] text-[#898989] mb-3">
-                  効果的な
                   <span className="text-[#fafafa]">
-                    広告クリエイティブの制作
+                    {t.creativeDescription}
                   </span>
-                  を行います。
                 </p>
                 <ul className="space-y-0.5">
-                  <li className="flex items-center gap-2 text-[13.2px] text-[#fafafa]">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="#fafafa"
-                      viewBox="0 0 24 24"
+                  {t.creativeFeatures.map((feature, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-center gap-2 text-[13.2px] text-[#fafafa]"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    画像・動画制作
-                  </li>
-                  <li className="flex items-center gap-2 text-[13.5px] text-[#fafafa]">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="#fafafa"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    A/Bテスト
-                  </li>
-                  <li className="flex items-center gap-2 text-[13.3px] text-[#fafafa]">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="#fafafa"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    コピーライティング
-                  </li>
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="#fafafa"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -199,66 +197,37 @@ export default function MetaAdsSection() {
                   />
                 </svg>
                 <h3 className="text-[15.1px] leading-[24px] text-[#fafafa]">
-                  運用・最適化
+                  {t.managementTitle}
                 </h3>
               </div>
               <div>
                 <p className="text-[13.3px] leading-[20px] text-[#898989] mb-3">
-                  継続的な
                   <span className="text-[#fafafa]">
-                    広告運用とパフォーマンス最適化
+                    {t.managementDescription}
                   </span>
-                  を行います。
                 </p>
                 <ul className="space-y-0.5">
-                  <li className="flex items-center gap-2 text-[13.2px] text-[#fafafa]">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="#fafafa"
-                      viewBox="0 0 24 24"
+                  {t.managementFeatures.map((feature, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-center gap-2 text-[13.2px] text-[#fafafa]"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    日次・週次レポート
-                  </li>
-                  <li className="flex items-center gap-2 text-[13.5px] text-[#fafafa]">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="#fafafa"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    パフォーマンス分析
-                  </li>
-                  <li className="flex items-center gap-2 text-[13.3px] text-[#fafafa]">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="#fafafa"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    継続的な改善
-                  </li>
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="#fafafa"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

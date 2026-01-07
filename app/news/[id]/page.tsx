@@ -9,12 +9,26 @@ import NewsShareButtons from "@/components/NewsShareButtons";
 import { useLanguage } from "@/contexts/LanguageContext";
 import type { Blog } from "@/lib/microcms";
 
+const translations = {
+  ja: {
+    loading: "読み込み中...",
+    publishedAt: "公開日:",
+    updatedAt: "更新日:",
+  },
+  en: {
+    loading: "Loading...",
+    publishedAt: "Published:",
+    updatedAt: "Updated:",
+  },
+};
+
 export default function NewsDetailPage() {
   const params = useParams<{ id: string }>();
   const router = useRouter();
   const { language } = useLanguage();
   const [post, setPost] = useState<Blog | null>(null);
   const [loading, setLoading] = useState(true);
+  const t = translations[language];
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -26,7 +40,7 @@ export default function NewsDetailPage() {
         }
         const data = await res.json();
         setPost(data);
-      } catch (e) {
+      } catch {
         router.push("/");
       } finally {
         setLoading(false);
@@ -41,7 +55,7 @@ export default function NewsDetailPage() {
   if (loading) {
     return (
       <div className="bg-[#121212] min-h-screen w-full text-white flex items-center justify-center">
-        <p>読み込み中...</p>
+        <p>{t.loading}</p>
       </div>
     );
   }
@@ -49,31 +63,32 @@ export default function NewsDetailPage() {
   if (!post) return null;
 
   const html = typeof post.content === "string" ? post.content : "";
+  const locale = language === "ja" ? "ja-JP" : "en-US";
   const publishedAt =
-    post.publishedAt && new Date(post.publishedAt).toLocaleDateString("ja-JP");
+    post.publishedAt && new Date(post.publishedAt).toLocaleDateString(locale);
   const updatedAt =
-    post.updatedAt && new Date(post.updatedAt).toLocaleDateString("ja-JP");
+    post.updatedAt && new Date(post.updatedAt).toLocaleDateString(locale);
 
   return (
-    <div className="bg-[#121212] min-h-screen w-full text白">
+    <div className="bg-[#121212] min-h-screen w-full text-white">
       <Header />
       <main className="max-w-[960px] mx-auto px-4 py-12">
         <div className="mb-4 space-y-1">
           {publishedAt && (
             <p className="text-xs text-[#898989]">
-              公開日: <span className="ml-1">{publishedAt}</span>
+              {t.publishedAt} <span className="ml-1">{publishedAt}</span>
             </p>
           )}
           {updatedAt && (
             <p className="text-xs text-[#898989]">
-              更新日: <span className="ml-1">{updatedAt}</span>
+              {t.updatedAt} <span className="ml-1">{updatedAt}</span>
             </p>
           )}
         </div>
         <h1 className="text-3xl font-bold mb-6 text-[#fafafa]">{post.title}</h1>
 
         {post.eyecatch && (
-          <div className="mb-6">
+          <div className="mb-6 max-w-md mx-auto">
             <Image
               src={post.eyecatch.url}
               alt={post.title}

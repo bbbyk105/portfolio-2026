@@ -41,7 +41,7 @@ export default function HeroSection() {
         >
           <span className="whitespace-nowrap">{t.banner}</span>
           <svg
-            className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0"
+            className="w-3 h-3 sm:w-4 sm:h-4 shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

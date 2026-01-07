@@ -1,8 +1,61 @@
 "use client";
 
 import Image from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const translations = {
+  ja: {
+    title: "アプリ制作",
+    description:
+      "iPhone・AndroidアプリからWebアプリまで、お客様のニーズに合わせた最適なアプリを開発します。",
+    iosTitle: "iOSアプリ開発",
+    iosDescription: "iPhoneアプリの開発を行います。",
+    iosFeatures: ["App Store公開対応", "使いやすいデザイン", "高速動作"],
+    androidTitle: "Androidアプリ開発",
+    androidDescription: "Androidアプリの開発を行います。",
+    androidFeatures: ["Google Play公開対応", "使いやすいデザイン", "高速動作"],
+    webTitle: "Webアプリ開発",
+    webDescription:
+      "Webアプリの開発を行います。スマホのホーム画面に追加できるアプリも作成可能です。",
+    webFeatures: [
+      "スマホ・PC対応",
+      "アプリのように使える",
+      "オフラインでも利用可能",
+    ],
+  },
+  en: {
+    title: "App Development",
+    description:
+      "We develop optimal apps tailored to your needs, from iPhone and Android apps to web apps.",
+    iosTitle: "iOS App Development",
+    iosDescription: "We develop iPhone apps.",
+    iosFeatures: [
+      "App Store Publishing",
+      "User-Friendly Design",
+      "High Performance",
+    ],
+    androidTitle: "Android App Development",
+    androidDescription: "We develop Android apps.",
+    androidFeatures: [
+      "Google Play Publishing",
+      "User-Friendly Design",
+      "High Performance",
+    ],
+    webTitle: "Web App Development",
+    webDescription:
+      "We develop web apps. We can also create apps that can be added to your smartphone's home screen.",
+    webFeatures: [
+      "Mobile & PC Compatible",
+      "App-like Experience",
+      "Offline Available",
+    ],
+  },
+};
 
 export default function AppDevelopmentSection() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section id="app" className="w-full py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
@@ -10,12 +63,11 @@ export default function AppDevelopmentSection() {
           <div className="flex items-center gap-3 mb-4">
             <div className="w-1 h-8 bg-[#0ABAB5]"></div>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#fafafa]">
-              アプリ制作
+              {t.title}
             </h2>
           </div>
           <p className="text-sm sm:text-base md:text-lg text-[#b4b4b4] max-w-3xl ml-4">
-            iPhone・AndroidアプリからWebアプリまで、
-            お客様のニーズに合わせた最適なアプリを開発します。
+            {t.description}
           </p>
         </div>
 
@@ -38,13 +90,12 @@ export default function AppDevelopmentSection() {
                   />
                 </svg>
                 <h3 className="text-[15.1px] leading-[24px] text-[#fafafa]">
-                  iOSアプリ開発
+                  {t.iosTitle}
                 </h3>
               </div>
               <div className="flex-1 flex flex-col">
                 <p className="text-[13.3px] leading-[20px] text-[#898989] mb-4">
-                  <span className="text-[#fafafa]">iPhoneアプリの開発</span>
-                  を行います。
+                  <span className="text-[#fafafa]">{t.iosDescription}</span>
                 </p>
                 <div className="relative w-full h-32 sm:h-40 bg-[#242424] rounded-lg overflow-hidden mb-4">
                   <Image
@@ -55,54 +106,27 @@ export default function AppDevelopmentSection() {
                   />
                 </div>
                 <ul className="space-y-1">
-                  <li className="flex items-center gap-2 text-[13.2px] text-[#fafafa]">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="#fafafa"
-                      viewBox="0 0 24 24"
+                  {t.iosFeatures.map((feature, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-center gap-2 text-[13.2px] text-[#fafafa]"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    App Store公開対応
-                  </li>
-                  <li className="flex items-center gap-2 text-[13.5px] text-[#fafafa]">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="#fafafa"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    使いやすいデザイン
-                  </li>
-                  <li className="flex items-center gap-2 text-[13.3px] text-[#fafafa]">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="#fafafa"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    高速動作
-                  </li>
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="#fafafa"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -126,13 +150,12 @@ export default function AppDevelopmentSection() {
                   />
                 </svg>
                 <h3 className="text-[15.1px] leading-[24px] text-[#fafafa]">
-                  Androidアプリ開発
+                  {t.androidTitle}
                 </h3>
               </div>
               <div className="flex-1 flex flex-col">
                 <p className="text-[13.3px] leading-[20px] text-[#898989] mb-4">
-                  <span className="text-[#fafafa]">Androidアプリの開発</span>
-                  を行います。
+                  <span className="text-[#fafafa]">{t.androidDescription}</span>
                 </p>
                 <div className="relative w-full h-32 sm:h-40 bg-[#242424] rounded-lg overflow-hidden mb-4">
                   <Image
@@ -143,54 +166,27 @@ export default function AppDevelopmentSection() {
                   />
                 </div>
                 <ul className="space-y-1">
-                  <li className="flex items-center gap-2 text-[13.2px] text-[#fafafa]">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="#fafafa"
-                      viewBox="0 0 24 24"
+                  {t.androidFeatures.map((feature, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-center gap-2 text-[13.2px] text-[#fafafa]"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    Google Play公開対応
-                  </li>
-                  <li className="flex items-center gap-2 text-[13.5px] text-[#fafafa]">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="#fafafa"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    使いやすいデザイン
-                  </li>
-                  <li className="flex items-center gap-2 text-[13.3px] text-[#fafafa]">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="#fafafa"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    高速動作
-                  </li>
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="#fafafa"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -214,14 +210,12 @@ export default function AppDevelopmentSection() {
                   />
                 </svg>
                 <h3 className="text-[15.1px] leading-[24px] text-[#fafafa]">
-                  Webアプリ開発
+                  {t.webTitle}
                 </h3>
               </div>
               <div className="flex-1 flex flex-col">
                 <p className="text-[13.3px] leading-[20px] text-[#898989] mb-4">
-                  <span className="text-[#fafafa]">Webアプリの開発</span>
-                  を行います。
-                  スマホのホーム画面に追加できるアプリも作成可能です。
+                  <span className="text-[#fafafa]">{t.webDescription}</span>
                 </p>
                 <div className="relative w-full h-32 sm:h-40 bg-[#242424] rounded-lg overflow-hidden mb-4">
                   <Image
@@ -232,54 +226,27 @@ export default function AppDevelopmentSection() {
                   />
                 </div>
                 <ul className="space-y-1">
-                  <li className="flex items-center gap-2 text-[13.2px] text-[#fafafa]">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="#fafafa"
-                      viewBox="0 0 24 24"
+                  {t.webFeatures.map((feature, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-center gap-2 text-[13.2px] text-[#fafafa]"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    スマホ・PC対応
-                  </li>
-                  <li className="flex items-center gap-2 text-[13.5px] text-[#fafafa]">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="#fafafa"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    アプリのように使える
-                  </li>
-                  <li className="flex items-center gap-2 text-[13.3px] text-[#fafafa]">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="#fafafa"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    オフラインでも利用可能
-                  </li>
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="#fafafa"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

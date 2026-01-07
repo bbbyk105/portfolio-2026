@@ -4,13 +4,35 @@ import { useEffect, useState } from "react";
 import { FiLink } from "react-icons/fi";
 import { FaLine } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type Props = {
   title: string;
 };
 
+const translations = {
+  ja: {
+    copyLink: "リンクコピー",
+    copied: "コピー済み",
+    copyLinkAria: "リンクをコピー",
+    shareOnLine: "LINEで共有",
+    shareOnX: "Xで共有",
+  },
+  en: {
+    copyLink: "Copy Link",
+    copied: "Copied",
+    copyLinkAria: "Copy link",
+    shareOnLine: "Share on LINE",
+    shareOnX: "Share on X",
+  },
+};
+
 export default function NewsShareButtons({ title }: Props) {
-  const [url, setUrl] = useState("");
+  const { language } = useLanguage();
+  const t = translations[language];
+  const [url, setUrl] = useState(
+    typeof window !== "undefined" ? window.location.href : ""
+  );
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
@@ -49,12 +71,12 @@ export default function NewsShareButtons({ title }: Props) {
         type="button"
         onClick={handleCopy}
         className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2e2e2e] text-[#fafafa] hover:bg-[#1f1f1f] transition-colors"
-        aria-label="リンクをコピー"
+        aria-label={t.copyLinkAria}
       >
         <span className="inline-flex h-4 w-4 items-center justify-center">
           <FiLink className="h-4 w-4" />
         </span>
-        <span>{copied ? "コピー済み" : "リンクコピー"}</span>
+        <span>{copied ? t.copied : t.copyLink}</span>
       </button>
 
       {/* LINE 共有 */}
@@ -64,7 +86,7 @@ export default function NewsShareButtons({ title }: Props) {
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#00c300]/60 text-[#fafafa] hover:bg-[#00c300]/20 transition-colors"
-          aria-label="LINEで共有"
+          aria-label={t.shareOnLine}
         >
           <span className="inline-flex h-4 w-4 items-center justify-center">
             <FaLine className="h-4 w-4" />
@@ -79,7 +101,7 @@ export default function NewsShareButtons({ title }: Props) {
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1DA1F2]/60 text-[#fafafa] hover:bg-[#1DA1F2]/20 transition-colors"
-          aria-label="Xで共有"
+          aria-label={t.shareOnX}
         >
           <span className="inline-flex h-4 w-4 items-center justify-center">
             <FaXTwitter className="h-4 w-4" />

@@ -22,7 +22,7 @@ export default function LogoMarquee() {
             {logos.map((logo) => (
               <div
                 key={logo.name}
-                className="flex items-center justify-center h-8 sm:h-10 md:h-12 flex-shrink-0"
+                className="flex items-center justify-center h-8 sm:h-10 md:h-12 shrink-0"
               >
                 <Image
                   src={logo.src}
@@ -37,7 +37,7 @@ export default function LogoMarquee() {
             {logos.map((logo) => (
               <div
                 key={`dup-${logo.name}`}
-                className="flex items-center justify-center h-8 sm:h-10 md:h-12 flex-shrink-0"
+                className="flex items-center justify-center h-8 sm:h-10 md:h-12 shrink-0"
               >
                 <Image
                   src={logo.src}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { microcmsClient, type Blog } from "@/lib/microcms";
+import { getBlogClient, type Blog } from "@/lib/microcms";
 
 type Props = {
   params: {
@@ -11,8 +11,9 @@ export const revalidate = 60;
 
 export default async function NewsListPage({ params }: Props) {
   const { lang } = params;
+  const client = getBlogClient(lang);
 
-  const data = await microcmsClient.getList<Blog>({
+  const data = await client.getList<Blog>({
     endpoint: "blogs",
     queries: {
       limit: 20,
@@ -28,7 +29,7 @@ export default async function NewsListPage({ params }: Props) {
       <main className="max-w-[960px] mx-auto px-4 py-12">
         <h1 className="text-3xl font-bold mb-8">{title}</h1>
         <ul className="space-y-4">
-          {data.contents.map((post) => (
+          {data.contents.map((post: Blog) => (
             <li key={post.id} className="border-b border-[#2e2e2e] pb-4">
               <Link
                 href={`/${lang}/news/${post.id}`}

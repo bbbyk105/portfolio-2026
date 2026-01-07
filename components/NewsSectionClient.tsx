@@ -52,7 +52,7 @@ export default function NewsSectionClient({ jaItems, enItems }: Props) {
               className="block py-4 sm:py-5 md:py-6 border-b border-[#2e2e2e] hover:bg-[#1f1f1f] transition-colors"
             >
               <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6">
-                <div className="w-24 sm:w-28 flex-shrink-0">
+                <div className="w-24 sm:w-28 shrink-0">
                   <span className="text-sm sm:text-base text-[#898989]">
                     {item.publishedAt?.slice(0, 10).replace(/-/g, "/")}
                   </span>

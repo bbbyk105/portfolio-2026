@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { microcmsClient, type Blog } from "@/lib/microcms";
+import { getBlogClient, type Blog } from "@/lib/microcms";
 
 type Props = {
   params: {
@@ -12,28 +12,66 @@ type Props = {
 export const revalidate = 60;
 
 export async function generateStaticParams() {
-  const data = await microcmsClient.getList<Blog>({
-    endpoint: "blogs",
-    queries: {
-      limit: 1000,
-    },
-  });
+  const getAllPosts = async (lang: "ja" | "en") => {
+    const client = getBlogClient(lang);
+    const allPosts: Blog[] = [];
+    let offset = 0;
+    const limit = 100;
 
-  return data.contents.map((post) => ({
-    lang: post.lang,
-    id: post.id,
-  }));
+    while (true) {
+      const data = await client.getList<Blog>({
+        endpoint: "blogs",
+        queries: {
+          limit,
+          offset,
+        },
+      });
+
+      allPosts.push(...data.contents);
+
+      if (
+        data.contents.length < limit ||
+        !data.totalCount ||
+        offset + limit >= data.totalCount
+      ) {
+        break;
+      }
+
+      offset += limit;
+    }
+
+    return allPosts;
+  };
+
+  const [jaPosts, enPosts] = await Promise.all([
+    getAllPosts("ja"),
+    getAllPosts("en"),
+  ]);
+
+  const params = [
+    ...jaPosts.map((post: Blog) => ({
+      lang: "ja" as const,
+      id: post.id,
+    })),
+    ...enPosts.map((post: Blog) => ({
+      lang: "en" as const,
+      id: post.id,
+    })),
+  ];
+
+  return params;
 }
 
 export default async function NewsDetailPage({ params }: Props) {
-  const post = await microcmsClient
+  const client = getBlogClient(params.lang);
+  const post = await client
     .get<Blog>({
       endpoint: "blogs",
       contentId: params.id,
     })
     .catch(() => null);
 
-  if (!post || post.lang !== params.lang) {
+  if (!post) {
     return notFound();
   }
 
@@ -59,11 +97,11 @@ export default async function NewsDetailPage({ params }: Props) {
 
         <div
           className="prose prose-invert max-w-none"
-          dangerouslySetInnerHTML={{ __html: post.content }}
+          dangerouslySetInnerHTML={{
+            __html: typeof post.content === "string" ? post.content : "",
+          }}
         />
       </main>
     </div>
   );
 }
-
-
