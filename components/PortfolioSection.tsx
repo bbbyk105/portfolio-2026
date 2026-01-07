@@ -96,15 +96,15 @@ const portfolioData = {
 
 const translations = {
   ja: {
-    title: "制作実績",
+    title: "サービス別実績",
     description:
-      "これまでに制作したWebサイト、アプリ、システムの実績をご紹介します。",
+      "各サービスカテゴリでの制作実績をご紹介します。詳細な制作事例はポートフォリオページでご確認いただけます。",
     viewDetails: "詳細を見る",
   },
   en: {
-    title: "Portfolio",
+    title: "Service Portfolio",
     description:
-      "We introduce our achievements in websites, apps, and systems we have created.",
+      "We introduce our achievements by service category. View detailed case studies on our portfolio page.",
     viewDetails: "View Details",
   },
 };
@@ -113,6 +113,11 @@ export default function PortfolioSection() {
   const { language } = useLanguage();
   const portfolioItems = portfolioData[language];
   const t = translations[language];
+
+  // meta広告とアプリ系（iOS/Android）を除外
+  const availableItems = portfolioItems.filter(
+    (item) => item.id !== 3 && item.id !== 4 && item.id !== 5
+  );
 
   return (
     <section className="w-full bg-[#171717] py-12 sm:py-16 md:py-20 lg:py-24">
@@ -131,10 +136,10 @@ export default function PortfolioSection() {
 
         {/* 統一されたグリッドレイアウト */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-          {portfolioItems.map((item) => (
+          {availableItems.map((item) => (
             <a
               key={item.id}
-              href={`/portfolio/${item.id}`}
+              href="/portfolio"
               className="group relative h-[400px] sm:h-[420px] md:h-[450px] overflow-hidden rounded-lg border border-[#2e2e2e] bg-[#1a1a1a] transition-all duration-300 hover:border-[#0ABAB5]/50"
             >
               {/* 画像背景 */}

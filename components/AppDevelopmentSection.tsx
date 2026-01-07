@@ -1,6 +1,10 @@
+"use client";
+
+import Image from "next/image";
+
 export default function AppDevelopmentSection() {
   return (
-    <section className="w-full py-12 sm:py-16 md:py-20 lg:py-24">
+    <section id="app" className="w-full py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
         <div className="mb-8 sm:mb-12 md:mb-16">
           <div className="flex items-center gap-3 mb-4">
@@ -37,11 +41,19 @@ export default function AppDevelopmentSection() {
                   iOSアプリ開発
                 </h3>
               </div>
-              <div className="flex-1">
-                <p className="text-[13.3px] leading-[20px] text-[#898989] mb-2">
+              <div className="flex-1 flex flex-col">
+                <p className="text-[13.3px] leading-[20px] text-[#898989] mb-4">
                   <span className="text-[#fafafa]">iPhoneアプリの開発</span>
                   を行います。
                 </p>
+                <div className="relative w-full h-32 sm:h-40 bg-[#242424] rounded-lg overflow-hidden mb-4">
+                  <Image
+                    src="/images/apple.jpg"
+                    alt="iOS App Development"
+                    fill
+                    className="object-cover opacity-60 group-hover:opacity-100 transition-opacity"
+                  />
+                </div>
                 <ul className="space-y-1">
                   <li className="flex items-center gap-2 text-[13.2px] text-[#fafafa]">
                     <svg
@@ -117,11 +129,19 @@ export default function AppDevelopmentSection() {
                   Androidアプリ開発
                 </h3>
               </div>
-              <div className="flex-1">
-                <p className="text-[13.3px] leading-[20px] text-[#898989] mb-2">
+              <div className="flex-1 flex flex-col">
+                <p className="text-[13.3px] leading-[20px] text-[#898989] mb-4">
                   <span className="text-[#fafafa]">Androidアプリの開発</span>
                   を行います。
                 </p>
+                <div className="relative w-full h-32 sm:h-40 bg-[#242424] rounded-lg overflow-hidden mb-4">
+                  <Image
+                    src="/images/android.png"
+                    alt="Android App Development"
+                    fill
+                    className="object-contain p-4 opacity-60 group-hover:opacity-100 transition-opacity"
+                  />
+                </div>
                 <ul className="space-y-1">
                   <li className="flex items-center gap-2 text-[13.2px] text-[#fafafa]">
                     <svg
@@ -197,12 +217,20 @@ export default function AppDevelopmentSection() {
                   Webアプリ開発
                 </h3>
               </div>
-              <div className="flex-1">
-                <p className="text-[13.3px] leading-[20px] text-[#898989] mb-2">
+              <div className="flex-1 flex flex-col">
+                <p className="text-[13.3px] leading-[20px] text-[#898989] mb-4">
                   <span className="text-[#fafafa]">Webアプリの開発</span>
                   を行います。
                   スマホのホーム画面に追加できるアプリも作成可能です。
                 </p>
+                <div className="relative w-full h-32 sm:h-40 bg-[#242424] rounded-lg overflow-hidden mb-4">
+                  <Image
+                    src="/images/nextjs-white.png"
+                    alt="Web App Development"
+                    fill
+                    className="object-contain p-4 opacity-60 group-hover:opacity-100 transition-opacity"
+                  />
+                </div>
                 <ul className="space-y-1">
                   <li className="flex items-center gap-2 text-[13.2px] text-[#fafafa]">
                     <svg

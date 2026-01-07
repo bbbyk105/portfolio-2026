@@ -18,9 +18,9 @@ export default function MetaAdsSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {/* Strategy */}
-          <div className="h-[350px] sm:h-[380px] md:h-[400px] p-px rounded-xl bg-gradient-to-b from-[#2e2e2e] to-[#2e2e2e]/50 relative overflow-hidden group">
-            <div className="h-full bg-[#171717] rounded-[11px] p-4 sm:p-5 md:p-6 flex flex-col">
-              <div className="flex items-center gap-2 mb-4">
+          <div className="p-px rounded-xl bg-gradient-to-b from-[#2e2e2e] to-[#2e2e2e]/50 relative overflow-hidden group">
+            <div className="bg-[#171717] rounded-[11px] p-4 sm:p-5 md:p-6 flex flex-col">
+              <div className="flex items-center gap-2 mb-2">
                 <svg
                   className="w-[18px] h-[18px]"
                   fill="none"
@@ -38,13 +38,13 @@ export default function MetaAdsSection() {
                   広告戦略立案
                 </h3>
               </div>
-              <div className="flex-1">
-                <p className="text-[13.3px] leading-[20px] text-[#898989] mb-2">
+              <div>
+                <p className="text-[13.3px] leading-[20px] text-[#898989] mb-3">
                   目標に合わせた
                   <span className="text-[#fafafa]">広告戦略の設計と最適化</span>
                   を行います。
                 </p>
-                <ul className="space-y-1">
+                <ul className="space-y-0.5">
                   <li className="flex items-center gap-2 text-[13.2px] text-[#fafafa]">
                     <svg
                       className="w-4 h-4"
@@ -99,9 +99,9 @@ export default function MetaAdsSection() {
           </div>
 
           {/* Creative */}
-          <div className="h-[350px] sm:h-[380px] md:h-[400px] p-px rounded-xl bg-gradient-to-b from-[#2e2e2e] to-[#2e2e2e]/50 relative overflow-hidden group">
-            <div className="h-full bg-[#171717] rounded-[11px] p-4 sm:p-5 md:p-6 flex flex-col">
-              <div className="flex items-center gap-2 mb-4">
+          <div className="p-px rounded-xl bg-gradient-to-b from-[#2e2e2e] to-[#2e2e2e]/50 relative overflow-hidden group">
+            <div className="bg-[#171717] rounded-[11px] p-4 sm:p-5 md:p-6 flex flex-col">
+              <div className="flex items-center gap-2 mb-2">
                 <svg
                   className="w-[18px] h-[18px]"
                   fill="none"
@@ -119,15 +119,15 @@ export default function MetaAdsSection() {
                   クリエイティブ制作
                 </h3>
               </div>
-              <div className="flex-1">
-                <p className="text-[13.3px] leading-[20px] text-[#898989] mb-2">
+              <div>
+                <p className="text-[13.3px] leading-[20px] text-[#898989] mb-3">
                   効果的な
                   <span className="text-[#fafafa]">
                     広告クリエイティブの制作
                   </span>
                   を行います。
                 </p>
-                <ul className="space-y-1">
+                <ul className="space-y-0.5">
                   <li className="flex items-center gap-2 text-[13.2px] text-[#fafafa]">
                     <svg
                       className="w-4 h-4"
@@ -182,9 +182,9 @@ export default function MetaAdsSection() {
           </div>
 
           {/* Management */}
-          <div className="h-[350px] sm:h-[380px] md:h-[400px] p-px rounded-xl bg-gradient-to-b from-[#2e2e2e] to-[#2e2e2e]/50 relative overflow-hidden group">
-            <div className="h-full bg-[#171717] rounded-[11px] p-4 sm:p-5 md:p-6 flex flex-col">
-              <div className="flex items-center gap-2 mb-4">
+          <div className="p-px rounded-xl bg-gradient-to-b from-[#2e2e2e] to-[#2e2e2e]/50 relative overflow-hidden group">
+            <div className="bg-[#171717] rounded-[11px] p-4 sm:p-5 md:p-6 flex flex-col">
+              <div className="flex items-center gap-2 mb-2">
                 <svg
                   className="w-[18px] h-[18px]"
                   fill="none"
@@ -202,15 +202,15 @@ export default function MetaAdsSection() {
                   運用・最適化
                 </h3>
               </div>
-              <div className="flex-1">
-                <p className="text-[13.3px] leading-[20px] text-[#898989] mb-2">
+              <div>
+                <p className="text-[13.3px] leading-[20px] text-[#898989] mb-3">
                   継続的な
                   <span className="text-[#fafafa]">
                     広告運用とパフォーマンス最適化
                   </span>
                   を行います。
                 </p>
-                <ul className="space-y-1">
+                <ul className="space-y-0.5">
                   <li className="flex items-center gap-2 text-[13.2px] text-[#fafafa]">
                     <svg
                       className="w-4 h-4"

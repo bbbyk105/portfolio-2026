@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const portfolioData = {
@@ -68,6 +69,21 @@ const portfolioData = {
         "展示会・イベント対応",
       ],
     },
+    {
+      id: 5,
+      title: "evimeria home",
+      description: "家具やライトを専門としたアメリカ向けECサイト",
+      fullDescription:
+        "家具やライトを専門としたアメリカ市場向けのECサイトを制作しました。スタイリッシュで機能的なデザインを重視し、アメリカの顧客の購買行動に最適化したユーザー体験を実現。レスポンシブデザインと高速な表示速度により、モバイル・デスクトップ両方での快適なショッピング体験を提供しています。",
+      image: "/portfolio/ec.png", // 後でevimeria home用の画像に変更してください
+      url: "", // プレビューリンクをここに追加
+      highlights: [
+        "アメリカ市場向け最適化",
+        "家具・ライト専門EC",
+        "レスポンシブデザイン",
+        "高速表示・UX最適化",
+      ],
+    },
   ],
   en: [
     {
@@ -110,7 +126,7 @@ const portfolioData = {
         "Landing page for fragrance brand using cypress from Mount Fuji",
       fullDescription:
         "We created a landing page for a fragrance brand using cypress from Mount Fuji. With English support and world-class design, it serves as an inbound marketing tool and promotional material for trade shows and business meetings.",
-      image: "/portfolio/yawnlp.png",
+      image: "/portfolio/ec.png",
       url: "", // プレビューリンクをここに追加
       highlights: [
         "English Support",
@@ -135,6 +151,22 @@ const portfolioData = {
         "Trade Show Support",
       ],
     },
+    {
+      id: 5,
+      title: "evimeria home",
+      description:
+        "E-commerce site specializing in furniture and lighting for the US market",
+      fullDescription:
+        "We created an e-commerce site specializing in furniture and lighting for the US market. With a focus on stylish and functional design, we optimized the user experience for American customer purchasing behavior. Through responsive design and fast loading times, we provide a comfortable shopping experience on both mobile and desktop devices.",
+      image: "/portfolio/yawnec.png", // Please change to evimeria home image later
+      url: "", // プレビューリンクをここに追加
+      highlights: [
+        "US Market Optimization",
+        "Furniture & Lighting Specialized",
+        "Responsive Design",
+        "Fast Loading & UX Optimization",
+      ],
+    },
   ],
 };
 
@@ -145,6 +177,8 @@ const translations = {
       "これまでに制作したWebサイト、アプリ、システムの実績をご紹介します。",
     highlights: "主な特徴",
     viewSite: "サイトを見る",
+    previous: "前へ",
+    next: "次へ",
   },
   en: {
     title: "Portfolio",
@@ -152,13 +186,48 @@ const translations = {
       "We introduce our achievements in websites, apps, and systems we have created.",
     highlights: "Key Highlights",
     viewSite: "View Site",
+    previous: "Previous",
+    next: "Next",
   },
 };
 
 export default function PortfolioPageContent() {
   const { language } = useLanguage();
-  const portfolioItems = portfolioData[language];
+  const allItems = portfolioData[language];
   const t = translations[language];
+
+  // 1ページ目に表示する順序: 学習院大学、聚楽苑、evimeria home
+  const orderedItems = [
+    allItems.find((item) => item.id === 1), // 学習院大学
+    allItems.find((item) => item.id === 2), // 聚楽苑
+    allItems.find((item) => item.id === 5), // evimeria home
+    allItems.find((item) => item.id === 3), // yawn & nap LP
+    allItems.find((item) => item.id === 4), // yawn & nap EC
+  ].filter(Boolean) as typeof allItems;
+
+  const itemsPerPage = 3;
+  const totalPages = Math.ceil(orderedItems.length / itemsPerPage);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentItems = orderedItems.slice(startIndex, endIndex);
+
+  const handlePrevious = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePageClick = (page: number) => {
+    setCurrentPage(page);
+  };
 
   return (
     <section className="w-full bg-[#121212] min-h-screen py-12 sm:py-16 md:py-20 lg:py-24">
@@ -176,37 +245,43 @@ export default function PortfolioPageContent() {
           </p>
         </div>
 
-        {/* 制作実績 - バリエーションのあるレイアウト */}
-        <div className="space-y-8 sm:space-y-10 md:space-y-12">
-          {/* 1つ目: 横並びブロックスタイル */}
-          <div className="group relative overflow-hidden rounded-lg border border-[#2e2e2e] bg-[#171717] hover:border-[#0ABAB5]/30 hover:bg-[#1a1a1a]">
-            <div className="flex flex-col lg:flex-row">
-              <div className="w-full lg:w-2/5 relative h-[250px] sm:h-[300px] lg:h-auto overflow-hidden bg-[#1a1a1a]">
+        {/* 制作実績 - グリッドレイアウト */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
+          {currentItems.map((item) => (
+            <div
+              key={item.id}
+              className="group relative overflow-hidden rounded-lg border border-[#2e2e2e] bg-[#171717] hover:border-[#0ABAB5]/50 hover:bg-[#1a1a1a]"
+            >
+              {/* 画像エリア */}
+              <div className="relative h-[200px] sm:h-[240px] overflow-hidden bg-[#1a1a1a]">
                 <Image
-                  src={portfolioItems[0].image}
-                  alt={portfolioItems[0].title}
+                  src={item.image}
+                  alt={item.title}
                   fill
                   className="object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171717]"></div>
               </div>
-              <div className="w-full lg:w-3/5 p-6 sm:p-8 md:p-10 flex flex-col justify-center">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-[#fafafa] mb-2 sm:mb-3 group-hover:text-[#0ABAB5]">
-                  {portfolioItems[0].title}
+
+              {/* コンテンツエリア */}
+              <div className="p-5 sm:p-6">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-medium text-[#fafafa] mb-2 group-hover:text-[#0ABAB5]">
+                  {item.title}
                 </h2>
-                <p className="text-sm sm:text-base text-[#d4d4d4] mb-3 sm:mb-4 leading-relaxed">
-                  {portfolioItems[0].description}
+                <p className="text-xs sm:text-sm text-[#d4d4d4] mb-3 leading-relaxed">
+                  {item.description}
                 </p>
-                <p className="text-xs sm:text-sm text-[#b4b4b4] mb-4 sm:mb-6 leading-relaxed">
-                  {portfolioItems[0].fullDescription}
+                <p className="text-xs text-[#b4b4b4] mb-4 leading-relaxed line-clamp-3">
+                  {item.fullDescription}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {portfolioItems[0].highlights.map((highlight, idx) => (
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {item.highlights.slice(0, 3).map((highlight, idx) => (
                     <span
                       key={idx}
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs text-[#0ABAB5] bg-[#0ABAB5]/10 rounded border border-[#0ABAB5]/20"
+                      className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] sm:text-xs text-[#0ABAB5] bg-[#0ABAB5]/10 rounded border border-[#0ABAB5]/20"
                     >
                       <svg
-                        className="w-3 h-3"
+                        className="w-2.5 h-2.5"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -222,16 +297,16 @@ export default function PortfolioPageContent() {
                     </span>
                   ))}
                 </div>
-                {portfolioItems[0].url && (
+                {item.url && (
                   <Link
-                    href={portfolioItems[0].url}
+                    href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 text-sm text-[#0ABAB5] border border-[#0ABAB5]/30 rounded-md hover:bg-[#0ABAB5]/10 w-fit"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 text-xs sm:text-sm text-[#0ABAB5] border border-[#0ABAB5]/30 rounded-md hover:bg-[#0ABAB5]/10 w-fit"
                   >
                     <span>{t.viewSite}</span>
                     <svg
-                      className="w-4 h-4"
+                      className="w-3.5 h-3.5"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -247,161 +322,55 @@ export default function PortfolioPageContent() {
                 )}
               </div>
             </div>
-          </div>
-
-          {/* 2つ目以降: コンパクトグリッドスタイル */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {portfolioItems.slice(1, 3).map((item) => (
-              <div
-                key={item.id}
-                className="group relative overflow-hidden rounded-lg border border-[#2e2e2e] bg-[#171717] hover:border-[#0ABAB5]/50 hover:bg-[#1a1a1a]"
-              >
-                {/* 画像エリア */}
-                <div className="relative h-[200px] sm:h-[240px] overflow-hidden bg-[#1a1a1a]">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171717]"></div>
-                </div>
-
-                {/* コンテンツエリア */}
-                <div className="p-5 sm:p-6">
-                  <h2 className="text-lg sm:text-xl md:text-2xl font-medium text-[#fafafa] mb-2 group-hover:text-[#0ABAB5]">
-                    {item.title}
-                  </h2>
-                  <p className="text-xs sm:text-sm text-[#d4d4d4] mb-3 leading-relaxed">
-                    {item.description}
-                  </p>
-                  <p className="text-xs text-[#b4b4b4] mb-4 leading-relaxed line-clamp-3">
-                    {item.fullDescription}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {item.highlights.slice(0, 3).map((highlight, idx) => (
-                      <span
-                        key={idx}
-                        className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] sm:text-xs text-[#0ABAB5] bg-[#0ABAB5]/10 rounded border border-[#0ABAB5]/20"
-                      >
-                        <svg
-                          className="w-2.5 h-2.5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        {highlight}
-                      </span>
-                    ))}
-                  </div>
-                  {item.url && (
-                    <Link
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-3 py-1.5 text-xs sm:text-sm text-[#0ABAB5] border border-[#0ABAB5]/30 rounded-md hover:bg-[#0ABAB5]/10 w-fit"
-                    >
-                      <span>{t.viewSite}</span>
-                      <svg
-                        className="w-3.5 h-3.5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
-                    </Link>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* 4つ目: 単独表示（必要に応じて） */}
-          {portfolioItems.length > 3 && (
-            <div className="group relative overflow-hidden rounded-lg border border-[#2e2e2e] bg-[#171717] hover:border-[#0ABAB5]/50 hover:bg-[#1a1a1a]">
-              <div className="flex flex-col lg:flex-row">
-                <div className="w-full lg:w-2/5 relative h-[250px] sm:h-[300px] lg:h-auto overflow-hidden bg-[#1a1a1a]">
-                  <Image
-                    src={portfolioItems[3].image}
-                    alt={portfolioItems[3].title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="w-full lg:w-3/5 p-6 sm:p-8 md:p-10 flex flex-col justify-center">
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-[#fafafa] mb-2 sm:mb-3 group-hover:text-[#0ABAB5]">
-                    {portfolioItems[3].title}
-                  </h2>
-                  <p className="text-sm sm:text-base text-[#d4d4d4] mb-3 sm:mb-4 leading-relaxed">
-                    {portfolioItems[3].description}
-                  </p>
-                  <p className="text-xs sm:text-sm text-[#b4b4b4] mb-4 sm:mb-6 leading-relaxed">
-                    {portfolioItems[3].fullDescription}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {portfolioItems[3].highlights.map((highlight, idx) => (
-                      <span
-                        key={idx}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs text-[#0ABAB5] bg-[#0ABAB5]/10 rounded border border-[#0ABAB5]/20"
-                      >
-                        <svg
-                          className="w-3 h-3"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        {highlight}
-                      </span>
-                    ))}
-                  </div>
-                  {portfolioItems[3].url && (
-                    <Link
-                      href={portfolioItems[3].url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 text-sm text-[#0ABAB5] border border-[#0ABAB5]/30 rounded-md hover:bg-[#0ABAB5]/10 w-fit"
-                    >
-                      <span>{t.viewSite}</span>
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
-                    </Link>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
+          ))}
         </div>
+
+        {/* ページネーション */}
+        {totalPages > 1 && (
+          <div className="flex items-center justify-center gap-2 sm:gap-4">
+            <button
+              onClick={handlePrevious}
+              disabled={currentPage === 1}
+              className={`px-4 py-2 text-sm font-medium rounded-md border transition-all ${
+                currentPage === 1
+                  ? "border-[#2e2e2e] text-[#898989] cursor-not-allowed"
+                  : "border-[#0ABAB5]/30 text-[#0ABAB5] hover:bg-[#0ABAB5]/10"
+              }`}
+            >
+              {t.previous}
+            </button>
+
+            <div className="flex items-center gap-1 sm:gap-2">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (page) => (
+                  <button
+                    key={page}
+                    onClick={() => handlePageClick(page)}
+                    className={`w-8 h-8 sm:w-10 sm:h-10 text-sm font-medium rounded-md border transition-all ${
+                      currentPage === page
+                        ? "bg-[#0ABAB5] border-[#0ABAB5] text-[#121212]"
+                        : "border-[#2e2e2e] text-[#fafafa] hover:border-[#0ABAB5]/50 hover:bg-[#0ABAB5]/10"
+                    }`}
+                  >
+                    {page}
+                  </button>
+                )
+              )}
+            </div>
+
+            <button
+              onClick={handleNext}
+              disabled={currentPage === totalPages}
+              className={`px-4 py-2 text-sm font-medium rounded-md border transition-all ${
+                currentPage === totalPages
+                  ? "border-[#2e2e2e] text-[#898989] cursor-not-allowed"
+                  : "border-[#0ABAB5]/30 text-[#0ABAB5] hover:bg-[#0ABAB5]/10"
+              }`}
+            >
+              {t.next}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

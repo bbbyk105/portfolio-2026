@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const getIcon = (type: string) => {
@@ -242,19 +243,54 @@ export default function FeaturesSection() {
   const features = featuresData[language];
   const t = translations[language];
 
+  // 除外したアイテムのロゴ情報
+  const excludedLogos = [
+    {
+      image: "/images/apple.jpg",
+      alt: language === "ja" ? "iOSアプリ開発" : "iOS App Development",
+    },
+    {
+      image: "/images/android.png",
+      alt: language === "ja" ? "Androidアプリ開発" : "Android App Development",
+    },
+    {
+      image: "/top-logos/meta.png",
+      alt: language === "ja" ? "Meta広告運用" : "Meta Advertising",
+    },
+  ];
+
   return (
     <section className="w-full py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
-        <div className="mb-8 sm:mb-12 md:mb-16">
+        <div className="mb-8 sm:mb-12 md:mb-16 group/header">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-1 h-8 bg-[#0ABAB5]"></div>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#fafafa]">
               {t.title}
             </h2>
           </div>
-          <p className="text-sm sm:text-base md:text-lg text-[#b4b4b4] max-w-3xl ml-4">
-            {t.description}
-          </p>
+          <div className="relative">
+            <p className="text-sm sm:text-base md:text-lg text-[#b4b4b4] max-w-3xl ml-4">
+              {t.description}
+            </p>
+            {/* ホバー時に表示されるロゴ */}
+            <div className="absolute left-0 top-full mt-4 ml-4 flex items-center gap-4 sm:gap-6 opacity-0 group-hover/header:opacity-100 transition-opacity duration-300 pointer-events-none">
+              {excludedLogos.map((logo, index) => (
+                <div
+                  key={index}
+                  className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-lg bg-[#1a1a1a] border border-[#2e2e2e] p-2 flex items-center justify-center"
+                >
+                  <Image
+                    src={logo.image}
+                    alt={logo.alt}
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* おしゃれなグリッドレイアウト */}
