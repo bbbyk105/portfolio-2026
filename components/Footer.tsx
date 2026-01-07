@@ -266,21 +266,6 @@ export default function Footer() {
           <p className="text-[10px] sm:text-[11.4px] text-[#898989]">
             © {new Date().getFullYear()} Evimería Inc
           </p>
-          <div className="w-7 h-7 flex items-center justify-center">
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="#b4b4b4"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 2v20M2 12h20"
-              />
-            </svg>
-          </div>
         </div>
       </div>
     </footer>
