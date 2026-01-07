@@ -123,10 +123,12 @@ export default function CommunitySection() {
   const { language } = useLanguage();
   const faqs = faqsData[language];
   const t = translations[language];
-  const [openId, setOpenId] = useState<number | null>(null);
+  const [openIds, setOpenIds] = useState<number[]>([]);
 
   const toggleFAQ = (id: number) => {
-    setOpenId(openId === id ? null : id);
+    setOpenIds((prev) =>
+      prev.includes(id) ? prev.filter((openId) => openId !== id) : [...prev, id]
+    );
   };
 
   return (
@@ -159,7 +161,7 @@ export default function CommunitySection() {
                 </h3>
                 <svg
                   className={`w-5 h-5 text-[#0ABAB5] shrink-0 transition-transform duration-300 ${
-                    openId === faq.id ? "rotate-180" : ""
+                    openIds.includes(faq.id) ? "rotate-180" : ""
                   }`}
                   fill="none"
                   stroke="currentColor"
@@ -175,7 +177,7 @@ export default function CommunitySection() {
               </button>
               <div
                 className={`overflow-hidden transition-all duration-300 ${
-                  openId === faq.id
+                  openIds.includes(faq.id)
                     ? "max-h-[500px] opacity-100"
                     : "max-h-0 opacity-0"
                 }`}

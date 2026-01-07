@@ -99,12 +99,6 @@ export default function Header() {
             >
               {t.news}
             </Link>
-            <Link
-              href="/about"
-              className="px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
-            >
-              {t.about}
-            </Link>
           </div>
           <div className="flex items-center gap-2">
             {/* 言語切り替えプルダウン */}
@@ -265,13 +259,6 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               {t.news}
-            </Link>
-            <Link
-              href="/about"
-              className="block px-3 py-2 text-sm text-[#fafafa] hover:bg-[#1f1f1f] rounded-md transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {t.about}
             </Link>
             <div className="pt-2 border-t border-[#2e2e2e]">
               <Link
