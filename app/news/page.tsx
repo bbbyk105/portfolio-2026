@@ -1,6 +1,17 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NewsPageContent from "@/components/NewsPageContent";
+
+export const metadata: Metadata = {
+  title: "ニュース",
+  description: "Evimeríaの最新情報、技術トレンド、プロジェクトのアップデートなどをお届けします。",
+  openGraph: {
+    title: "ニュース | Evimería",
+    description: "Evimeríaの最新情報、技術トレンド、プロジェクトのアップデートなどをお届けします。",
+    url: "/news",
+  },
+};
 
 export default function NewsPage() {
   return (

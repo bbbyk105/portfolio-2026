@@ -6,7 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const translations = {
   ja: {
-    description: "デジタルシステムで競争優位性を創出します。",
+    description: "Web制作・EC・業務自動化を提供します。",
     services: "サービス",
     webDevelopment: "Web制作",
     appDevelopment: "アプリ制作",

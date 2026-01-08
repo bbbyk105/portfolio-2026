@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SolutionsHero from "@/components/SolutionsHero";
@@ -5,6 +6,16 @@ import WebDevelopmentSection from "@/components/WebDevelopmentSection";
 import AppDevelopmentSection from "@/components/AppDevelopmentSection";
 import MetaAdsSection from "@/components/MetaAdsSection";
 import AutomationSection from "@/components/AutomationSection";
+
+export const metadata: Metadata = {
+  title: "ソリューション",
+  description: "Web開発、アプリ開発、Meta広告運用、AI自動化など、Evimeríaが提供する包括的なデジタルソリューションをご紹介します。",
+  openGraph: {
+    title: "ソリューション | Evimería",
+    description: "Web開発、アプリ開発、Meta広告運用、AI自動化など、Evimeríaが提供する包括的なデジタルソリューションをご紹介します。",
+    url: "/solutions",
+  },
+};
 
 export default function SolutionsPage() {
   return (

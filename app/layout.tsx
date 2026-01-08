@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import StructuredData from "@/components/StructuredData";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +15,73 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Evimería - デジタルシステムで競争優位性を創出",
-  description: "Web制作からアプリ開発、広告運用、AI自動化まで、すべてのサービスを統合的に提供。",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://evimeria105.com"
+  ),
+  title: {
+    default: "Evimería - Web制作・EC・業務自動化",
+    template: "%s | Evimería",
+  },
+  description:
+    "Web制作からアプリ開発、広告運用、AI自動化まで、すべてのサービスを統合的に提供。競争優位性を生み出すデジタルシステムを構築します。",
+  keywords: [
+    "evimeria",
+    "evimeria アプリ開発",
+    "Evimeria Web制作",
+    "Evimeria 合同会社",
+    "evimeria n8n",
+    "evimeria ドロップシッピング",
+    "デジタルマーケティング",
+    "Web Development",
+    "App Development",
+  ],
+  authors: [{ name: "Evimería" }],
+  creator: "Evimería",
+  publisher: "Evimería",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "ja_JP",
+    url: "/",
+    siteName: "Evimería",
+    title: "Evimería - Web制作・EC・業務自動化",
+    description:
+      "Web制作からアプリ開発、広告運用、AI自動化まで、すべてのサービスを統合的に提供。",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Evimería",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Evimería - Web制作・EC・業務自動化",
+    description:
+      "Web制作からアプリ開発、広告運用、AI自動化まで、すべてのサービスを統合的に提供。",
+    images: ["/images/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    // Google Search Consoleやその他の検証コードを追加可能
+    // google: "your-google-verification-code",
+  },
 };
 
 export default function RootLayout({
@@ -28,6 +94,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <StructuredData />
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>

@@ -1,6 +1,17 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactContent from "@/components/ContactContent";
+
+export const metadata: Metadata = {
+  title: "お問い合わせ",
+  description: "Evimeríaへのお問い合わせはこちらから。Web制作、アプリ開発、広告運用、AI自動化など、お気軽にご相談ください。",
+  openGraph: {
+    title: "お問い合わせ | Evimería",
+    description: "Evimeríaへのお問い合わせはこちらから。Web制作、アプリ開発、広告運用、AI自動化など、お気軽にご相談ください。",
+    url: "/contact",
+  },
+};
 
 export default function ContactPage() {
   return (
