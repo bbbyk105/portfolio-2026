@@ -1,13 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import NewsSection from "@/components/NewsSection";
+import PrivacyPolicyContent from "@/components/PrivacyPolicyContent";
 
-export default function NewsPage() {
+export default function PrivacyPolicyPage() {
   return (
     <div className="bg-[#121212] min-h-screen w-full">
       <Header />
       <main className="w-full">
-        <NewsSection isHomePage={false} />
+        <PrivacyPolicyContent />
       </main>
       <Footer />
     </div>

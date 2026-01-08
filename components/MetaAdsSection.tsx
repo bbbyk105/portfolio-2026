@@ -56,7 +56,10 @@ export default function MetaAdsSection() {
   const t = translations[language];
 
   return (
-    <section className="w-full bg-[#171717] py-12 sm:py-16 md:py-20 lg:py-24">
+    <section
+      id="meta"
+      className="w-full bg-[#171717] py-12 sm:py-16 md:py-20 lg:py-24"
+    >
       <div className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
         <div className="mb-8 sm:mb-12 md:mb-16">
           <div className="flex items-center gap-3 mb-4">

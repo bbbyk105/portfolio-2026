@@ -12,8 +12,6 @@ const translations = {
       "and scalable dropshipping operations — all designed to drive real",
       "results.",
     ],
-    cta1: "Start your project",
-    cta2: "Request a demo",
   },
   ja: {
     banner: "Supabase Wrapped 2025: 年間レビュー",
@@ -22,8 +20,6 @@ const translations = {
       "Web開発とアプリ開発から始め、n8nを活用した",
       "自動化、Meta広告運用を統合します。",
     ],
-    cta1: "プロジェクトを始める",
-    cta2: "デモをリクエスト",
   },
 };
 
@@ -79,22 +75,6 @@ export default function HeroSection() {
           {t.description[3]}
           {t.description[4]}
         </p>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 px-4 w-full sm:w-auto">
-          <a
-            href="https://supabase.com/dashboard"
-            className="w-full sm:w-auto px-4 sm:px-[17px] py-2 sm:py-[9px] bg-[#078A85] border border-[rgba(10,186,181,0.3)] rounded-md text-xs sm:text-[13.8px] text-[#fafafa] hover:bg-[#089A95] transition-colors text-center"
-          >
-            {t.cta1}
-          </a>
-          <a
-            href="https://supabase.com/contact/sales"
-            className="w-full sm:w-auto px-4 sm:px-[17px] py-2 sm:py-[9px] bg-[#242424] border border-[#363636] rounded-md text-xs sm:text-[13.3px] text-[#fafafa] hover:bg-[#2e2e2e] transition-colors text-center"
-          >
-            {t.cta2}
-          </a>
-        </div>
       </div>
     </section>
   );

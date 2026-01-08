@@ -18,9 +18,8 @@ const translations = {
     privacy: "プライバシーポリシー",
     terms: "利用規約",
     resources: "リソース",
-    news: "最新情報",
+    news: "ニュース",
     portfolio: "制作実績",
-    blog: "ブログ",
     support: "サポート",
     faq: "よくある質問",
   },
@@ -39,7 +38,6 @@ const translations = {
     resources: "Resources",
     news: "News",
     portfolio: "Portfolio",
-    blog: "Blog",
     support: "Support",
     faq: "FAQ",
   },
@@ -227,14 +225,6 @@ export default function Footer() {
                     {t.portfolio}
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="/blog"
-                    className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
-                  >
-                    {t.blog}
-                  </Link>
-                </li>
               </ul>
             </div>
             <div>
@@ -252,7 +242,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/faq"
+                    href="/#faq"
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
                     {t.faq}

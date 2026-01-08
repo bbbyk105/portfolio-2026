@@ -12,23 +12,27 @@ type NewsItem = {
 type Props = {
   jaItems: NewsItem[];
   enItems: NewsItem[];
+  isHomePage?: boolean;
 };
 
 const translations = {
   ja: {
     label: "News",
     title: "最新情報",
+    newsPageTitle: "ニュース",
   },
   en: {
     label: "News",
     title: "Latest News",
+    newsPageTitle: "News",
   },
 };
 
-export default function NewsSectionClient({ jaItems, enItems }: Props) {
+export default function NewsSectionClient({ jaItems, enItems, isHomePage = true }: Props) {
   const { language } = useLanguage();
   const t = translations[language];
   const newsItems = language === "ja" ? jaItems : enItems;
+  const title = isHomePage ? t.title : t.newsPageTitle;
 
   return (
     <section className="w-full bg-[#171717] py-12 sm:py-16 md:py-20 lg:py-24">
@@ -40,7 +44,7 @@ export default function NewsSectionClient({ jaItems, enItems }: Props) {
           <div className="flex items-center gap-3 mb-4">
             <div className="w-1 h-8 bg-[#0ABAB5]"></div>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#fafafa]">
-              {t.title}
+              {title}
             </h2>
           </div>
         </div>

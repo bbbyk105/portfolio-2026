@@ -111,19 +111,19 @@ export default function ContactContent() {
     <section className="w-full bg-[#121212] min-h-screen py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
         {/* ヘッダー */}
-        <div className="mb-8 sm:mb-12 md:mb-16">
-          <div className="flex items-center gap-3 mb-4">
+        <div className="mb-8 sm:mb-12 md:mb-16 text-center">
+          <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-1 h-8 bg-[#0ABAB5]"></div>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-[#fafafa]">
               {t.title}
             </h1>
           </div>
-          <p className="text-sm sm:text-base md:text-lg text-[#b4b4b4] max-w-3xl ml-4">
+          <p className="text-sm sm:text-base md:text-lg text-[#b4b4b4] max-w-3xl mx-auto">
             {t.description}
           </p>
         </div>
 
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto">
           {/* お問い合わせフォーム */}
           <div className="p-px rounded-xl bg-gradient-to-b from-[#2e2e2e] to-[#2e2e2e]/50 mb-8">
             <div className="bg-[#171717] rounded-[11px] p-6 sm:p-8 md:p-10">
@@ -235,20 +235,65 @@ export default function ContactContent() {
           {/* 軽い説明セクション */}
           <div className="p-px rounded-xl bg-gradient-to-b from-[#2e2e2e] to-[#2e2e2e]/50">
             <div className="bg-[#171717] rounded-[11px] p-6 sm:p-8 md:p-10">
-              <h2 className="text-lg sm:text-xl font-medium text-[#fafafa] mb-4">
-                {language === "ja" ? "お問い合わせについて" : "About Inquiries"}
-              </h2>
+              <div className="flex items-center gap-3 mb-4">
+                <svg
+                  className="w-5 h-5 text-[#0ABAB5]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <h2 className="text-lg sm:text-xl font-medium text-[#fafafa]">
+                  {language === "ja" ? "お問い合わせについて" : "About Inquiries"}
+                </h2>
+              </div>
               <div className="space-y-3 text-sm sm:text-base text-[#d4d4d4] leading-relaxed">
-                <p>
-                  {language === "ja"
-                    ? "お問い合わせいただいた内容については、通常1〜2営業日以内にご返信いたします。"
-                    : "We typically respond to inquiries within 1-2 business days."}
-                </p>
-                <p>
-                  {language === "ja"
-                    ? "プロジェクトのご相談やお見積もりは無料です。お気軽にお問い合わせください。"
-                    : "Project consultations and estimates are free. Please feel free to contact us."}
-                </p>
+                <div className="flex items-start gap-3">
+                  <svg
+                    className="w-5 h-5 text-[#0ABAB5] mt-0.5 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <p>
+                    {language === "ja"
+                      ? "お問い合わせいただいた内容については、通常1〜2営業日以内にご返信いたします。"
+                      : "We typically respond to inquiries within 1-2 business days."}
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg
+                    className="w-5 h-5 text-[#0ABAB5] mt-0.5 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <p>
+                    {language === "ja"
+                      ? "プロジェクトのご相談やお見積もりは無料です。お気軽にお問い合わせください。"
+                      : "Project consultations and estimates are free. Please feel free to contact us."}
+                  </p>
+                </div>
               </div>
             </div>
           </div>

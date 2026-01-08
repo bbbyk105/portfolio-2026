@@ -14,7 +14,7 @@ const translations = {
   ja: {
     services: "サービス",
     portfolio: "制作実績",
-    news: "最新情報",
+    news: "ニュース",
     about: "会社概要",
     contact: "お問い合わせ",
   },

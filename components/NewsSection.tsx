@@ -10,7 +10,11 @@ type NewsItem = {
   publishedAt?: string;
 };
 
-export default function NewsSection() {
+type Props = {
+  isHomePage?: boolean;
+};
+
+export default function NewsSection({ isHomePage = true }: Props) {
   const { language } = useLanguage();
   const [jaItems, setJaItems] = useState<NewsItem[]>([]);
   const [enItems, setEnItems] = useState<NewsItem[]>([]);
@@ -25,25 +29,31 @@ export default function NewsSection() {
       const jaData = await jaRes.json();
       const enData = await enRes.json();
 
+      const limit = isHomePage ? 3 : undefined;
+
       setJaItems(
-        (jaData.contents || []).slice(0, 3).map((post: any) => ({
-          id: post.id,
-          title: post.title,
-          publishedAt: post.publishedAt,
-        }))
+        (jaData.contents || [])
+          .slice(0, limit)
+          .map((post: any) => ({
+            id: post.id,
+            title: post.title,
+            publishedAt: post.publishedAt,
+          }))
       );
 
       setEnItems(
-        (enData.contents || []).slice(0, 3).map((post: any) => ({
-          id: post.id,
-          title: post.title,
-          publishedAt: post.publishedAt,
-        }))
+        (enData.contents || [])
+          .slice(0, limit)
+          .map((post: any) => ({
+            id: post.id,
+            title: post.title,
+            publishedAt: post.publishedAt,
+          }))
       );
     };
 
     fetchNews();
-  }, []);
+  }, [isHomePage]);
 
-  return <NewsSectionClient jaItems={jaItems} enItems={enItems} />;
+  return <NewsSectionClient jaItems={jaItems} enItems={enItems} isHomePage={isHomePage} />;
 }
