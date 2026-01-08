@@ -47,12 +47,7 @@ const portfolioData = {
         "富士山麓のヒノキを使用したフレグランスブランドのLPを制作。英語対応・世界観設計により、インバウンド向け訴求および海外展示会・商談時の紹介ツールとして活用されています。",
       image: "/portfolio/yawnlp.png",
       url: "https://www.hinokifragrance.com/", // プレビューリンクをここに追加
-      highlights: [
-        "英語対応",
-        "世界観設計",
-        "インバウンド訴求",
-        "展示会・商談ツール",
-      ],
+      highlights: ["英語対応", "インバウンド訴求", "展示会・商談ツール"],
     },
     {
       id: 4,
@@ -148,7 +143,6 @@ const portfolioData = {
         "Face-to-Face Payment",
         "Instant Purchase",
         "Online/Offline Integration",
-        "Trade Show Support",
       ],
     },
     {
@@ -179,6 +173,8 @@ const translations = {
     viewSite: "サイトを見る",
     previous: "前へ",
     next: "次へ",
+    readMore: "詳しく見る",
+    readLess: "閉じる",
   },
   en: {
     title: "Portfolio",
@@ -188,6 +184,8 @@ const translations = {
     viewSite: "View Site",
     previous: "Previous",
     next: "Next",
+    readMore: "Read More",
+    readLess: "Read Less",
   },
 };
 
@@ -208,6 +206,7 @@ export default function PortfolioPageContent() {
   const itemsPerPage = 3;
   const totalPages = Math.ceil(orderedItems.length / itemsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
+  const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
@@ -228,6 +227,20 @@ export default function PortfolioPageContent() {
   const handlePageClick = (page: number) => {
     setCurrentPage(page);
   };
+
+  const toggleExpand = (itemId: number) => {
+    setExpandedItems((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(itemId)) {
+        newSet.delete(itemId);
+      } else {
+        newSet.add(itemId);
+      }
+      return newSet;
+    });
+  };
+
+  const isExpanded = (itemId: number) => expandedItems.has(itemId);
 
   return (
     <section className="w-full bg-[#121212] min-h-screen py-12 sm:py-16 md:py-20 lg:py-24">
@@ -250,30 +263,59 @@ export default function PortfolioPageContent() {
           {currentItems.map((item) => (
             <div
               key={item.id}
-              className="group relative overflow-hidden rounded-lg border border-[#2e2e2e] bg-[#171717] hover:border-[#0ABAB5]/50 hover:bg-[#1a1a1a]"
+              className="group relative overflow-hidden rounded-lg border border-[#2e2e2e] bg-[#171717] hover:border-[#0ABAB5]/50 hover:bg-[#1a1a1a] transition-all"
             >
               {/* 画像エリア */}
-              <div className="relative h-[120px] sm:h-[150px] overflow-hidden bg-[#1a1a1a]">
+              <div className="relative h-[200px] sm:h-[240px] md:h-[280px] overflow-hidden bg-[#1a1a1a] flex items-center justify-center">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-cover"
+                  className="object-contain p-4"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171717]"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#171717] pointer-events-none"></div>
               </div>
 
               {/* コンテンツエリア */}
               <div className="p-5 sm:p-6">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-medium text-[#fafafa] mb-2 group-hover:text-[#0ABAB5]">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-medium text-[#fafafa] mb-2 group-hover:text-[#0ABAB5] transition-colors">
                   {item.title}
                 </h2>
                 <p className="text-xs sm:text-sm text-[#d4d4d4] mb-3 leading-relaxed">
                   {item.description}
                 </p>
-                <p className="text-xs text-[#b4b4b4] mb-4 leading-relaxed line-clamp-3">
-                  {item.fullDescription}
-                </p>
+                <div className="mb-4">
+                  <p
+                    className={`text-xs sm:text-sm text-[#b4b4b4] leading-relaxed transition-all ${
+                      isExpanded(item.id) ? "" : "line-clamp-3"
+                    }`}
+                  >
+                    {item.fullDescription}
+                  </p>
+                  {item.fullDescription.length > 100 && (
+                    <button
+                      onClick={() => toggleExpand(item.id)}
+                      className="mt-2 text-xs sm:text-sm text-[#0ABAB5] hover:text-[#0ABAB5]/80 transition-colors flex items-center gap-1"
+                    >
+                      {isExpanded(item.id) ? t.readLess : t.readMore}
+                      <svg
+                        className={`w-3.5 h-3.5 transition-transform ${
+                          isExpanded(item.id) ? "rotate-180" : ""
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                  )}
+                </div>
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {item.highlights.slice(0, 3).map((highlight, idx) => (
                     <span
@@ -302,7 +344,7 @@ export default function PortfolioPageContent() {
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-3 py-1.5 text-xs sm:text-sm text-[#0ABAB5] border border-[#0ABAB5]/30 rounded-md hover:bg-[#0ABAB5]/10 w-fit"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 text-xs sm:text-sm text-[#0ABAB5] border border-[#0ABAB5]/30 rounded-md hover:bg-[#0ABAB5]/10 w-fit transition-colors"
                   >
                     <span>{t.viewSite}</span>
                     <svg

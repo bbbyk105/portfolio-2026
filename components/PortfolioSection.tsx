@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const portfolioData = {
@@ -137,13 +138,13 @@ export default function PortfolioSection() {
         {/* 統一されたグリッドレイアウト */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {availableItems.map((item) => (
-            <a
+            <Link
               key={item.id}
               href="/portfolio"
               className="group relative h-[400px] sm:h-[420px] md:h-[450px] overflow-hidden rounded-lg border border-[#2e2e2e] bg-[#1a1a1a] transition-all duration-300 hover:border-[#0ABAB5]/50"
             >
               {/* 画像背景 */}
-              <div className="absolute inset-0 flex items-center justify-center p-8">
+              <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6 md:p-8">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -152,7 +153,7 @@ export default function PortfolioSection() {
                   className="max-w-full max-h-full w-auto h-auto object-contain opacity-90 transition-opacity duration-500 group-hover:opacity-100"
                 />
                 {/* グラデーションオーバーレイ - 下部のみ薄く */}
-                <div className="absolute inset-0 bg-linear-to-t from-[#171717] via-[#171717]/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#171717] via-[#171717]/30 to-transparent pointer-events-none" />
               </div>
 
               {/* コンテンツ */}
@@ -192,7 +193,7 @@ export default function PortfolioSection() {
                   </div>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
