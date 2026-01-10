@@ -27,7 +27,7 @@ export default function SplineBackground() {
 
   return (
     <div
-      className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none"
+      className="absolute inset-0 w-full h-full overflow-hidden"
       style={{
         zIndex: 0,
         width: "100%",
@@ -36,25 +36,22 @@ export default function SplineBackground() {
     >
       {!isLoaded && (
         <div
-          className="absolute inset-0 flex items-center justify-center"
+          className="absolute inset-0 flex items-center justify-center pointer-events-none"
           style={{ zIndex: 1 }}
         >
           <div className="text-white/30 text-xs">Loading 3D...</div>
         </div>
       )}
       <div
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full pointer-events-auto"
         style={{
           opacity: isLoaded ? 0.6 : 0,
-          transition: isLoaded ? "opacity 1s ease-in-out" : "none",
-          zIndex: -10,
+          transition: isLoaded && !hasError ? "opacity 0.3s ease-in" : "none",
+          zIndex: 0,
           width: "100%",
           height: "100%",
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
+          willChange: "opacity",
+          transform: "translate3d(0, 0, 0)",
         }}
       >
         <Spline
@@ -65,11 +62,6 @@ export default function SplineBackground() {
             width: "100%",
             height: "100%",
             display: "block",
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
           }}
         />
       </div>

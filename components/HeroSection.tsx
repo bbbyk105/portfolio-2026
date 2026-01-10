@@ -51,12 +51,12 @@ export default function HeroSection() {
       </div>
 
       {/* テキストコンテンツ（Desktop: 左下寄せ、Mobile: 中央寄せ） */}
-      <div className="relative z-20 w-full h-full min-h-[600px] sm:min-h-[700px] md:min-h-[800px] flex items-center md:items-end justify-center md:justify-start px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pb-8 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24">
-        <div className="flex flex-col items-center md:items-start gap-4 sm:gap-6 md:gap-8 w-full md:w-auto max-w-[520px]">
+      <div className="relative z-20 w-full h-full min-h-[600px] sm:min-h-[700px] md:min-h-[800px] flex items-center md:items-end justify-center md:justify-start px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pb-8 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24 pointer-events-none">
+        <div className="flex flex-col items-center md:items-start gap-4 sm:gap-6 md:gap-8 w-full md:w-auto max-w-[520px] pointer-events-auto">
           {/* Banner */}
           <Link
             href="/news"
-            className="inline-flex items-center gap-2 px-3 sm:px-4 md:px-5 py-1 rounded-full bg-gradient-to-b from-[#1f1f1f] to-[#292929] border border-[#292929] backdrop-blur-sm text-[10px] sm:text-xs md:text-sm text-[#fafafa] hover:bg-[#2e2e2e] transition-colors"
+            className="inline-flex items-center gap-2 px-3 sm:px-4 md:px-5 py-1 rounded-full bg-gradient-to-b from-[#1f1f1f] to-[#292929] border border-[#292929] backdrop-blur-sm text-[10px] sm:text-xs md:text-sm text-[#fafafa] hover:bg-[#2e2e2e] transition-colors pointer-events-auto"
           >
             <span className="whitespace-nowrap">{t.banner}</span>
             <svg
