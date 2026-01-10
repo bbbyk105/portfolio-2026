@@ -11,7 +11,7 @@ const logos = [
 
 export default function LogoMarquee() {
   return (
-    <section className="w-full py-0 pb-8 sm:pb-12 md:pb-16 lg:pb-24 px-4">
+    <section className="w-full pt-8 sm:pt-12 md:pt-16 lg:pt-24 pb-8 sm:pb-12 md:pb-16 lg:pb-24 px-4">
       <div className="max-w-[896px] mx-auto">
         <p className="text-[10px] sm:text-xs md:text-[13.6px] text-[#898989] text-center mb-4 sm:mb-6 md:mb-8">
           Powered by industry-leading technologies

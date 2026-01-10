@@ -1,6 +1,16 @@
 "use client";
 
 import { useLanguage } from "@/contexts/LanguageContext";
+import dynamic from "next/dynamic";
+import Link from "next/link";
+
+const SplineBackground = dynamic(
+  () => import("@/components/SplineBackground"),
+  {
+    ssr: false,
+    loading: () => null,
+  }
+);
 
 const translations = {
   en: {
@@ -28,53 +38,67 @@ export default function HeroSection() {
   const t = translations[language];
 
   return (
-    <section className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-[432px] py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 relative">
-      <div className="flex flex-col items-center gap-4 sm:gap-6 md:gap-8 pt-8 sm:pt-12 md:pt-16 lg:pt-20 xl:pt-[90px]">
-        {/* Banner */}
-        <a
-          href="/news"
-          className="inline-flex items-center gap-2 px-3 sm:px-4 md:px-5 py-1 rounded-full bg-gradient-to-b from-[#1f1f1f] to-[#292929] border border-[#292929] backdrop-blur-sm text-[10px] sm:text-xs md:text-sm text-[#fafafa] hover:bg-[#2e2e2e] transition-colors"
-        >
-          <span className="whitespace-nowrap">{t.banner}</span>
-          <svg
-            className="w-3 h-3 sm:w-4 sm:h-4 shrink-0"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+    <section
+      className="relative w-full py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 min-h-[600px] sm:min-h-[700px] md:min-h-[800px]"
+      style={{ overflow: "hidden" }}
+    >
+      {/* Spline 3Dモデルを背景として配置（中央〜やや右寄り、主役として維持） */}
+      <div
+        className="absolute inset-y-0 w-screen h-full"
+        style={{ left: "50%", transform: "translateX(-50%)", zIndex: 0 }}
+      >
+        <SplineBackground />
+      </div>
+
+      {/* テキストコンテンツ（Desktop: 左下寄せ、Mobile: 中央寄せ） */}
+      <div className="relative z-20 w-full h-full min-h-[600px] sm:min-h-[700px] md:min-h-[800px] flex items-center md:items-end justify-center md:justify-start px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pb-8 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24">
+        <div className="flex flex-col items-center md:items-start gap-4 sm:gap-6 md:gap-8 w-full md:w-auto max-w-[520px]">
+          {/* Banner */}
+          <Link
+            href="/news"
+            className="inline-flex items-center gap-2 px-3 sm:px-4 md:px-5 py-1 rounded-full bg-gradient-to-b from-[#1f1f1f] to-[#292929] border border-[#292929] backdrop-blur-sm text-[10px] sm:text-xs md:text-sm text-[#fafafa] hover:bg-[#2e2e2e] transition-colors"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </a>
+            <span className="whitespace-nowrap">{t.banner}</span>
+            <svg
+              className="w-3 h-3 sm:w-4 sm:h-4 shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </Link>
 
-        {/* Heading */}
-        <div className="flex flex-col items-center gap-0">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[69px] leading-tight sm:leading-[48px] md:leading-[56px] lg:leading-[64px] xl:leading-[72px] font-medium text-[#fafafa] text-center px-2 sm:px-4">
-            Build the edge
-          </h1>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[69.6px] leading-tight sm:leading-[48px] md:leading-[56px] lg:leading-[64px] xl:leading-[72px] font-medium text-[#0ABAB5] text-center px-2 sm:px-4">
-            Where systems become leverage
-          </h1>
+          {/* Heading */}
+          <div className="flex flex-col items-center md:items-start gap-0">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[69px] leading-tight sm:leading-[48px] md:leading-[56px] lg:leading-[64px] xl:leading-[72px] font-medium text-[#fafafa] text-center md:text-left px-2 sm:px-4 md:px-0">
+              Build the edge
+            </h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[69.6px] leading-tight sm:leading-[48px] md:leading-[56px] lg:leading-[64px] xl:leading-[72px] font-medium text-[#0ABAB5] text-center md:text-left px-2 sm:px-4 md:px-0">
+              Where systems become leverage
+            </h1>
+          </div>
+
+          {/* Description */}
+          <p className="text-xs sm:text-sm md:text-base lg:text-[17.4px] leading-5 sm:leading-6 md:leading-7 lg:leading-[28px] text-[#fafafa] text-center md:text-left max-w-[520px] px-4 md:px-0">
+            {t.description[0]}
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
+            {t.description[1]}
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
+            {t.description[2]}
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
+            {t.description[3]}
+            {t.description[4]}
+          </p>
         </div>
-
-        {/* Description */}
-        <p className="text-xs sm:text-sm md:text-base lg:text-[17.4px] leading-5 sm:leading-6 md:leading-7 lg:leading-[28px] text-[#fafafa] text-center max-w-[576px] px-4">
-          {t.description[0]}
-          <br className="hidden sm:block" />
-          <span className="sm:hidden"> </span>
-          {t.description[1]}
-          <br className="hidden sm:block" />
-          <span className="sm:hidden"> </span>
-          {t.description[2]}
-          <br className="hidden sm:block" />
-          <span className="sm:hidden"> </span>
-          {t.description[3]}
-          {t.description[4]}
-        </p>
       </div>
     </section>
   );
