@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const portfolioData = {
@@ -243,6 +243,14 @@ export default function PortfolioPageContent() {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentItems = orderedItems.slice(startIndex, endIndex);
+
+  // ページ変更時にトップまでスクロール
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [currentPage]);
 
   const handlePrevious = () => {
     if (currentPage > 1) {
