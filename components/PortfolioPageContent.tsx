@@ -79,6 +79,21 @@ const portfolioData = {
         "高速表示・UX最適化",
       ],
     },
+    {
+      id: 6,
+      title: "天地星空（あまちほしそら）",
+      description: "富士山麓の水と山田錦を使った高級純米大吟醸のブランドサイト",
+      fullDescription:
+        "富士山麓を拠点に醸される高級純米大吟醸「天地星空」のブランドサイトを制作しました。富士山の清らかな伏流水と、日本酒造りに適した酒米（山田錦100％）を使用した逸品を世界に紹介するため、海外市場向けの高級日本酒として開発・販売される銘柄の特徴を活かした設計を採用。インバウンド向け訴求や海外展示会・商談時の紹介ツールとして活用されています。",
+      image: "/portfolio/amachi.webp",
+      url: "https://www.mtfuji-sake-aus.com/",
+      highlights: [
+        "海外市場向け高級日本酒",
+        "インバウンド訴求",
+        "多言語対応設計",
+        "ブランドサイト",
+      ],
+    },
   ],
   en: [
     {
@@ -161,6 +176,22 @@ const portfolioData = {
         "Fast Loading & UX Optimization",
       ],
     },
+    {
+      id: 6,
+      title: "Amachi Hoshisora (天地星空)",
+      description:
+        "Brand site for premium Junmai Daiginjo sake brewed with Mount Fuji water and Yamada Nishiki rice",
+      fullDescription:
+        "We created a brand site for Amachi Hoshisora, a premium Junmai Daiginjo sake brewed at the foot of Mount Fuji. The site introduces this exquisite sake made with Mount Fuji's pure underground water and 100% Yamada Nishiki rice to the world. Designed as a premium Japanese sake for the overseas market, the site serves as an inbound marketing tool and promotional material for trade shows and business meetings.",
+      image: "/portfolio/amachi.webp",
+      url: "https://www.mtfuji-sake-aus.com/",
+      highlights: [
+        "Premium Sake for Overseas Market",
+        "Inbound Appeal",
+        "Multilingual Design",
+        "Brand Site",
+      ],
+    },
   ],
 };
 
@@ -201,6 +232,7 @@ export default function PortfolioPageContent() {
     allItems.find((item) => item.id === 5), // evimeria home
     allItems.find((item) => item.id === 3), // yawn & nap LP
     allItems.find((item) => item.id === 4), // yawn & nap EC
+    allItems.find((item) => item.id === 6), // 天地星空
   ].filter(Boolean) as typeof allItems;
 
   const itemsPerPage = 3;

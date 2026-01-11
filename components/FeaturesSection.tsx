@@ -139,22 +139,6 @@ const featuresData = {
       iconType: "automation",
       href: "/solutions#automation",
     },
-    {
-      title: "デジタル戦略",
-      description:
-        "ビジネス成長を加速するデジタル戦略の立案と実行をサポートします。",
-      features: ["戦略立案", "実行支援", "効果測定"],
-      iconType: "strategy",
-      href: "/solutions#strategy",
-    },
-    {
-      title: "継続サポート",
-      description:
-        "制作後の運用・保守・改善まで、長期的なサポートを提供します。",
-      features: ["運用サポート", "保守・メンテナンス", "継続的改善"],
-      iconType: "support",
-      href: "/solutions#support",
-    },
   ],
   en: [
     {
@@ -201,26 +185,6 @@ const featuresData = {
       iconType: "automation",
       href: "/solutions#automation",
     },
-    {
-      title: "Digital Strategy",
-      description:
-        "We support the planning and execution of digital strategies that accelerate business growth.",
-      features: [
-        "Strategy Planning",
-        "Execution Support",
-        "Performance Measurement",
-      ],
-      iconType: "strategy",
-      href: "/solutions#strategy",
-    },
-    {
-      title: "Ongoing Support",
-      description:
-        "We provide long-term support including operation, maintenance, and improvement after development.",
-      features: ["Operation Support", "Maintenance", "Continuous Improvement"],
-      iconType: "support",
-      href: "/solutions#support",
-    },
   ],
 };
 
@@ -260,25 +224,25 @@ export default function FeaturesSection() {
         </div>
 
         {/* おしゃれなグリッドレイアウト */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
           {features.map((feature, index) => (
             <a
               key={index}
               href={feature.href}
-              className="group relative h-full min-h-[220px] sm:min-h-[300px] rounded-lg border border-[#2e2e2e] bg-[#171717] p-4 sm:p-7 md:p-8 flex flex-col transition-all duration-300 hover:border-[#0ABAB5]/50 hover:bg-[#1a1a1a]"
+              className="group relative h-full min-h-[200px] sm:min-h-[260px] rounded-lg border border-[#2e2e2e] bg-[#171717] p-5 sm:p-6 md:p-7 flex flex-col transition-all duration-300 hover:border-[#0ABAB5]/50 hover:bg-[#1a1a1a]"
             >
               {/* アイコン */}
-              <div className="mb-3 sm:mb-4 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[#0ABAB5]/10 border border-[#0ABAB5]/20 flex items-center justify-center text-[#0ABAB5] transition-all duration-300 group-hover:bg-[#0ABAB5]/20 group-hover:border-[#0ABAB5]/40 group-hover:scale-110">
+              <div className="mb-3 sm:mb-4 w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#0ABAB5]/10 border border-[#0ABAB5]/20 flex items-center justify-center text-[#0ABAB5] transition-all duration-300 group-hover:bg-[#0ABAB5]/20 group-hover:border-[#0ABAB5]/40 group-hover:scale-110">
                 {getIcon(feature.iconType)}
               </div>
 
               {/* タイトル */}
-              <h3 className="text-base sm:text-xl font-medium text-[#fafafa] mb-2 sm:mb-3 transition-colors duration-300 group-hover:text-[#0ABAB5]">
+              <h3 className="text-base sm:text-lg md:text-xl font-medium text-[#fafafa] mb-2 sm:mb-3 transition-colors duration-300 group-hover:text-[#0ABAB5]">
                 {feature.title}
               </h3>
 
               {/* 説明 */}
-              <p className="text-xs sm:text-base text-[#898989] mb-3 sm:mb-4 leading-relaxed flex-1">
+              <p className="text-xs sm:text-sm text-[#b4b4b4] mb-3 sm:mb-4 leading-relaxed flex-1">
                 {feature.description}
               </p>
 
@@ -287,7 +251,7 @@ export default function FeaturesSection() {
                 {feature.features.map((item, idx) => (
                   <li
                     key={idx}
-                    className="flex items-center gap-2 text-xs sm:text-sm text-[#b4b4b4]"
+                    className="flex items-center gap-2 text-xs sm:text-sm text-[#d4d4d4]"
                   >
                     <svg
                       className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0ABAB5] shrink-0"
@@ -308,7 +272,7 @@ export default function FeaturesSection() {
               </ul>
 
               {/* ホバー時の矢印 */}
-              <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute bottom-4 right-4 sm:bottom-5 sm:right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <svg
                   className="w-5 h-5 text-[#0ABAB5] transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"

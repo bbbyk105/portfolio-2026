@@ -13,7 +13,7 @@ const translations = {
     email: "メールアドレス",
     emailPlaceholder: "example@email.com",
     subject: "お問い合わせ内容",
-    subjectPlaceholder: "選択してください",
+    subjectPlaceholder: "お問い合わせ内容をご記入ください",
     message: "メッセージ",
     messagePlaceholder: "ご質問やご要望をご記入ください",
     submit: "送信する",
@@ -30,7 +30,7 @@ const translations = {
     email: "Email",
     emailPlaceholder: "example@email.com",
     subject: "Subject",
-    subjectPlaceholder: "Please select",
+    subjectPlaceholder: "Please enter your inquiry",
     message: "Message",
     messagePlaceholder: "Please enter your questions or requests",
     submit: "Send",
@@ -40,22 +40,6 @@ const translations = {
   },
 };
 
-const subjectOptions = {
-  ja: [
-    { value: "web", label: "Web制作" },
-    { value: "app", label: "アプリ制作" },
-    { value: "meta", label: "Meta広告" },
-    { value: "automation", label: "AI自動化" },
-    { value: "other", label: "その他" },
-  ],
-  en: [
-    { value: "web", label: "Web Development" },
-    { value: "app", label: "App Development" },
-    { value: "meta", label: "Meta Advertising" },
-    { value: "automation", label: "AI Automation" },
-    { value: "other", label: "Other" },
-  ],
-};
 
 export default function ContactContent() {
   const { language } = useLanguage();
@@ -99,7 +83,7 @@ export default function ContactContent() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({
       ...formData,
@@ -173,21 +157,16 @@ export default function ContactContent() {
                   >
                     {t.subject}
                   </label>
-                  <select
+                  <input
+                    type="text"
                     id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#2e2e2e] rounded-lg text-[#fafafa] focus:outline-none focus:border-[#0ABAB5] transition-colors"
-                  >
-                    <option value="">{t.subjectPlaceholder}</option>
-                    {subjectOptions[language].map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
+                    placeholder={t.subjectPlaceholder}
+                    className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#2e2e2e] rounded-lg text-[#fafafa] placeholder-[#898989] focus:outline-none focus:border-[#0ABAB5] transition-colors"
+                  />
                 </div>
 
                 <div>
