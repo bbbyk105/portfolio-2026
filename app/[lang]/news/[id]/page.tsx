@@ -1,15 +1,82 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { getBlogClient, type Blog } from "@/lib/microcms";
 
 type Props = {
-  params: {
+  params: Promise<{
     lang: "ja" | "en";
     id: string;
-  };
+  }>;
 };
 
 export const revalidate = 60;
+
+const baseUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.evimeria105.com";
+
+// HTMLタグを除去してテキストのみを抽出
+const stripHtmlTags = (html: string): string => {
+  return html.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").trim();
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang, id } = await params;
+  const client = getBlogClient(lang);
+  const post = await client
+    .get<Blog>({
+      endpoint: "blogs",
+      contentId: id,
+    })
+    .catch(() => null);
+
+  if (!post || !post.publishedAt) {
+    return {
+      title: "Not Found",
+    };
+  }
+
+  const contentText = stripHtmlTags(
+    typeof post.content === "string" ? post.content : ""
+  );
+  const description =
+    contentText.length > 160
+      ? contentText.substring(0, 160) + "..."
+      : contentText || "Evimería news article";
+
+  const title = post.title || "News";
+  const ogImage = post.eyecatch?.url || `${baseUrl}/images/og-image.png`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      publishedTime: post.publishedAt,
+      modifiedTime: post.updatedAt,
+      authors: ["Evimería"],
+      images: [
+        {
+          url: ogImage,
+          width: post.eyecatch?.width || 1200,
+          height: post.eyecatch?.height || 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
+    alternates: {
+      canonical: `${baseUrl}/news/${id}`,
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const getAllPosts = async (lang: "ja" | "en") => {
@@ -63,11 +130,12 @@ export async function generateStaticParams() {
 }
 
 export default async function NewsDetailPage({ params }: Props) {
-  const client = getBlogClient(params.lang);
+  const { lang, id } = await params;
+  const client = getBlogClient(lang);
   const post = await client
     .get<Blog>({
       endpoint: "blogs",
-      contentId: params.id,
+      contentId: id,
     })
     .catch(() => null);
 
