@@ -52,6 +52,7 @@ export default function SplineBackground() {
           height: "100%",
           willChange: "opacity",
           transform: "translate3d(0, 0, 0)",
+          touchAction: "pan-y",
         }}
       >
         <Spline
@@ -62,6 +63,7 @@ export default function SplineBackground() {
             width: "100%",
             height: "100%",
             display: "block",
+            touchAction: "pan-y",
           }}
         />
       </div>
