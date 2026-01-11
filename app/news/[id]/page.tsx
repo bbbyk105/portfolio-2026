@@ -6,6 +6,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NewsShareButtons from "@/components/NewsShareButtons";
+import Loading from "@/components/Loading";
 import { useLanguage } from "@/contexts/LanguageContext";
 import type { Blog } from "@/lib/microcms";
 
@@ -54,8 +55,10 @@ export default function NewsDetailPage() {
 
   if (loading) {
     return (
-      <div className="bg-[#121212] min-h-screen w-full text-white flex items-center justify-center">
-        <p>{t.loading}</p>
+      <div className="bg-[#121212] min-h-screen w-full text-white">
+        <Header />
+        <Loading fullScreen={false} size="lg" text={t.loading} />
+        <Footer />
       </div>
     );
   }

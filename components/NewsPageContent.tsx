@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Loading from "@/components/Loading";
 
 type NewsItem = {
   id: string;
@@ -58,11 +59,12 @@ export default function NewsPageContent() {
             let excerpt = "";
             if (post.content) {
               const textContent = stripHtmlTags(post.content);
-              excerpt = textContent.length > 120 
-                ? textContent.substring(0, 120) + "..." 
-                : textContent;
+              excerpt =
+                textContent.length > 120
+                  ? textContent.substring(0, 120) + "..."
+                  : textContent;
             }
-            
+
             return {
               id: post.id,
               title: post.title,
@@ -87,9 +89,7 @@ export default function NewsPageContent() {
     return (
       <section className="w-full bg-[#121212] min-h-screen py-12 sm:py-16 md:py-20 lg:py-24">
         <div className="max-w-[960px] mx-auto px-4 sm:px-6 md:px-8">
-          <div className="flex items-center justify-center py-20">
-            <p className="text-[#898989]">{t.loading}</p>
-          </div>
+          <Loading text={t.loading} />
         </div>
       </section>
     );
