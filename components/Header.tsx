@@ -21,6 +21,7 @@ const translations = {
     contact: "お問い合わせ",
     privacy: "プライバシーポリシー",
     terms: "利用規約",
+    specifiedCommercialTransactions: "特定商取引法",
     resources: "リソース",
     news: "ニュース",
     portfolio: "制作実績",
@@ -37,6 +38,7 @@ const translations = {
     contact: "Contact",
     privacy: "Privacy Policy",
     terms: "Terms of Service",
+    specifiedCommercialTransactions: "Specified Commercial Transactions Act",
     resources: "Resources",
     news: "News",
     portfolio: "Portfolio",
@@ -434,6 +436,13 @@ export default function Header() {
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {t.terms}
+                  </Link>
+                  <Link
+                    href="/specified-commercial-transactions"
+                    className="block px-4 sm:px-6 py-3 text-sm text-[#b4b4b4] hover:bg-[#1f1f1f] hover:text-[#fafafa] transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {t.specifiedCommercialTransactions}
                   </Link>
                 </div>
               )}

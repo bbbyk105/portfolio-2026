@@ -17,6 +17,7 @@ const translations = {
     contact: "お問い合わせ",
     privacy: "プライバシーポリシー",
     terms: "利用規約",
+    specifiedCommercialTransactions: "特定商取引法",
     resources: "リソース",
     news: "ニュース",
     portfolio: "制作実績",
@@ -35,6 +36,7 @@ const translations = {
     contact: "Contact",
     privacy: "Privacy Policy",
     terms: "Terms of Service",
+    specifiedCommercialTransactions: "Specified Commercial Transactions Act",
     resources: "Resources",
     news: "News",
     portfolio: "Portfolio",
@@ -215,6 +217,14 @@ export default function Footer() {
                     className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
                   >
                     {t.terms}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/specified-commercial-transactions"
+                    className="text-[13.3px] text-[#898989] hover:text-[#fafafa] transition-colors"
+                  >
+                    {t.specifiedCommercialTransactions}
                   </Link>
                 </li>
               </ul>
