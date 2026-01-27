@@ -5,10 +5,12 @@ import ContactContent from "@/components/ContactContent";
 
 export const metadata: Metadata = {
   title: "お問い合わせ",
-  description: "Evimeríaへのお問い合わせはこちらから。Web制作、アプリ開発、広告運用、AI自動化など、お気軽にご相談ください。",
+  description:
+    "Evimeríaへのお問い合わせはこちらから。Web制作、アプリ開発、広告運用、業務効率化など、お気軽にご相談ください。",
   openGraph: {
     title: "お問い合わせ | Evimería",
-    description: "Evimeríaへのお問い合わせはこちらから。Web制作、アプリ開発、広告運用、AI自動化など、お気軽にご相談ください。",
+    description:
+      "Evimeríaへのお問い合わせはこちらから。Web制作、アプリ開発、広告運用、業務効率化など、お気軽にご相談ください。",
     url: "/contact",
   },
 };
@@ -24,4 +26,3 @@ export default function ContactPage() {
     </div>
   );
 }
-

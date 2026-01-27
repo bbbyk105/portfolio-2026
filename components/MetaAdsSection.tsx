@@ -4,9 +4,9 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const translations = {
   ja: {
-    title: "Meta広告代理",
+    title: "SNS広告代理",
     description:
-      "Meta広告の戦略立案から運用、最適化まで一貫してサポート。ターゲティング、クリエイティブ制作、パフォーマンス分析により、効果的な広告運用を実現します。",
+      "SNS広告の戦略立案から運用、最適化まで一貫してサポート。ターゲティング、クリエイティブ制作、パフォーマンス分析により、効果的な広告運用を実現します。",
     strategyTitle: "広告戦略立案",
     strategyDescription: "目標に合わせた広告戦略の設計と最適化を行います。",
     strategyFeatures: ["ターゲット設定", "予算配分最適化", "KPI設定"],

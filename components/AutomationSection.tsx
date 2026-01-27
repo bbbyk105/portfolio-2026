@@ -103,79 +103,79 @@ const automationExamples = {
     {
       title: "データ連携・同期",
       description:
-        "Googleスプレッドシート、Notion、Airtableなど、複数のサービス間でのデータ自動同期と連携を実現します。",
+        "Googleスプレッドシート、Notion、Airtableなど、複数のサービス間でのデータ連携と同期を行い、更新作業を効率化します。",
     },
     {
-      title: "通知・レポート自動化",
+      title: "通知・レポート運用",
       description:
-        "定期的なレポート生成やSlack、メール、LINEへの通知を自動送信します。",
+        "定期的なレポート生成やSlack、メール、LINEへの通知フローを整備し、手作業の繰り返しを減らします。",
     },
     {
-      title: "受注管理の自動化",
+      title: "受注管理フローの最適化",
       description:
-        "ECサイトの注文を自動でスプレッドシートや在庫管理システムに連携し、受注処理を効率化します。",
+        "ECサイトの注文情報をスプレッドシートや在庫管理システムに連携し、受注処理フローを効率化します。",
     },
     {
-      title: "SNS投稿の自動化",
+      title: "SNS運用の効率化",
       description:
-        "ブログ更新や新商品情報を自動でSNS（X、Instagram、Facebook）に投稿します。",
+        "ブログ更新や新商品情報を基にSNS投稿の下書きを自動作成し、確認後に各SNSへ投稿できる運用フローを整えます。",
     },
     {
       title: "カレンダー連携",
       description:
-        "Googleカレンダーや予約システムと連携し、スケジュール管理やリマインダーを自動化します。",
+        "Googleカレンダーや予約システムと連携し、スケジュール管理やリマインダー送信を効率化します。",
     },
     {
       title: "フォーム回答の処理",
       description:
-        "お問い合わせフォームの回答を自動でメール送信、データベース保存、担当者への通知を行います。",
+        "お問い合わせフォームの回答をメール送信・データベース保存・担当者への通知に振り分け、対応漏れを防ぎます。",
     },
   ],
   en: [
     {
       title: "Data Integration & Sync",
       description:
-        "Automatically sync and integrate data between multiple services like Google Sheets, Notion, Airtable, and more.",
+        "Sync and integrate data between multiple services like Google Sheets, Notion, Airtable, and more to streamline updates.",
     },
     {
-      title: "Notification & Report Automation",
+      title: "Notification & Reporting Workflows",
       description:
-        "Automatically generate regular reports and send notifications to Slack, email, LINE, and more.",
+        "Generate regular reports and organize notification workflows to Slack, email, LINE, and more, reducing repetitive manual work.",
     },
     {
-      title: "Order Management Automation",
+      title: "Order Management Flow Optimization",
       description:
-        "Automatically sync e-commerce orders to spreadsheets and inventory management systems to streamline order processing.",
+        "Connect e-commerce orders with spreadsheets and inventory management systems to streamline and structure order processing flows.",
     },
     {
-      title: "Social Media Automation",
+      title: "Social Media Operations Support",
       description:
-        "Automatically post blog updates and new product information to social media (X, Instagram, Facebook).",
+        "Prepare social media post drafts based on blog updates and new product information, and support scheduling across your social channels.",
     },
     {
       title: "Calendar Integration",
       description:
-        "Integrate with Google Calendar and booking systems to automate schedule management and reminders.",
+        "Integrate with Google Calendar and booking systems to streamline schedule management and reminders.",
     },
     {
       title: "Form Response Processing",
       description:
-        "Automatically process contact form responses by sending emails, saving to database, and notifying team members.",
+        "Process contact form responses by sending emails, saving to databases, and notifying team members in an organized workflow.",
     },
   ],
 };
 
 const translations = {
   ja: {
-    title: "AIによる自動化",
+    title: "AIによる業務効率化",
     description:
-      "n8nを活用した業務プロセスの自動化を実現します。データ連携、作業の自動化、AI統合により、効率的な業務運用を実現します。",
-    mainTitle: "ワークフロー自動化",
+      "業務プロセスの見直しとシステム連携により、データ連携や作業フローの最適化、AI活用による業務効率化を実現します。",
+    mainTitle: "ワークフロー設計・連携",
     mainDescription:
-      "n8nを使用して、業務プロセスの自動化と統合を行います。繰り返し作業を自動化し、業務効率を大幅に向上させます。API連携により、様々なサービスとデータを連携し、カスタムワークフローを構築できます。",
-    aiTitle: "AI統合・自動化",
+      "業務プロセスを可視化し、繰り返し作業を減らすワークフローを設計・構築します。API連携により、様々なサービスとデータを結び付け、業務に合わせた連携フローを実現します。",
+    aiTitle: "AI統合・業務効率化",
     aiDescription:
-      "AI技術を活用した業務自動化を実現します。チャットボットや自動応答システムなど、AIを活用した業務効率化をサポートします。自然言語処理や機械学習を組み合わせることで、より高度な自動化が可能です。",
+      "AI技術を活用して、チャットボットや応答支援システムなどの導入を通じて業務を効率化します。自然言語処理や機械学習を組み合わせることで、より高度なサポートが可能になります。",
     features: ["データ連携・同期", "API統合", "カスタムワークフロー構築"],
     aiFeatures: [
       "AIチャットボット統合",
@@ -185,15 +185,15 @@ const translations = {
     examplesTitle: "自動化の例",
   },
   en: {
-    title: "AI Automation",
+    title: "AI-powered Operations",
     description:
-      "We automate business processes using n8n. Achieve efficient business operations through data integration, workflow automation, and AI integration.",
-    mainTitle: "Workflow Automation",
+      "We streamline business processes through data integration, workflow design, and AI-supported operations.",
+    mainTitle: "Workflow Design & Integration",
     mainDescription:
-      "We automate and integrate business processes using n8n. Automate repetitive tasks and significantly improve operational efficiency. Through API integration, we can connect various services and data to build custom workflows.",
-    aiTitle: "AI Integration & Automation",
+      "We design and integrate business workflows to reduce repetitive tasks and improve operational efficiency. Through API integration, we can connect various services and data to build custom workflows tailored to your operations.",
+    aiTitle: "AI Integration & Operational Efficiency",
     aiDescription:
-      "We achieve business automation using AI technology. We support business efficiency through AI-powered chatbots and automated response systems. By combining natural language processing and machine learning, more advanced automation is possible.",
+      "We use AI technology to support business operations through chatbots and response-assist systems. By combining natural language processing and machine learning, more advanced and efficient support becomes possible.",
     features: [
       "Data Integration & Sync",
       "API Integration",

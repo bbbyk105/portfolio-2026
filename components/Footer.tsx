@@ -6,12 +6,12 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const translations = {
   ja: {
-    description: "Web制作・EC・業務自動化を提供します。",
+    description: "Web制作・EC・業務効率化を提供します。",
     services: "サービス",
     webDevelopment: "Web制作",
     appDevelopment: "アプリ制作",
-    metaAds: "Meta広告代理",
-    aiAutomation: "AI自動化",
+    metaAds: "SNS広告代理",
+    aiAutomation: "AI活用",
     companyInfo: "会社情報",
     about: "会社概要",
     contact: "お問い合わせ",
@@ -30,7 +30,7 @@ const translations = {
     webDevelopment: "Web Development",
     appDevelopment: "App Development",
     metaAds: "Meta Advertising",
-    aiAutomation: "AI Automation",
+    aiAutomation: "AI-powered Operations",
     companyInfo: "Company",
     about: "About",
     contact: "Contact",

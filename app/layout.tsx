@@ -17,20 +17,20 @@ const geistMono = Geist_Mono({
 
 const metadataJa: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://www.evimeria105.com"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.evimeria105.com",
   ),
   title: {
     default: "Evimería - Web制作・EC・業務自動化",
     template: "%s | Evimería",
   },
   description:
-    "Web制作からアプリ開発、広告運用、AI自動化まで、すべてのサービスを統合的に提供。競争優位性を生み出すデジタルシステムを構築します。",
+    "Web制作からアプリ開発、広告運用、業務効率化まで、すべてのサービスを統合的に提供。競争優位性を生み出すデジタルシステムを構築します。",
   keywords: [
     "evimeria",
     "evimeria アプリ開発",
     "Evimeria Web制作",
     "Evimeria 合同会社",
-    "evimeria n8n",
+    "evimeria ワークフロー設計",
     "evimeria ドロップシッピング",
     "デジタルマーケティング",
     "Web Development",
@@ -60,7 +60,7 @@ const metadataJa: Metadata = {
     siteName: "Evimería",
     title: "Evimería - Web制作・EC・業務自動化",
     description:
-      "Web制作からアプリ開発、広告運用、AI自動化まで、すべてのサービスを統合的に提供。",
+      "Web制作からアプリ開発、広告運用、業務効率化まで、すべてのサービスを統合的に提供。",
     images: [
       {
         url: "/images/og-image.png",
@@ -74,7 +74,7 @@ const metadataJa: Metadata = {
     card: "summary_large_image",
     title: "Evimería - Web制作・EC・業務自動化",
     description:
-      "Web制作からアプリ開発、広告運用、AI自動化まで、すべてのサービスを統合的に提供。",
+      "Web制作からアプリ開発、広告運用、業務効率化まで、すべてのサービスを統合的に提供。",
     images: ["/images/og-image.png"],
   },
   robots: {
@@ -96,28 +96,28 @@ const metadataJa: Metadata = {
 
 const metadataEn: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://www.evimeria105.com"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.evimeria105.com",
   ),
   title: {
     default: "Evimería - Web Development, E-commerce & Business Automation",
     template: "%s | Evimería",
   },
   description:
-    "We provide integrated services from web development to app development, advertising operations, and AI automation. We build digital systems that create competitive advantages.",
+    "We provide integrated services from web development to app development, advertising operations, and business process improvement. We build digital systems that create competitive advantages.",
   keywords: [
     "evimeria",
     "evimeria app development",
     "Evimeria Web Development",
     "Evimeria LLC",
-    "evimeria n8n",
+    "workflow design",
     "evimeria dropshipping",
     "Digital Marketing",
     "Web Development",
     "App Development",
-    "Business Automation",
+    "Business Operations",
     "E-commerce Development",
-    "Meta Advertising",
-    "AI Automation",
+    "Digital Advertising",
+    "AI-powered Operations",
   ],
   authors: [{ name: "Evimería" }],
   creator: "Evimería",
@@ -143,7 +143,7 @@ const metadataEn: Metadata = {
     siteName: "Evimería",
     title: "Evimería - Web Development, E-commerce & Business Automation",
     description:
-      "We provide integrated services from web development to app development, advertising operations, and AI automation.",
+      "We provide integrated services from web development to app development, advertising operations, and business process improvement.",
     images: [
       {
         url: "/images/og-image.png",
@@ -157,7 +157,7 @@ const metadataEn: Metadata = {
     card: "summary_large_image",
     title: "Evimería - Web Development, E-commerce & Business Automation",
     description:
-      "We provide integrated services from web development to app development, advertising operations, and AI automation.",
+      "We provide integrated services from web development to app development, advertising operations, and business process improvement.",
     images: ["/images/og-image.png"],
   },
   robots: {

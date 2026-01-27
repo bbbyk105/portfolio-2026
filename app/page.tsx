@@ -11,13 +11,13 @@ import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Evimería - Web制作・EC・業務自動化",
+  title: "Evimería - Web制作・EC・業務効率化",
   description:
-    "Web制作からアプリ開発、広告運用、AI自動化まで、すべてのサービスを統合的に提供。競争優位性を生み出すデジタルシステムを構築します。",
+    "Web制作からアプリ開発、広告運用、業務効率化まで、すべてのサービスを統合的に提供。競争優位性を生み出すデジタルシステムを構築します。",
   openGraph: {
-    title: "Evimería - Web制作・EC・業務自動化",
+    title: "Evimería - Web制作・EC・業務効率化",
     description:
-      "Web制作からアプリ開発、広告運用、AI自動化まで、すべてのサービスを統合的に提供。",
+      "Web制作からアプリ開発、広告運用、業務効率化まで、すべてのサービスを統合的に提供。",
     url: "/",
   },
 };

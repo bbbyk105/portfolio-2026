@@ -125,17 +125,17 @@ const featuresData = {
       href: "/solutions#app",
     },
     {
-      title: "Meta広告代理",
+      title: "SNS広告運用",
       description: "戦略立案から運用、最適化まで一貫してサポートします。",
       features: ["広告戦略立案", "クリエイティブ制作", "運用・最適化"],
       iconType: "meta",
       href: "/solutions#meta",
     },
     {
-      title: "AI自動化",
+      title: "AI活用による業務効率化",
       description:
-        "AI技術を活用した業務プロセスの自動化を実現します。繰り返し作業を自動化し、業務効率を大幅に向上させます。",
-      features: ["ワークフロー自動化", "AI統合", "データ連携"],
+        "AI技術を活用して業務プロセスを見直し、繰り返し作業を減らすことで業務効率を大幅に向上させます。",
+      features: ["ワークフロー設計", "AI統合", "データ連携"],
       iconType: "automation",
       href: "/solutions#automation",
     },
@@ -166,7 +166,7 @@ const featuresData = {
       href: "/solutions#app",
     },
     {
-      title: "Meta Advertising",
+      title: "Social Advertising",
       description:
         "We provide comprehensive support from strategy planning to operation and optimization.",
       features: [
@@ -178,10 +178,10 @@ const featuresData = {
       href: "/solutions#meta",
     },
     {
-      title: "AI Automation",
+      title: "AI-powered Operations",
       description:
-        "We automate business processes using AI technology. We automate repetitive tasks and significantly improve operational efficiency.",
-      features: ["Workflow Automation", "AI Integration", "Data Integration"],
+        "We improve business processes using AI technology, reducing repetitive tasks and significantly improving operational efficiency.",
+      features: ["Workflow Design", "AI Integration", "Data Integration"],
       iconType: "automation",
       href: "/solutions#automation",
     },
@@ -197,7 +197,7 @@ const translations = {
   en: {
     title: "Comprehensive Digital Solutions",
     description:
-      "We provide integrated services from web development to app development, advertising operations, and AI automation. We comprehensively support your business growth.",
+      "We provide integrated services from web development to app development, advertising operations, and AI-powered operations. We comprehensively support your business growth.",
   },
 };
 

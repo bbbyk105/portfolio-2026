@@ -35,13 +35,6 @@ const portfolioData = {
       image: "/images/android.png",
     },
     {
-      id: 5,
-      title: "Meta広告運用",
-      description: "効果的な広告戦略と運用",
-      category: "広告運用",
-      image: "/top-logos/meta.png",
-    },
-    {
       id: 6,
       title: "AI自動化システム",
       description: "業務プロセスの自動化と統合",
@@ -77,13 +70,6 @@ const portfolioData = {
       description: "Android app ready for Google Play release",
       category: "App Development",
       image: "/images/android.png",
-    },
-    {
-      id: 5,
-      title: "Meta Advertising",
-      description: "Effective advertising strategy and operations",
-      category: "Advertising",
-      image: "/top-logos/meta.png",
     },
     {
       id: 6,

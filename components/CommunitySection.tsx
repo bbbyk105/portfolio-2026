@@ -31,7 +31,7 @@ const faqsData = {
     },
     {
       id: 5,
-      question: "Meta広告の運用費用はどのくらいかかりますか？",
+      question: "SNS広告の運用費用はどのくらいかかりますか？",
       answer:
         "広告予算と運用費用は別途となります。運用費用は月額5万円〜が目安です。広告予算はお客様の目標に合わせて最適な金額をご提案いたします。",
     },
@@ -81,7 +81,7 @@ const faqsData = {
     },
     {
       id: 5,
-      question: "How much does Meta advertising cost?",
+      question: "How much does social advertising management cost?",
       answer:
         "Advertising budget and operational fees are separate. Operational fees start from around 50,000 yen per month. We will propose the optimal advertising budget based on your goals.",
     },
@@ -127,12 +127,17 @@ export default function CommunitySection() {
 
   const toggleFAQ = (id: number) => {
     setOpenIds((prev) =>
-      prev.includes(id) ? prev.filter((openId) => openId !== id) : [...prev, id]
+      prev.includes(id)
+        ? prev.filter((openId) => openId !== id)
+        : [...prev, id],
     );
   };
 
   return (
-    <section id="faq" className="w-full bg-[#171717] py-12 sm:py-16 md:py-20 lg:py-24">
+    <section
+      id="faq"
+      className="w-full bg-[#171717] py-12 sm:py-16 md:py-20 lg:py-24"
+    >
       <div className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
         <div className="mb-8 sm:mb-12 md:mb-16">
           <div className="flex items-center gap-3 mb-4">
