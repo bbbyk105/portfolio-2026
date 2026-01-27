@@ -31,15 +31,15 @@ const faqsData = {
     },
     {
       id: 5,
-      question: "SNS広告の運用費用はどのくらいかかりますか？",
+      question: "デジタルマーケティングの運用費用はどのくらいかかりますか？",
       answer:
-        "広告予算と運用費用は別途となります。運用費用は月額5万円〜が目安です。広告予算はお客様の目標に合わせて最適な金額をご提案いたします。",
+        "マーケティング予算と運用費用は別途となります。運用費用は月額5万円〜が目安です。マーケティング予算はお客様の目標に合わせて最適な金額をご提案いたします。",
     },
     {
       id: 6,
-      question: "AI自動化システムの導入にはどのような準備が必要ですか？",
+      question: "AI業務効率化システムの導入にはどのような準備が必要ですか？",
       answer:
-        "現在の業務フローや使用しているツールの情報があれば十分です。ヒアリング時に最適な自動化プランをご提案し、段階的に導入を進めることができます。",
+        "現在の業務フローや使用しているツールの情報があれば十分です。ヒアリング時に最適な業務効率化プランをご提案し、段階的に導入を進めることができます。",
     },
     {
       id: 7,
@@ -81,16 +81,16 @@ const faqsData = {
     },
     {
       id: 5,
-      question: "How much does social advertising management cost?",
+      question: "How much does digital marketing management cost?",
       answer:
-        "Advertising budget and operational fees are separate. Operational fees start from around 50,000 yen per month. We will propose the optimal advertising budget based on your goals.",
+        "Marketing budget and operational fees are separate. Operational fees start from around 50,000 yen per month. We will propose the optimal marketing budget based on your goals.",
     },
     {
       id: 6,
       question:
-        "What preparation is needed for AI automation system introduction?",
+        "What preparation is needed for AI operations system introduction?",
       answer:
-        "Information about your current business flow and tools you use is sufficient. We will propose the optimal automation plan during consultation and proceed with gradual introduction.",
+        "Information about your current business flow and tools you use is sufficient. We will propose the optimal process improvement plan during consultation and proceed with gradual introduction.",
     },
     {
       id: 7,

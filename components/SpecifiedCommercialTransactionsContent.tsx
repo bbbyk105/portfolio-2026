@@ -33,8 +33,8 @@ const translations = {
           "Web制作",
           "ECサイト構築",
           "アプリ開発",
-          "AI自動化",
-          "広告運用・代理",
+          "AI業務効率化",
+          "デジタルマーケティング支援",
           "EC販売（商品の製造・発送は提携事業者が行う場合があります）",
         ],
       },
@@ -62,7 +62,7 @@ const translations = {
         content:
           "サービス提供時期・商品の引渡時期は、サービス・商品の種類により異なります。",
         serviceItems: [
-          "Web制作・ECサイト構築・アプリ開発・AI自動化・広告運用：各サービスページまたは契約時に明示いたします。",
+          "Web制作・ECサイト構築・アプリ開発・AI業務効率化・デジタルマーケティング支援：各サービスページまたは契約時に明示いたします。",
           "EC販売（物販商品）：ご注文確定後、原則として7営業日以内に発送いたします。なお、商品は国内外の提携事業者より直接発送される場合があり、その場合は発送までに最大14営業日程度かかる場合があります。",
         ],
         dropshippingNote:
@@ -78,7 +78,7 @@ const translations = {
           "商品到着後8日以内に、商品に欠陥があることが判明した場合（物販商品のみ）",
         ],
         serviceNote:
-          "Web制作・ECサイト構築・アプリ開発・AI自動化・広告運用等のサービスについては、契約内容に基づき、契約時に別途キャンセルポリシーを明示いたします。",
+          "Web制作・ECサイト構築・アプリ開発・AI業務効率化・デジタルマーケティング支援等のサービスについては、契約内容に基づき、契約時に別途キャンセルポリシーを明示いたします。",
         dropshippingNote:
           "提携事業者より直接発送される商品の返品については、提携事業者の返品ポリシーに準じます。返品をご希望の場合は、お問い合わせフォームよりご連絡ください。返品送料は、商品の欠陥が当方の責めに帰すべき事由による場合を除き、お客様のご負担となります。",
         contactNote:
@@ -135,8 +135,8 @@ const translations = {
           "Web Development",
           "EC Site Construction",
           "App Development",
-          "AI Automation",
-          "Advertising Management & Agency",
+          "AI Operations",
+          "Digital Marketing Support",
           "EC Sales (product manufacturing and shipping may be handled by partner businesses)",
         ],
       },
@@ -164,7 +164,7 @@ const translations = {
         content:
           "Service delivery timing and product delivery timing vary depending on the type of service/product.",
         serviceItems: [
-          "Web Development / EC Site Construction / App Development / AI Automation / Advertising Management: Will be specified on each service page or at the time of contract.",
+          "Web Development / EC Site Construction / App Development / AI Operations / Digital Marketing Support: Will be specified on each service page or at the time of contract.",
           "EC Sales (Physical Products): Products will be shipped within 7 business days after order confirmation, in principle. However, some products may be shipped directly from partner businesses (domestic and international), in which case shipment may take up to approximately 14 business days.",
         ],
         dropshippingNote:
@@ -180,7 +180,7 @@ const translations = {
           "When a defect in the product is discovered within 8 days after product arrival (physical products only)",
         ],
         serviceNote:
-          "For services such as Web Development, EC Site Construction, App Development, AI Automation, and Advertising Management, cancellation policies will be separately specified at the time of contract based on the contract content.",
+          "For services such as Web Development, EC Site Construction, App Development, AI Operations, and Digital Marketing Support, cancellation policies will be separately specified at the time of contract based on the contract content.",
         dropshippingNote:
           "Returns for products shipped directly from partner businesses follow the return policy of partner businesses. If you wish to return a product, please contact us through the inquiry form. Return shipping costs are the customer's responsibility, except when the product defect is due to reasons attributable to us.",
         contactNote:

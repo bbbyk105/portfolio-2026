@@ -20,11 +20,11 @@ const metadataJa: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || "https://www.evimeria105.com",
   ),
   title: {
-    default: "Evimeria - Web制作・EC・業務自動化",
+    default: "Evimeria - Web制作・EC・業務効率化",
     template: "%s | Evimeria",
   },
   description:
-    "Web制作からアプリ開発、広告運用、業務効率化まで、すべてのサービスを統合的に提供。競争優位性を生み出すデジタルシステムを構築します。",
+    "Web制作からアプリ開発、デジタルマーケティング支援、業務効率化まで、すべてのサービスを統合的に提供。競争優位性を生み出すデジタルシステムを構築します。",
   keywords: [
     "evimeria",
     "evimeria アプリ開発",
@@ -58,9 +58,9 @@ const metadataJa: Metadata = {
     alternateLocale: ["en_US"],
     url: "/",
     siteName: "Evimeria",
-    title: "Evimeria - Web制作・EC・業務自動化",
+    title: "Evimeria - Web制作・EC・業務効率化",
     description:
-      "Web制作からアプリ開発、広告運用、業務効率化まで、すべてのサービスを統合的に提供。",
+      "Web制作からアプリ開発、デジタルマーケティング支援、業務効率化まで、すべてのサービスを統合的に提供。",
     images: [
       {
         url: "/images/og-image.png",
@@ -72,9 +72,9 @@ const metadataJa: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Evimeria - Web制作・EC・業務自動化",
+    title: "Evimeria - Web制作・EC・業務効率化",
     description:
-      "Web制作からアプリ開発、広告運用、業務効率化まで、すべてのサービスを統合的に提供。",
+      "Web制作からアプリ開発、デジタルマーケティング支援、業務効率化まで、すべてのサービスを統合的に提供。",
     images: ["/images/og-image.png"],
   },
   robots: {
@@ -99,24 +99,24 @@ const metadataEn: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || "https://www.evimeria105.com",
   ),
   title: {
-    default: "Evimeria - Web Development, E-commerce & Business Automation",
+    default: "Evimeria - Web Development, E-commerce & Business Operations",
     template: "%s | Evimeria",
   },
   description:
-    "We provide integrated services from web development to app development, advertising operations, and business process improvement. We build digital systems that create competitive advantages.",
+    "We provide integrated services from web development to app development, digital marketing support, and business process improvement. We build digital systems that create competitive advantages.",
   keywords: [
     "evimeria",
     "evimeria app development",
     "Evimeria Web Development",
     "Evimeria LLC",
-    "workflow design",
+    "process design",
     "evimeria dropshipping",
     "Digital Marketing",
     "Web Development",
     "App Development",
     "Business Operations",
     "E-commerce Development",
-    "Digital Advertising",
+    "Digital Marketing",
     "AI-powered Operations",
   ],
   authors: [{ name: "Evimeria" }],
@@ -141,9 +141,9 @@ const metadataEn: Metadata = {
     alternateLocale: ["ja_JP"],
     url: "/",
     siteName: "Evimeria",
-    title: "Evimeria - Web Development, E-commerce & Business Automation",
+    title: "Evimeria - Web Development, E-commerce & Business Operations",
     description:
-      "We provide integrated services from web development to app development, advertising operations, and business process improvement.",
+      "We provide integrated services from web development to app development, digital marketing support, and business process improvement.",
     images: [
       {
         url: "/images/og-image.png",
@@ -155,9 +155,9 @@ const metadataEn: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Evimeria - Web Development, E-commerce & Business Automation",
+    title: "Evimeria - Web Development, E-commerce & Business Operations",
     description:
-      "We provide integrated services from web development to app development, advertising operations, and business process improvement.",
+      "We provide integrated services from web development to app development, digital marketing support, and business process improvement.",
     images: ["/images/og-image.png"],
   },
   robots: {

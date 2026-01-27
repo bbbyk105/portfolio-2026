@@ -1,20 +1,9 @@
 import Image from "next/image";
 
 const logos = [
-  {
-    name: "Social Platform",
-    src: "/top-logos/meta.png",
-    alt: "Social platform",
-  },
   { name: "Shopify", src: "/top-logos/shopify.webp", alt: "Shopify" },
   { name: "Stripe", src: "/top-logos/stripe.webp", alt: "Stripe" },
-  {
-    name: "Workflow Engine",
-    src: "/top-logos/n8n.png",
-    alt: "Workflow engine",
-  },
   { name: "Next.js", src: "/top-logos/nextjs.png", alt: "Next.js" },
-  { name: "AutoDS", src: "/top-logos/autods.jpg", alt: "AutoDS" },
 ];
 
 export default function LogoMarquee() {

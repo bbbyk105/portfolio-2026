@@ -17,8 +17,8 @@ const translations = {
     banner: "Latest Updates & Insights",
     description: [
       "Evimeria builds digital systems that create a competitive edge.",
-      "Start with web and app development, then integrate workflow-driven",
-      "operations, online advertising,",
+      "Start with web and app development, then integrate process-driven",
+      "operations, digital marketing support,",
       "and scalable dropshipping operations — all designed to drive real",
       "results.",
     ],
@@ -28,7 +28,7 @@ const translations = {
     description: [
       "Evimeriaは競争優位性を生み出すデジタルシステムを構築します。",
       "Web開発とアプリ開発から始め、業務フローに基づいた",
-      "自動化と広告運用を統合します。",
+      "業務効率化とデジタルマーケティング支援を統合します。",
     ],
   },
 };

@@ -6,11 +6,11 @@ import ContactContent from "@/components/ContactContent";
 export const metadata: Metadata = {
   title: "お問い合わせ",
   description:
-    "Evimeriaへのお問い合わせはこちらから。Web制作、アプリ開発、広告運用、業務効率化など、お気軽にご相談ください。",
+    "Evimeriaへのお問い合わせはこちらから。Web制作、アプリ開発、デジタルマーケティング支援、業務効率化など、お気軽にご相談ください。",
   openGraph: {
     title: "お問い合わせ | Evimeria",
     description:
-      "Evimeriaへのお問い合わせはこちらから。Web制作、アプリ開発、広告運用、業務効率化など、お気軽にご相談ください。",
+      "Evimeriaへのお問い合わせはこちらから。Web制作、アプリ開発、デジタルマーケティング支援、業務効率化など、お気軽にご相談ください。",
     url: "/contact",
   },
 };

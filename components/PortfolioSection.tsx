@@ -36,9 +36,9 @@ const portfolioData = {
     },
     {
       id: 6,
-      title: "AI自動化システム",
-      description: "業務プロセスの自動化と統合",
-      category: "AI自動化",
+      title: "AI業務効率化システム",
+      description: "業務プロセスの効率化と統合",
+      category: "AI業務効率化",
       image: "/images/node.png",
     },
   ],
@@ -73,9 +73,9 @@ const portfolioData = {
     },
     {
       id: 6,
-      title: "AI Automation System",
-      description: "Business process automation and integration",
-      category: "AI Automation",
+      title: "AI Operations System",
+      description: "Business process improvement and integration",
+      category: "AI Operations",
       image: "/images/node.png",
     },
   ],
@@ -101,7 +101,7 @@ export default function PortfolioSection() {
   const portfolioItems = portfolioData[language];
   const t = translations[language];
 
-  // meta広告とアプリ系（iOS/Android）を除外
+  // アプリ系（iOS/Android）を除外
   const availableItems = portfolioItems.filter(
     (item) => item.id !== 3 && item.id !== 4 && item.id !== 5
   );

@@ -118,7 +118,7 @@ const automationExamples = {
     {
       title: "SNS運用の効率化",
       description:
-        "ブログ更新や新商品情報を基にSNS投稿の下書きを自動作成し、確認後に各SNSへ投稿できる運用フローを整えます。",
+        "ブログ更新や新商品情報を基にSNS投稿の下書きを作成し、確認後に各SNSへ投稿できる運用フローを整えます。",
     },
     {
       title: "カレンダー連携",
@@ -138,14 +138,14 @@ const automationExamples = {
         "Sync and integrate data between multiple services like Google Sheets, Notion, Airtable, and more to streamline updates.",
     },
     {
-      title: "Notification & Reporting Workflows",
+      title: "Notification & Reporting Processes",
       description:
-        "Generate regular reports and organize notification workflows to Slack, email, LINE, and more, reducing repetitive manual work.",
+        "Generate regular reports and organize notification processes to Slack, email, LINE, and more, reducing repetitive manual work.",
     },
     {
       title: "Order Management Flow Optimization",
       description:
-        "Connect e-commerce orders with spreadsheets and inventory management systems to streamline and structure order processing flows.",
+        "Connect e-commerce orders with spreadsheets and inventory management systems to streamline and structure order processing processes.",
     },
     {
       title: "Social Media Operations Support",
@@ -160,7 +160,7 @@ const automationExamples = {
     {
       title: "Form Response Processing",
       description:
-        "Process contact form responses by sending emails, saving to databases, and notifying team members in an organized workflow.",
+        "Process contact form responses by sending emails, saving to databases, and notifying team members in an organized process.",
     },
   ],
 };
@@ -170,41 +170,41 @@ const translations = {
     title: "AIによる業務効率化",
     description:
       "業務プロセスの見直しとシステム連携により、データ連携や作業フローの最適化、AI活用による業務効率化を実現します。",
-    mainTitle: "ワークフロー設計・連携",
+    mainTitle: "業務フロー設計・連携",
     mainDescription:
-      "業務プロセスを可視化し、繰り返し作業を減らすワークフローを設計・構築します。API連携により、様々なサービスとデータを結び付け、業務に合わせた連携フローを実現します。",
+      "業務プロセスを可視化し、繰り返し作業を減らす業務フローを設計・構築します。API連携により、様々なサービスとデータを結び付け、業務に合わせた連携フローを実現します。",
     aiTitle: "AI統合・業務効率化",
     aiDescription:
       "AI技術を活用して、チャットボットや応答支援システムなどの導入を通じて業務を効率化します。自然言語処理や機械学習を組み合わせることで、より高度なサポートが可能になります。",
-    features: ["データ連携・同期", "API統合", "カスタムワークフロー構築"],
+    features: ["データ連携・同期", "API統合", "カスタム業務フロー構築"],
     aiFeatures: [
       "AIチャットボット統合",
-      "自動応答システム",
-      "データ分析・処理自動化",
+      "応答支援システム",
+      "データ分析・処理支援",
     ],
-    examplesTitle: "自動化の例",
+    examplesTitle: "業務効率化の例",
   },
   en: {
     title: "AI-powered Operations",
     description:
-      "We streamline business processes through data integration, workflow design, and AI-supported operations.",
-    mainTitle: "Workflow Design & Integration",
+      "We streamline business processes through data integration, process design, and AI-supported operations.",
+    mainTitle: "Business Process Design & Integration",
     mainDescription:
-      "We design and integrate business workflows to reduce repetitive tasks and improve operational efficiency. Through API integration, we can connect various services and data to build custom workflows tailored to your operations.",
+      "We design and integrate business processes to reduce repetitive tasks and improve operational efficiency. Through API integration, we can connect various services and data to build custom processes tailored to your operations.",
     aiTitle: "AI Integration & Operational Efficiency",
     aiDescription:
       "We use AI technology to support business operations through chatbots and response-assist systems. By combining natural language processing and machine learning, more advanced and efficient support becomes possible.",
     features: [
       "Data Integration & Sync",
       "API Integration",
-      "Custom Workflow Building",
+      "Custom Process Building",
     ],
     aiFeatures: [
       "AI Chatbot Integration",
-      "Automated Response Systems",
-      "Data Analysis & Processing Automation",
+      "Response Support Systems",
+      "Data Analysis & Processing Support",
     ],
-    examplesTitle: "Automation Examples",
+    examplesTitle: "Operational Efficiency Examples",
   },
 };
 
@@ -333,7 +333,7 @@ export default function AutomationSection() {
           </div>
         </div>
 
-        {/* 自動化の例 */}
+        {/* 業務効率化の例 */}
         <div className="mb-6">
           <h3 className="text-lg sm:text-xl font-medium text-[#fafafa] mb-6">
             {t.examplesTitle}

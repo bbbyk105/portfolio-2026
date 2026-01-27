@@ -125,9 +125,9 @@ const featuresData = {
       href: "/solutions#app",
     },
     {
-      title: "SNS広告運用",
+      title: "デジタルマーケティング支援",
       description: "戦略立案から運用、最適化まで一貫してサポートします。",
-      features: ["広告戦略立案", "クリエイティブ制作", "運用・最適化"],
+      features: ["マーケティング戦略立案", "クリエイティブ制作", "運用・最適化"],
       iconType: "meta",
       href: "/solutions#meta",
     },
@@ -135,7 +135,7 @@ const featuresData = {
       title: "AI活用による業務効率化",
       description:
         "AI技術を活用して業務プロセスを見直し、繰り返し作業を減らすことで業務効率を大幅に向上させます。",
-      features: ["ワークフロー設計", "AI統合", "データ連携"],
+      features: ["業務フロー設計", "AI統合", "データ連携"],
       iconType: "automation",
       href: "/solutions#automation",
     },
@@ -166,11 +166,11 @@ const featuresData = {
       href: "/solutions#app",
     },
     {
-      title: "Social Advertising",
+      title: "Digital Marketing",
       description:
         "We provide comprehensive support from strategy planning to operation and optimization.",
       features: [
-        "Ad Strategy Planning",
+        "Marketing Strategy Planning",
         "Creative Production",
         "Operation & Optimization",
       ],
@@ -181,7 +181,7 @@ const featuresData = {
       title: "AI-powered Operations",
       description:
         "We improve business processes using AI technology, reducing repetitive tasks and significantly improving operational efficiency.",
-      features: ["Workflow Design", "AI Integration", "Data Integration"],
+      features: ["Process Design", "AI Integration", "Data Integration"],
       iconType: "automation",
       href: "/solutions#automation",
     },
@@ -192,12 +192,12 @@ const translations = {
   ja: {
     title: "包括的なデジタルソリューション",
     description:
-      "Web制作からアプリ開発、広告運用、AI自動化まで、すべてのサービスを統合的に提供。お客様のビジネス成長を包括的にサポートします。",
+      "Web制作からアプリ開発、デジタルマーケティング支援、AI業務効率化まで、すべてのサービスを統合的に提供。お客様のビジネス成長を包括的にサポートします。",
   },
   en: {
     title: "Comprehensive Digital Solutions",
     description:
-      "We provide integrated services from web development to app development, advertising operations, and AI-powered operations. We comprehensively support your business growth.",
+      "We provide integrated services from web development to app development, digital marketing support, and AI-powered operations. We comprehensively support your business growth.",
   },
 };
 

@@ -7,13 +7,13 @@ const translations = {
     label: "Our Services",
     title: "事業内容",
     description:
-      "Web制作からアプリ開発、広告運用、業務効率化まで、デジタルビジネスの成長を包括的にサポートします。",
+      "Web制作からアプリ開発、デジタルマーケティング支援、業務効率化まで、デジタルビジネスの成長を包括的にサポートします。",
   },
   en: {
     label: "Our Services",
     title: "Services",
     description:
-      "We comprehensively support digital business growth from web development, app development, advertising management, to AI-powered operations.",
+      "We comprehensively support digital business growth from web development, app development, digital marketing support, to AI-powered operations.",
   },
 };
 

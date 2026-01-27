@@ -4,17 +4,17 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const translations = {
   ja: {
-    title: "SNS広告代理",
+    title: "デジタルマーケティング支援",
     description:
-      "SNS広告の戦略立案から運用、最適化まで一貫してサポート。ターゲティング、クリエイティブ制作、パフォーマンス分析により、効果的な広告運用を実現します。",
-    strategyTitle: "広告戦略立案",
-    strategyDescription: "目標に合わせた広告戦略の設計と最適化を行います。",
+      "デジタルマーケティングの戦略立案から運用、最適化まで一貫してサポート。ターゲティング、クリエイティブ制作、パフォーマンス分析により、効果的なマーケティング運用を実現します。",
+    strategyTitle: "マーケティング戦略立案",
+    strategyDescription: "目標に合わせたマーケティング戦略の設計と最適化を行います。",
     strategyFeatures: ["ターゲット設定", "予算配分最適化", "KPI設定"],
     creativeTitle: "クリエイティブ制作",
-    creativeDescription: "効果的な広告クリエイティブの制作を行います。",
+    creativeDescription: "効果的なマーケティングクリエイティブの制作を行います。",
     creativeFeatures: ["画像・動画制作", "A/Bテスト", "コピーライティング"],
     managementTitle: "運用・最適化",
-    managementDescription: "継続的な広告運用とパフォーマンス最適化を行います。",
+    managementDescription: "継続的なマーケティング運用とパフォーマンス最適化を行います。",
     managementFeatures: [
       "日次・週次レポート",
       "パフォーマンス分析",
@@ -22,19 +22,19 @@ const translations = {
     ],
   },
   en: {
-    title: "Meta Advertising Agency",
+    title: "Digital Marketing Support",
     description:
-      "We provide comprehensive support from Meta ad strategy planning to management and optimization. We achieve effective ad management through targeting, creative production, and performance analysis.",
-    strategyTitle: "Ad Strategy Planning",
+      "We provide comprehensive support from digital marketing strategy planning to management and optimization. We achieve effective marketing management through targeting, creative production, and performance analysis.",
+    strategyTitle: "Marketing Strategy Planning",
     strategyDescription:
-      "We design and optimize ad strategies tailored to your goals.",
+      "We design and optimize marketing strategies tailored to your goals.",
     strategyFeatures: [
       "Target Setting",
       "Budget Allocation Optimization",
       "KPI Setting",
     ],
     creativeTitle: "Creative Production",
-    creativeDescription: "We produce effective ad creatives.",
+    creativeDescription: "We produce effective marketing creatives.",
     creativeFeatures: [
       "Image & Video Production",
       "A/B Testing",
@@ -42,7 +42,7 @@ const translations = {
     ],
     managementTitle: "Management & Optimization",
     managementDescription:
-      "We provide continuous ad management and performance optimization.",
+      "We provide continuous marketing management and performance optimization.",
     managementFeatures: [
       "Daily & Weekly Reports",
       "Performance Analysis",

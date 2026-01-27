@@ -13,11 +13,11 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Evimeria - Web制作・EC・業務効率化",
   description:
-    "Web制作からアプリ開発、広告運用、業務効率化まで、すべてのサービスを統合的に提供。競争優位性を生み出すデジタルシステムを構築します。",
+    "Web制作からアプリ開発、デジタルマーケティング支援、業務効率化まで、すべてのサービスを統合的に提供。競争優位性を生み出すデジタルシステムを構築します。",
   openGraph: {
     title: "Evimeria - Web制作・EC・業務効率化",
     description:
-      "Web制作からアプリ開発、広告運用、業務効率化まで、すべてのサービスを統合的に提供。",
+      "Web制作からアプリ開発、デジタルマーケティング支援、業務効率化まで、すべてのサービスを統合的に提供。",
     url: "/",
   },
 };
