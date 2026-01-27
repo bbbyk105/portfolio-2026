@@ -124,7 +124,7 @@ export default function Header() {
           <Link href="/" className="flex items-center">
             <Image
               src="/images/logo.png"
-              alt="Evimería"
+              alt="Evimeria"
               width={150}
               height={50}
               className="h-8 sm:h-10 md:h-12 w-auto"
@@ -299,7 +299,7 @@ export default function Header() {
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>
             <Image
               src="/images/logo.png"
-              alt="Evimería"
+              alt="Evimeria"
               width={150}
               height={50}
               className="h-8 sm:h-10 md:h-12 w-auto"

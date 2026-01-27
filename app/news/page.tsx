@@ -5,10 +5,10 @@ import NewsPageContent from "@/components/NewsPageContent";
 
 export const metadata: Metadata = {
   title: "ニュース",
-  description: "Evimeríaの最新情報、技術トレンド、プロジェクトのアップデートなどをお届けします。",
+  description: "Evimeriaの最新情報、技術トレンド、プロジェクトのアップデートなどをお届けします。",
   openGraph: {
-    title: "ニュース | Evimería",
-    description: "Evimeríaの最新情報、技術トレンド、プロジェクトのアップデートなどをお届けします。",
+    title: "ニュース | Evimeria",
+    description: "Evimeriaの最新情報、技術トレンド、プロジェクトのアップデートなどをお届けします。",
     url: "/news",
   },
 };

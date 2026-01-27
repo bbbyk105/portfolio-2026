@@ -5,7 +5,7 @@ import SpecifiedCommercialTransactionsContent from "@/components/SpecifiedCommer
 
 export const metadata: Metadata = {
   title: "特定商取引法に基づく表記",
-  description: "Evimeríaの特定商取引法に基づく表記。事業者情報、支払方法、返品・キャンセルポリシーについて説明しています。",
+  description: "Evimeriaの特定商取引法に基づく表記。事業者情報、支払方法、返品・キャンセルポリシーについて説明しています。",
   robots: {
     index: true,
     follow: true,

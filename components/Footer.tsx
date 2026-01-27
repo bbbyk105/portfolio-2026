@@ -57,7 +57,7 @@ export default function Footer() {
             <Link href="/" className="block">
               <Image
                 src="/images/logo.png"
-                alt="Evimería"
+                alt="Evimeria"
                 width={200}
                 height={67}
                 className="h-12 sm:h-16 md:h-20 w-auto"
@@ -279,7 +279,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-[#2e2e2e] pt-4 sm:pt-6 md:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
           <p className="text-[10px] sm:text-[11.4px] text-[#898989]">
-            © {new Date().getFullYear()} Evimería Inc
+            © {new Date().getFullYear()} Evimeria
           </p>
         </div>
       </div>

@@ -5,7 +5,7 @@ import TermsOfServiceContent from "@/components/TermsOfServiceContent";
 
 export const metadata: Metadata = {
   title: "利用規約",
-  description: "Evimeríaの利用規約。サービスの利用条件について説明しています。",
+  description: "Evimeriaの利用規約。サービスの利用条件について説明しています。",
   robots: {
     index: true,
     follow: true,

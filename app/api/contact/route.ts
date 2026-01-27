@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
         responseTime:
           "通常1〜2営業日以内にご返信いたします。\n今しばらくお待ちください。",
         closing: "今後ともよろしくお願いいたします。",
-        companyName: "Evimería",
+        companyName: "Evimeria",
       },
       en: {
         adminSubject: "[Inquiry]",
@@ -66,7 +66,7 @@ export async function POST(request: NextRequest) {
         responseTime:
           "We typically respond within 1-2 business days.\nPlease wait for our reply.",
         closing: "We look forward to working with you.",
-        companyName: "Evimería",
+        companyName: "Evimeria",
       },
     };
 

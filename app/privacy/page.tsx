@@ -5,7 +5,7 @@ import PrivacyPolicyContent from "@/components/PrivacyPolicyContent";
 
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
-  description: "Evimeríaのプライバシーポリシー。お客様の個人情報の取り扱いについて説明しています。",
+  description: "Evimeriaのプライバシーポリシー。お客様の個人情報の取り扱いについて説明しています。",
   robots: {
     index: true,
     follow: true,

@@ -20,8 +20,8 @@ const metadataJa: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || "https://www.evimeria105.com",
   ),
   title: {
-    default: "Evimería - Web制作・EC・業務自動化",
-    template: "%s | Evimería",
+    default: "Evimeria - Web制作・EC・業務自動化",
+    template: "%s | Evimeria",
   },
   description:
     "Web制作からアプリ開発、広告運用、業務効率化まで、すべてのサービスを統合的に提供。競争優位性を生み出すデジタルシステムを構築します。",
@@ -36,9 +36,9 @@ const metadataJa: Metadata = {
     "Web Development",
     "App Development",
   ],
-  authors: [{ name: "Evimería" }],
-  creator: "Evimería",
-  publisher: "Evimería",
+  authors: [{ name: "Evimeria" }],
+  creator: "Evimeria",
+  publisher: "Evimeria",
   formatDetection: {
     email: false,
     address: false,
@@ -57,8 +57,8 @@ const metadataJa: Metadata = {
     locale: "ja_JP",
     alternateLocale: ["en_US"],
     url: "/",
-    siteName: "Evimería",
-    title: "Evimería - Web制作・EC・業務自動化",
+    siteName: "Evimeria",
+    title: "Evimeria - Web制作・EC・業務自動化",
     description:
       "Web制作からアプリ開発、広告運用、業務効率化まで、すべてのサービスを統合的に提供。",
     images: [
@@ -66,13 +66,13 @@ const metadataJa: Metadata = {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Evimería",
+        alt: "Evimeria",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Evimería - Web制作・EC・業務自動化",
+    title: "Evimeria - Web制作・EC・業務自動化",
     description:
       "Web制作からアプリ開発、広告運用、業務効率化まで、すべてのサービスを統合的に提供。",
     images: ["/images/og-image.png"],
@@ -99,8 +99,8 @@ const metadataEn: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || "https://www.evimeria105.com",
   ),
   title: {
-    default: "Evimería - Web Development, E-commerce & Business Automation",
-    template: "%s | Evimería",
+    default: "Evimeria - Web Development, E-commerce & Business Automation",
+    template: "%s | Evimeria",
   },
   description:
     "We provide integrated services from web development to app development, advertising operations, and business process improvement. We build digital systems that create competitive advantages.",
@@ -119,9 +119,9 @@ const metadataEn: Metadata = {
     "Digital Advertising",
     "AI-powered Operations",
   ],
-  authors: [{ name: "Evimería" }],
-  creator: "Evimería",
-  publisher: "Evimería",
+  authors: [{ name: "Evimeria" }],
+  creator: "Evimeria",
+  publisher: "Evimeria",
   formatDetection: {
     email: false,
     address: false,
@@ -140,8 +140,8 @@ const metadataEn: Metadata = {
     locale: "en_US",
     alternateLocale: ["ja_JP"],
     url: "/",
-    siteName: "Evimería",
-    title: "Evimería - Web Development, E-commerce & Business Automation",
+    siteName: "Evimeria",
+    title: "Evimeria - Web Development, E-commerce & Business Automation",
     description:
       "We provide integrated services from web development to app development, advertising operations, and business process improvement.",
     images: [
@@ -149,13 +149,13 @@ const metadataEn: Metadata = {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Evimería",
+        alt: "Evimeria",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Evimería - Web Development, E-commerce & Business Automation",
+    title: "Evimeria - Web Development, E-commerce & Business Automation",
     description:
       "We provide integrated services from web development to app development, advertising operations, and business process improvement.",
     images: ["/images/og-image.png"],

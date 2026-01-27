@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description =
     contentText.length > 160
       ? contentText.substring(0, 160) + "..."
-      : contentText || "Evimería news article";
+      : contentText || "Evimeria news article";
 
   const title = post.title || "News";
   const ogImage = post.eyecatch?.url || `${baseUrl}/images/og-image.png`;
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
-      authors: ["Evimería"],
+      authors: ["Evimeria"],
       images: [
         {
           url: ogImage,

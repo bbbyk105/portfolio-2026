@@ -5,10 +5,10 @@ import PortfolioPageContent from "@/components/PortfolioPageContent";
 
 export const metadata: Metadata = {
   title: "制作実績",
-  description: "Evimeríaがこれまでに制作したWebサイト、アプリ、システムの実績をご紹介します。",
+  description: "Evimeriaがこれまでに制作したWebサイト、アプリ、システムの実績をご紹介します。",
   openGraph: {
-    title: "制作実績 | Evimería",
-    description: "Evimeríaがこれまでに制作したWebサイト、アプリ、システムの実績をご紹介します。",
+    title: "制作実績 | Evimeria",
+    description: "Evimeriaがこれまでに制作したWebサイト、アプリ、システムの実績をご紹介します。",
     url: "/portfolio",
   },
 };

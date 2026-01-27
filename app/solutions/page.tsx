@@ -10,11 +10,11 @@ import AutomationSection from "@/components/AutomationSection";
 export const metadata: Metadata = {
   title: "ソリューション",
   description:
-    "Web開発、アプリ開発、SNS広告運用、業務効率化など、Evimeríaが提供する包括的なデジタルソリューションをご紹介します。",
+    "Web開発、アプリ開発、SNS広告運用、業務効率化など、Evimeriaが提供する包括的なデジタルソリューションをご紹介します。",
   openGraph: {
-    title: "ソリューション | Evimería",
+    title: "ソリューション | Evimeria",
     description:
-      "Web開発、アプリ開発、SNS広告運用、業務効率化など、Evimeríaが提供する包括的なデジタルソリューションをご紹介します。",
+      "Web開発、アプリ開発、SNS広告運用、業務効率化など、Evimeriaが提供する包括的なデジタルソリューションをご紹介します。",
     url: "/solutions",
   },
 };

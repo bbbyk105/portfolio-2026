@@ -5,7 +5,7 @@ export default function StructuredData() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Evimería",
+    name: "Evimeria",
     url: baseUrl,
     logo: `${baseUrl}/images/logo.png`,
     description:
@@ -25,7 +25,7 @@ export default function StructuredData() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Evimería",
+    name: "Evimeria",
     url: baseUrl,
     potentialAction: {
       "@type": "SearchAction",

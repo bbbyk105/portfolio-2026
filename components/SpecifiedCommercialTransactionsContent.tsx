@@ -10,7 +10,7 @@ const translations = {
     sections: {
       businessName: {
         title: "1. 事業者名（屋号）",
-        content: "Evimería",
+        content: "Evimeria",
       },
       representative: {
         title: "2. 運営責任者",
@@ -112,7 +112,7 @@ const translations = {
     sections: {
       businessName: {
         title: "1. Business Name",
-        content: "Evimería",
+        content: "Evimeria",
       },
       representative: {
         title: "2. Operator",
