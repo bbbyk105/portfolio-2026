@@ -71,7 +71,7 @@ const portfolioData = {
       fullDescription:
         "家具やライトを専門としたアメリカ市場向けのECサイトを制作しました。スタイリッシュで機能的なデザインを重視し、アメリカの顧客の購買行動に最適化したユーザー体験を実現。レスポンシブデザインと高速な表示速度により、モバイル・デスクトップ両方での快適なショッピング体験を提供しています。",
       image: "/portfolio/ec.png", // 後でevimeria home用の画像に変更してください
-      url: "", // プレビューリンクをここに追加
+      url: "https://www.evimeriahome.com/", // プレビューリンクをここに追加
       highlights: [
         "アメリカ市場向け最適化",
         "家具・ライト専門EC",
@@ -121,7 +121,7 @@ const portfolioData = {
       fullDescription:
         "We developed an e-commerce site and landing page for an organic matcha and tea producer in Fuji City. The design, focused on communicating effectively to international users, successfully attracted inbound inquiries and served as a promotional tool at overseas trade shows.",
       image: "/portfolio/jurakuen.png",
-      url: "", // プレビューリンクをここに追加
+      url: "https://www.jurakuen.com/", // プレビューリンクをここに追加
       highlights: [
         "Inbound Marketing",
         "Trade Show Support",
@@ -136,7 +136,7 @@ const portfolioData = {
         "Landing page for fragrance brand using cypress from Mount Fuji",
       fullDescription:
         "We created a landing page for a fragrance brand using cypress from Mount Fuji. With English support and world-class design, it serves as an inbound marketing tool and promotional material for trade shows and business meetings.",
-      image: "/portfolio/ec.png",
+      image: "/portfolio/yawnlp.png",
       url: "https://www.hinokifragrance.com/", // プレビューリンクをここに追加
       highlights: [
         "English Support",
@@ -153,7 +153,7 @@ const portfolioData = {
       fullDescription:
         "We newly built an e-commerce site supporting direct sales at trade shows and events. We implemented a system enabling face-to-face payment and instant purchase, achieving a seamless sales experience across online and offline channels.",
       image: "/portfolio/yawnec.png",
-      url: "", // プレビューリンクをここに追加
+      url: "https://www.yawnnap.shop/", // プレビューリンクをここに追加
       highlights: [
         "Face-to-Face Payment",
         "Instant Purchase",
@@ -167,8 +167,8 @@ const portfolioData = {
         "E-commerce site specializing in furniture and lighting for the US market",
       fullDescription:
         "We created an e-commerce site specializing in furniture and lighting for the US market. With a focus on stylish and functional design, we optimized the user experience for American customer purchasing behavior. Through responsive design and fast loading times, we provide a comfortable shopping experience on both mobile and desktop devices.",
-      image: "/portfolio/yawnec.png", // Please change to evimeria home image later
-      url: "", // プレビューリンクをここに追加
+      image: "/portfolio/ec.png", // Please change to evimeria home image later
+      url: "https://www.evimeriahome.com/", // プレビューリンクをここに追加
       highlights: [
         "US Market Optimization",
         "Furniture & Lighting Specialized",
@@ -436,7 +436,7 @@ export default function PortfolioPageContent() {
                   >
                     {page}
                   </button>
-                )
+                ),
               )}
             </div>
 
