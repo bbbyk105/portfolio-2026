@@ -9,10 +9,10 @@ const portfolioData = {
   ja: [
     {
       id: 1,
-      title: "学習院大学 DSA（Distance-based Structural Analysis）",
+      title: "学習院大学 DSA（Distance Scoring Analysis）",
       description: "タンパク質構造解析Webシステム",
       fullDescription:
-        "学習院大学における研究プロジェクトとして、タンパク質構造の距離解析を行う DSA（Distance-based Structural Analysis） システムの設計・実装を担当しました。従来はローカル環境で行われていた解析フローをWeb上で完結できるよう再構築し、解析のプロセス改善・可視化・再現性の向上を実現しています。研究者が直感的に操作できるUI設計を意識し、解析ジョブの管理、結果の可視化、履歴保存までを一貫して行える構成を採用しました。これにより、研究効率の向上だけでなく、将来的な共同研究や解析手法の展開にも対応可能な基盤として活用されています。",
+        "学習院大学における研究プロジェクトとして、タンパク質構造の距離解析を行う DSA（Distance Scoring Analysis） システムの設計・実装を担当しました。従来はローカル環境で行われていた解析フローをWeb上で完結できるよう再構築し、解析のプロセス改善・可視化・再現性の向上を実現しています。研究者が直感的に操作できるUI設計を意識し、解析ジョブの管理、結果の可視化、履歴保存までを一貫して行える構成を採用しました。これにより、研究効率の向上だけでなく、将来的な共同研究や解析手法の展開にも対応可能な基盤として活用されています。",
       image: "/portfolio/pdb.png",
       url: "", // プレビューリンクをここに追加
       highlights: [
@@ -98,10 +98,10 @@ const portfolioData = {
   en: [
     {
       id: 1,
-      title: "Gakushuin University DSA (Distance-based Structural Analysis)",
+      title: "Gakushuin University DSA (Distance Scoring Analysis)",
       description: "Protein Structure Analysis Web System",
       fullDescription:
-        "As a research project at Gakushuin University, I was responsible for the design and implementation of the DSA (Distance-based Structural Analysis) system for protein structure distance analysis. I restructured the analysis process, which was previously performed in local environments, to be completed entirely on the web, achieving process improvement, visualization, and improved reproducibility of analysis. With a focus on intuitive UI design for researchers, I adopted a configuration that enables consistent management of analysis jobs, visualization of results, and history saving. This not only improves research efficiency but also serves as a foundation that can support future collaborative research and expansion of analysis methods.",
+        "As a research project at Gakushuin University, I was responsible for the design and implementation of the DSA (Distance Scoring Analysis) system for protein structure distance analysis. I restructured the analysis process, which was previously performed in local environments, to be completed entirely on the web, achieving process improvement, visualization, and improved reproducibility of analysis. With a focus on intuitive UI design for researchers, I adopted a configuration that enables consistent management of analysis jobs, visualization of results, and history saving. This not only improves research efficiency but also serves as a foundation that can support future collaborative research and expansion of analysis methods.",
       image: "/portfolio/pdb.png",
       url: "", // プレビューリンクをここに追加
       highlights: [
