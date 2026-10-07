@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import ContactContent from "@/components/ContactContent";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "お問い合わせ",
   description:
     "Evimeriaへのお問い合わせはこちらから。Web制作、アプリ開発、デジタルマーケティング支援、業務効率化など、お気軽にご相談ください。",

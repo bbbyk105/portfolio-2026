@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // メタデータのストリーミングを止め、canonical・title を常に <head> に出す（<body> 側の canonical は Google が無視する）
+  htmlLimitedBots: /.*/,
   images: {
     remotePatterns: [
       {

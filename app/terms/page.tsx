@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import TermsOfServiceContent from "@/components/TermsOfServiceContent";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/terms" },
   title: "利用規約",
   description: "Evimeriaの利用規約。サービスの利用条件について説明しています。",
   robots: {

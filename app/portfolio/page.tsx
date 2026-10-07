@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import PortfolioPageContent from "@/components/PortfolioPageContent";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/portfolio" },
   title: "制作実績",
   description: "Evimeriaがこれまでに制作したWebサイト、アプリ、システムの実績をご紹介します。",
   openGraph: {

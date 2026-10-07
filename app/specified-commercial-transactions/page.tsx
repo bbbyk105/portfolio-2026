@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import SpecifiedCommercialTransactionsContent from "@/components/SpecifiedCommercialTransactionsContent";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/specified-commercial-transactions" },
   title: "特定商取引法に基づく表記",
   description: "Evimeriaの特定商取引法に基づく表記。事業者情報、支払方法、返品・キャンセルポリシーについて説明しています。",
   robots: {

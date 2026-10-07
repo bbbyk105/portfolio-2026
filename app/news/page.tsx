@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import NewsPageContent from "@/components/NewsPageContent";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/news" },
   title: "ニュース",
   description: "Evimeriaの最新情報、技術トレンド、プロジェクトのアップデートなどをお届けします。",
   openGraph: {

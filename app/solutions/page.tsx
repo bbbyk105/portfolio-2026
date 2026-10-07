@@ -8,6 +8,7 @@ import MetaAdsSection from "@/components/MetaAdsSection";
 import AutomationSection from "@/components/AutomationSection";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/solutions" },
   title: "ソリューション",
   description:
     "Web開発、アプリ開発、デジタルマーケティング支援、業務効率化など、Evimeriaが提供する包括的なデジタルソリューションをご紹介します。",

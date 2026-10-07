@@ -44,14 +44,6 @@ const metadataJa: Metadata = {
     address: false,
     telephone: false,
   },
-  alternates: {
-    canonical: "/",
-    languages: {
-      ja: "/",
-      en: "/",
-      "x-default": "/",
-    },
-  },
   openGraph: {
     type: "website",
     locale: "ja_JP",
@@ -126,14 +118,6 @@ const metadataEn: Metadata = {
     email: false,
     address: false,
     telephone: false,
-  },
-  alternates: {
-    canonical: "/",
-    languages: {
-      ja: "/",
-      en: "/",
-      "x-default": "/",
-    },
   },
   openGraph: {
     type: "website",

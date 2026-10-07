@@ -11,6 +11,7 @@ import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/" },
   title: "Evimeria - Web制作・EC・業務効率化",
   description:
     "Web制作からアプリ開発、デジタルマーケティング支援、業務効率化まで、すべてのサービスを統合的に提供。競争優位性を生み出すデジタルシステムを構築します。",

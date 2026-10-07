@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import PrivacyPolicyContent from "@/components/PrivacyPolicyContent";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/privacy" },
   title: "プライバシーポリシー",
   description: "Evimeriaのプライバシーポリシー。お客様の個人情報の取り扱いについて説明しています。",
   robots: {
